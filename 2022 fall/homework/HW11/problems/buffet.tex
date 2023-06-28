@@ -1,0 +1,143 @@
+\titledquestion{Having a Buffet}
+
+You plan to have a buffet at Aloft hotel on the weekend. There are $n$ different kinds of food provided by the hotel, and you can eat at most $W$ grams of food for the buffet. The $i$-th kind of food is worth $v_i$ yuan and weighs $w_i$ ($w_i\ ,W \in \mathbb{Z}^{+}$) grams per plate. You are very frugal, so you will not waste any food and eat up each plate of food. You have paid $T$ yuan for the buffet ticket, and you wonder whether you can get your money's worth or not.
+
+\begin{parts}
+	\part{} \textbf{Warm Up} \par
+	In order to enjoy as many kinds of foods as possible, you decide to taste at most one plate of each kind of food. Please design a dynamic programming algorithm to find out \textbf{whether you can get your money's worth} or not for the buffet. That is to say, it is possible for the total value of the food you eat to exceed the price you paid for the buffet ticket.
+	\begin{subparts}
+		\subpart[2] Define your subproblem for this question.
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{1.0in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%\vspace{1.0in}
+			\\let $dp[i][j]$ be the maximum value we can get after considering first $i$ kinds of food, with the weight limit of $j$.\\
+		\end{solution}
+
+		\subpart[4] Give your Bellman equation to solve the subproblems.
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{1.0in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{1.0in}
+			\\initially: $dp[i][j] = 0, \forall i,j$\\
+			\[
+				dp[i][j]=
+				\begin{cases}
+					dp[i-1][j]                      & \case{j<w_i} \\
+					\maxi{dp[i-1][j]}{dp[i-1][j-w_i]+v_i} & \case{j\geq w_i}
+				\end{cases}
+			\]
+			\paragraph{Explanation:}
+			\begin{itemize}
+				\item The $1$st term in $\max$: do not take the $i-th$ kind of food.
+				\item The $2$nd term in $\max$: take the $i-th$ kind of food, so the total weight comes from $j-w_i$.
+			\end{itemize}
+
+		\end{solution}
+
+		\subpart[2] What is the answer to this question in terms of the subproblems?
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{1.0in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{1.0in}
+			\\if $dp[n][W] \geq T$, then it can get the money worth.\\
+			otherwise, it cannot.
+		\end{solution}
+
+		\subpart[1] What is the runtime complexity of your algorithm?
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{0.5in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{0.5in}
+			\\$\Theta(nW)$
+		\end{solution}
+	\end{subparts}
+
+	\newpage
+
+	\part{} \textbf{Greedy Eater} \par
+	This time, for each kind of food, you decide to \textbf{eat as many plates} as you want. Please design a greedy algorithm \textbf{trying} to maximize the total value of the food you can eat.
+
+	\begin{subparts}
+		\subpart[2] Describe your greedy strategy where you should take both the value and weight of each kind of food into account. This is an open question and your algorithm does not have to give the optimal solution.
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{2.5in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{2.5in}
+			\\consider the cost performance ratio $(i.e. \frac{v_i}{w_i})$ of each food, and sort the food with their cost performance ratio in the descending order.\\
+			and consider the food from the biggest cost performance ratio to the lowest, for each kind of food, take as many as we can.\\
+		\end{solution}
+
+		\subpart[2] Provide a counterexample to show your greedy algorithm fails in finding the optimal solution to this question.
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{2.5in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{2.5in}
+			\\let $W = 10$, $v_1 = 10, w_1 = 6, v_2 = 6, w_2 = 5$\\
+			the first kind of food has the cost performance ratio $\frac{10}{6} = 1.67$, while the second kind of food has the cost performance ratio $\frac{6}{5} = 1.2$\\
+			so with the greedy, we will take one first food, and get the value of $10$.\\
+			but actually, we can take two second kind of food, then the value is $2*6=12 > 10$.\\
+			so the greedy is not correct.\\
+		\end{solution}
+
+	\end{subparts}
+
+	\newpage
+
+	\part{} \textbf{Time for Dynamic Programming} \par
+	Again, you eat as many plates of each kind of food as you want. Please design a dynamic programming algorithm to find out whether you can get your money's worth or not for the buffet. 
+	
+	\begin{subparts}
+		\subpart[3] Notice that you can achieve this goal by using the subproblem you defined in (a) and \textbf{only modifying your Bellman equation} in (a). Now, please first come up with a na\"{\i}ve $O(W\sum^n_{i=1}{\frac{W}{w_i}})$ dynamic programming algorithm. Give your modified Bellman equation.\\
+		\textbf{Hint:} Try to enumerate the number of plates you eat of each kind of food.
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{2.5in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{2.5in}
+			\\initially: $dp[i][j] = 0, \forall i,j$\\
+			\[
+				dp[i][j]=
+				\begin{cases}
+					dp[i-1][j]                      & \case{j< k\cdot w_i} \\
+					\maxi{dp[i-1][j]}{dp[i-1][j-k\cdot w_i] + k\cdot v_i} & \case{j\geq k\cdot w_i}
+				\end{cases}
+			\]
+			where $0 < k\cdot w_i \leq j$\\
+			\paragraph{Explanation:}
+			\begin{itemize}
+				\item The $1$st term in $\max$: do not take the $i-th$ kind of food.
+				\item The $2$nd term in $\max$: take the $i-th$ kind of food with $k$ times, so the total weight comes from $j-k\cdot w_i$.
+			\end{itemize}
+		\end{solution}
+
+		\subpart[4] Try to solve this question by \textbf{only modifying your Bellman equation} in (a) \textbf{without changing its runtime complexity}. Give your modified Bellman equation.
+		\begin{solution}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%  Replace the `vspace{2.5in}' with your answer.  
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% \vspace{2.5in}
+			\\initially: $dp[i][j] = 0, \forall i,j$\\
+			\[
+				dp[i][j]=
+				\begin{cases}
+					dp[i-1][j]                      & \case{j< w_i} \\
+					\maxi{dp[i-1][j]}{dp[i][j-w_i] + v_i} & \case{j\geq w_i}
+				\end{cases}
+			\]
+			\paragraph{Explanation:}
+			\begin{itemize}
+				\item The $1$st term in $\max$: do not take the $i-th$ kind of food.
+				\item The $2$nd term in $\max$: take the $i-th$ kind of food, so the total weight comes from $j-w_i$, and the food can be taken of many
+				times as we want, so we can get it from the $i-th$ level, instead of the $(i-1)-th$.
+			\end{itemize}
+		\end{solution}
+	\end{subparts}
+	
+\end{parts}

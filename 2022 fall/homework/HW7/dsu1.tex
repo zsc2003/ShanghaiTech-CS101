@@ -1,0 +1,42 @@
+\titledquestion{DSU on hand}[2]
+
+\emph{I mean, hands on DSU, perhaps.}\\
+
+Consider performing a series of merge opertions on a disjoint set structure employing union-by-height strategy.
+Draw the resulting tree structure.\\
+When merging two sets,
+break tie by merging the tree whose root label is small into the other tree.
+
+\newcommand{\SET}[1]{\{#1\}}
+
+\begin{enumerate}[{\bf op} 1.]
+	\item initialize: $\SET{1}, \SET{2}, \SET{3}, \SET{4}, \SET{5}, \SET{6}, \SET{6}, \SET{7}, \SET{8}$
+	\item merge 1,8
+	\item merge 2,7
+	\item merge 3,6
+	\item merge 4,5
+	\item merge 1,4
+	\item merge 2,3
+	\item merge 5,3
+\end{enumerate}
+
+\begin{solution}
+	% Give tikz-qtree a try!\\
+	\vspace{60ex}
+	\begin{tikzpicture}
+		\Tree [.8
+				1
+				[
+					.5
+					4
+				]
+				[.7
+					2
+					[
+						.6
+						3
+					]
+				]
+		]
+	\end{tikzpicture}
+\end{solution}

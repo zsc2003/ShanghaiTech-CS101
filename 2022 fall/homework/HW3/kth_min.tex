@@ -1,0 +1,69 @@
+\titledquestion{\(k\)-th Minimal Value}
+
+Given an array \(\langle a_1,\cdots,a_n\rangle\) of length \(n\) with \emph{distinct} elements and an integer \(k\in[1,n]\), we will design an algorithm to find the \(k\)-th minimal value of \(a\). We say \(a_x\) is the \(k\)-th minimal value of \(a\) if there are exactly \(k-1\) elements in \(a\) that are less than \(a_x\), i.e.
+\[\left|\left\{i\mid a_i<a_x\right\}\right|=k-1.\]
+Consider making use of the `\textbf{partition}' procedure in quick-sort. The function has the signature
+\begin{cpp}
+  int partition(int a[], int l, int r);
+\end{cpp}
+which processes the subarray \(\langle a_l,\cdots,a_r\rangle\). It will choose a pivot from the subarray, place all the elements that are less than the pivot before it, and place all the elements that are greater than the pivot after it. After that, the index of the pivot is returned.
+
+Our algorithm to find the \(k\)-th minimal value is implemented below.
+\begin{cpp}
+  // returns the k-th minimal value in the subarray a[l],...,a[r].
+  int kth_min(int a[], int l, int r, int k) {
+    auto pos = partition(a, l, r), num = pos - l + 1;
+    if (num == k)
+      return a[pos];
+    else if (num > k)
+      return kth_min(____a, l, pos - 1, k____________);
+    else
+      return kth_min(____a, pos + 1, r, k - num______);
+  }
+\end{cpp}
+By calling \lstinline{kth_min(a, 1, n, k)} we will get the answer.
+
+\begin{parts}
+  \part[2] Fill in the blanks in the code snippet above.
+  \part[3] What's the time complexity of our algorithm in the \textbf{worst case}? Please answer in the form of \(\Theta(\cdot)\) and fully justify your answer.
+  \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Replace `\vspace{2in}' with your answer.
+    %\vspace{2in}
+    let \(T(n)\) be the time complexity with \(n\) elements in the array
+    
+    for the worst case
+    
+    \(1\.\) if  \(k \leq \frac{n}{2}\) ,the partition always choose the pivot at the end of the sub-array
+
+    \(T(n) = T(n-1) + \Theta(n)\)
+
+    \(T(n-1) = T(n-2) + \Theta(n-1)\)
+
+    \(...\)
+
+    and \(T(k) = 1\)
+
+    so \(T(n) = T(k) + n + (n-1) + ... + (k+1) = \frac{n^2+n-k^2-k-2}{2} = \Theta(\frac{3}{8}n^2 + \frac{n}{4} +1)\)
+    
+    \(T(n) = \Theta(n^2)\)
+
+    \(2\.\) if \(k > \frac{n}{2}\) ,the partition always choose the pivot at the begin of the sub-array
+
+    \(T(n) = T(n-1) + \Theta(n)\)
+
+    \(T(n-1) = T(n-2) + \Theta(n-1)\)
+
+    \(...\)
+
+    and \(T(n-k+1) = 1\)
+
+    so \(T(n) = T(n-k+1) + n + (n-1) + ... + (n-k) = nk - \frac{k^2}{2} = \Theta(\frac{n^2}{2})\)
+    
+    \(T(n) = \Theta(n^2)\)
+
+    so above all, the worst case of the time complexity is \(\Theta(n^2)\)
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+\end{parts}

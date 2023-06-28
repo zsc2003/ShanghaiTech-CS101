@@ -1,0 +1,92 @@
+\titledquestion{Recurrence Relations}
+
+For each question, find the asymptotic order of growth of $T(n)$ i.e. find a function $g$ such that $T(n) = O(g(n))$. You may ignore any issue arising from whether a number is an integer. You can make use of the Master Theorem, Recursion Tree or other reasonable approaches to solve the following recurrence relations.
+
+\begin{parts}
+    \part[4] $T(n) = 4T(n/2) + 2^4\cdot\sqrt{n}$ and $T(0) = 1$.
+    \begin{solution}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Replace `\vspace{2in}' with your answer.
+        % \vspace{2.5in}
+        by the Master Theorem,
+
+        $ a = 4, b = 2 , and \ 2^4 \sqrt{n} = \Theta(\sqrt{n}), so \ d = \frac{1}{2}$
+
+        $ log_ba = log_24 = 2 > d = \frac{1}{2}$
+
+        so $ T(n) = O(n^{log_ba}) = O(n^2)$
+
+        $ T(n) = O(n^2) , g(n) = n^2$
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{solution}
+    \part[4] $T(n) = T(n / 4) + T(n / 2) + c \cdot n ^ 2$ and $T(0) = 1$, $c$ is a positive constant.
+    \begin{solution}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Replace `\vspace{2in}' with your answer.
+        %\vspace{2.5in}
+        set $f_k$ be k-th the element in the fabonacci sequence
+        
+        which $f_0 = 1, f_1 = 1, f_n = f_{n-2}+f_{n-1} (n\geq 2)$
+
+        and since $f_1 = 1 < 2^1, f_2 = 2 < 2^2 , f_n = f_{n-2}+f_{n-1}, 2^n = 2^{n-1} + 2^{n-1}$
+
+        so $f_k \leq 2^k$
+
+        since $T(n)=T(\frac{n}{2})+T(\frac{n}{4})+c \cdot n^2=f_0 \cdot T(\frac{n}{2})+f_0 \cdot T(\frac{n}{4})+f_1 \cdot c \cdot n^2$
+        
+        $T(\frac{n}{2})=T(\frac{n}{4})+T(\frac{n}{8})+f_1 \cdot c \cdot (\frac{n}{2})^2$
+
+        so $T(n)=(f_0+f_1) \cdot T(\frac{n}{4})+f_1 \cdot T(\frac{n}{8})+f_0 \cdot c \cdot n^2+f_1 \cdot c \cdot (\frac{n}{2})^2=$
+
+        $=f_2 \cdot T(\frac{n}{4})+f_1 \cdot T(\frac{n}{8})+f_0 \cdot c \cdot n^2+f_1 \cdot c \cdot (\frac{n}{2})^2$
+
+
+        $\cdots$
+
+        $=f_i\cdot T(\frac{n}{2^i})+f_{i-1}\cdot T(\frac{n}{2^{i+1}})+\sum_{k=0}^{i-1} f_k \cdot c \cdot (\frac{n}{2^k})^2$
+        
+        $=f_i \cdot \{ T(\frac{n}{2^{i+1}})+T(\frac{n}{2^{i+2}})+c\cdot (\frac{n}{2^i})^2 \} +f_{i-1}\cdot T(\frac{n}{2^{i+1}})+\sum_{k=0}^{i-1} f_k \cdot c \cdot (\frac{n}{2^k})^2$
+
+        $=f_{i+1}\cdot T(\frac{n}{2^{i+1}})+f_{i}\cdot T(\frac{n}{2^{i+2}})+\sum_{k=0}^{i} f_k \cdot c \cdot (\frac{n}{2^k})^2$
+
+
+        $\cdots$
+
+        so $T(n) \leq 1 + 1 + \sum_{k=01}^{\lceil logn \rceil} f_k \cdot c \cdot (\frac{n}{2^k})^2$
+
+        and since we have proved above $f_k \leq 2^k$
+
+        so $T(n) \leq c \cdot \sum_{k=0}^{\lceil logn \rceil} 2^k*\frac{n^2}{(2^k)^2}$
+
+        $T(n) \leq c \cdot n^2 \cdot \sum_{k=0}^{\lceil logn \rceil} \frac{1}{2^k} \leq 2c \cdot n^2$
+
+        $T(n) \leq 2c\cdot n^2$
+
+        so above all, $T(n)=O(n^2),g(n)=n^2$
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{solution}
+    
+    \newpage
+
+    \part[4] $T(n) = T(\sqrt{n}) + 1$ and $T(2)=T(1)=1$.
+    \begin{solution}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Replace `\vspace{2in}' with your answer.
+        %\vspace{3in}
+        let $ n^{\frac{1}{2^k}} \leq 2$
+
+        so $ 2^k \geq log_2n$
+
+        so $ k \geq \lceil log_2(log_2n) \rceil$
+
+        since T(2)=T(1)=1
+
+        so $T(n)=T(\sqrt{n})+1=T(n^\frac{1}{4})+2=\cdots=T(n^{\frac{1}{2^k}})+k \leq 1+k$
+
+        so $T(n)=O(k)=O(log_2log_2n)$
+        
+        so above all, $T(n)=O(loglogn), g(n)=loglogn$
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{solution}
+\end{parts}

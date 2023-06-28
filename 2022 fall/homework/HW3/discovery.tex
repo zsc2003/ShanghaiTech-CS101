@@ -1,0 +1,115 @@
+\titledquestion{Discovery}
+
+\begin{parts}
+  \part[2] Is C++ STL \lstinline{std::sort} stable or not? If not, is there any stable sort function provided by the standard library?
+  \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Replace `\vspace{0.5in}' with your answer.
+    %\vspace{0.5in}
+    \(C++ \ STL \ std::sort\) is not stable.
+
+    but the \(std::stable\_sort\) is stable.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+  \part[0] Suppose \(A\) is an array of size \(n\). If we can find the median value of \(A\) within \(O(n)\) time, it is possible to make quick-sort \(\Theta(n\log n)\) in worst case. STFW (Search The Friendly Web) about how to find the median value in \(O(n)\) time.
+  
+  \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    In the book \(Introduction oto algorithms\), and by searching the friendly internet, I found an algorithm
+    called \(BFPRT\), the name is from five of its inventors.
+
+    the algorithm is mainly decided by the following steps.
+    
+    \begin{itemize}
+      \item divide the array into groups every five adjacent numbers
+      \item for each group of numbers, we find the median of the five numbers and form a median array of the median of all groups
+      \item the median of each group forms a new array
+      \item recursively do the above steps
+      \item finally there reamin only one number, the medium number of the whole array.
+      
+    \end{itemize}
+    
+    \(T(n) \leq  T(\frac{n}{5}) +T(\frac{7n}{10})+c \cdot n\)
+
+    and it is proved on book and internet that \(T(n) \leq 10c \cdot n\)
+
+    so \(T(n)=\Theta(n)\)
+    
+    actually, when I was learning algorithms before, I hearded that we can use stl in C++, the \(std::nth\_element(...)\) can find the 
+    \(k\_th\) minimal element with in \(\Theta(n)\) time.
+
+    the median element can be easily find by using it, so I just want to write it before scearching
+
+    However, when I scearch the code of it clearly, I thought, and some analysis on the internet also 
+    say that the time complexity of \(std::nth_element\) is \(\Theta(n)\) on average, instead of the worst case,
+    the worst case might turn into \(\Theta(n^2)\)
+
+    so it might not be the best way to find the medium number, the \(DFPRT\) algorithm can get the median in \(\Theta(n)\)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+  
+  \part[0] It is known that some sorting algorithms, like quick-sort, need to swap elements. Run the following code, change the value of \(n\) and see how the output changes.
+  \begin{cpp}
+    #include <algorithm>
+    #include <cstdlib>
+    #include <iostream>
+    #include <vector>
+
+    namespace std {
+      template <>
+      inline void swap<int>(int &lhs, int &rhs) noexcept {
+        auto tmp = lhs;
+        lhs = rhs;
+        rhs = tmp;
+        std::cout << "swap is called.\n";
+      }
+    } // namespace std
+
+    int main() {
+      std::srand(19260817);
+      constexpr int n = 10;
+      std::vector<int> vec;
+      for (auto i = 0; i != n; ++i)
+        vec.push_back(std::rand());
+      std::sort(vec.begin(), vec.end());
+      return 0;
+    }
+  \end{cpp}
+  From your observation, the \lstinline{swap} function is never called when \(n\leqslant\) \fillin[][2em]. What algorithm(s) does \lstinline{std::sort} use?
+  \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Replace `\vspace{0.7in}' with your answer.
+    %\vspace{0.7in}
+    the \lstinline{swap} function is never called when \(n\leqslant 16\) .
+
+    the std::sort is based on the introspective sorting. It is combined with many different type
+    of sorting algorithms, and it will execute different onces if it reach some different situations.
+
+    the threshold of the std::sort is 16.
+
+    \begin{itemize}
+      \item the length of the array need to be sorted is less than or equal to the threshold
+      the std::sort will execute the insertion-sort.
+      
+      \item the length of the array need to be sorted is more than the threshold,
+        
+      there is another value \(depth\_limit\), which usually set as \(2*logN\), N is the length of the array need to be sorted
+
+      \begin{itemize}
+        \item the time of the recursion is less than or equal to the \(depth\_limit\)
+        
+        it will execute the recursive quick-sort.
+
+        \item the time of the recursion more than the \(depth \_ limit\)
+        
+        it will execute heap-sort.
+      \end{itemize}
+
+    \end{itemize}
+     
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+\end{parts}

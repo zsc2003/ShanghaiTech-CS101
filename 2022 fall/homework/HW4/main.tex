@@ -1,0 +1,129 @@
+\documentclass[11pt, addpoints, answers]{exam}
+
+\usepackage{amsmath, amssymb, euler}
+\usepackage{xcolor}
+\usepackage{algorithm, algorithmicx, algpseudocode}
+\usepackage{tikz, tikz-qtree, drawstack}
+\usepackage[shortlabels]{enumitem}
+
+\usetikzlibrary{graphs}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+	blank/.style={draw=none},
+	edge from parent/.style=
+	{draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+	level distance=1.2cm}
+
+% For inserting code snippets.
+\usepackage{listings}
+\lstset{
+    columns = fixed,
+    basewidth = {0.5em},
+    breaklines = true,
+    backgroundcolor = \color{white},
+    keywordstyle = \color[RGB]{40, 40, 255},
+    numberstyle = \footnotesize\color{darkgray},
+    commentstyle = \ttfamily\color{violet},
+    basicstyle = \ttfamily,
+    stringstyle = \ttfamily\color[RGB]{128, 0, 0},
+    showstringspaces = false,
+    language = {[11]C++},
+    escapechar = \@
+}
+\lstnewenvironment{cpp}[1][]{\lstset{language = {[11]C++}, #1}}{}
+
+\usepackage{tikz}
+
+% headers, footers, titles
+\newcommand{\CourseName}{CS101 Algorithms and Data Structures}
+\newcommand{\HomeworkNO}{Homework 4}
+\newcommand{\DueDate}{Due date: 23:59, October 16th, 2022}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\runningheader{\CourseName}{\HomeworkNO}{\DueDate}
+\runningfooter{}{\thepage}{}
+
+\title{
+	\CourseName\\
+	Fall 2022\\
+	\HomeworkNO
+}
+\author{}
+\date{\DueDate}
+
+% formats of questions, choices, points, etc.
+\qformat{\bf\thequestion. (\totalpoints\ points) \thequestiontitle\hfill}
+\pointname{'}
+\CorrectChoiceEmphasis{\bf\color{blue}}
+
+% We frequently use this font.
+\newcommand{\ttt}{\texttt}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\bluett}[1]{\blue{\ttt{#1}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item Please write your solutions in English.
+	\item Submit your solutions to gradescope.com.
+	\item Set your FULL name to your Chinese name and your STUDENT ID correctly in Account Settings.
+	\item If you want to submit a handwritten version, scan it clearly. \ttt{CamScanner} is recommended.
+	\item When submitting, match your solutions to the problems correctly.
+	\item No late submission will be accepted.
+	\item Violations to any of the above may result in zero points.
+\end{enumerate}
+
+\newpage
+
+
+{\large\textbf{Notes}:}
+
+\begin{enumerate}
+	\item Some problems in this homework requires you to design Divide and Conquer algorithm. When grading these problems, we will put more emphasis on how you reduce a problem to a smaller size problem and how to combine their solutions with Divide and Conquer strategy. 
+	\item Your answer for these problems {\color{red}\textbf{should}} include:
+	\begin{enumerate}
+		\item {\color{red}Algorithm Design}
+		\item {\color{red}Time Complexity Analysis}
+		\item Pseudocode (Optional)
+	\end{enumerate}
+    \item Your answer for these problems is {\color{red}not allowed to include real C or C++ code}.
+	\item In Algorithm Design, you should describe each step of your algorithm clearly.
+	\item Unless required, writing pseudocode is optional. If you write pseudocode, please give some additional descriptions if the pseudocode is not obvious.
+	\item You are recommended to finish the algorithm design part of this homework with \LaTeX.
+\end{enumerate}
+
+\newpage
+
+\begin{questions}
+
+\include{example}
+
+\newpage
+
+\include{trees}
+
+\newpage
+
+\include{tree_properties}
+
+\newpage
+
+\include{tree_structure_and_traversal}
+
+\newpage
+
+\include{recurrence_relations}
+
+\newpage
+
+\include{maximum_contiguous_subsequence_sum}
+
+\newpage
+
+\include{kth_min}
+
+\end{questions}
+
+\end{document}

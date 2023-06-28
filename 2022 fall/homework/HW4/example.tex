@@ -1,0 +1,41 @@
+\titledquestion{Binary Search Example}[0]
+
+Given a sorted array $a$ of $n$ elements, design an algorithm to search for the index of given element $x$ in $a$.
+
+\begin{solution}
+
+\paragraph{Algorithm Design:} We basically ignore half of the elements just after one comparison.
+\begin{enumerate}
+	\item Compare $x$ with the middle element.
+	\item If $x$ matches with the middle element, return the middle index.
+	\item Else If $x$ is greater than the mid element, then $x$ can only lie in right half subarray after the mid element. So we recur for right half.
+	\item Otherwise ($x$ is smaller) recur for the left half.
+\end{enumerate}
+
+\paragraph{Pseudocode (Optional):}
+$left$ and $right$ are indecies of the leftmost and rightmost elements in given array $a$ respectively.
+\begin{algorithm}[H]
+	\begin{algorithmic}[1]
+		\Function {binarySearch}{$a$, $value$, $left$, $right$}
+		\If {$right < left$} 
+		\State \Return not found
+		\EndIf
+		\State $mid\gets \lfloor (right-left)/2 \rfloor + left$
+		\If {$a[mid] = value$} 
+		\State \Return $mid$
+		\EndIf
+		\If {$value < a[mid]$} 
+		\State \Return binarySearch($a$, $value$, $left$, $mid-1$)
+		\Else
+		\State \Return binarySearch($a$, $value$, $mid+1$, $right$) 
+		\EndIf   		
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Time Complexity Analysis:}
+During each recursion, the calculation of $mid$ and comparison can be done in constant time, which is $O(1)$. We ignore half of the elements after each comparison, thus we need $O(\log n)$ recursions.
+$$T(n) = T(n/2)+O(1)$$
+Therefore, by the Master Theorem $\log_{b}{a}=0=d$, so $T(n) = O(\log n)$.
+
+\end{solution}

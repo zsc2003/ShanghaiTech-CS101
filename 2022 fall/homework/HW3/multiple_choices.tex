@@ -1,0 +1,56 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\CorrectChoice', as what you did in the previous questions. However, there are 
+% still many students who would like to handwrite their homework. To make TA's work 
+% easier, you have to fill your selected choices in the table below, no matter whether 
+% you use LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|}
+		\hline
+		(a) & (b) & (c) \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		  BCD  &  D   &  ACD   \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{parts}
+	\part[2] Which of the following statements are true?
+
+	\begin{choices}
+		\choice In the \(k\)-th iteration of insertion-sort, finding a correct position for a new element to be inserted at takes \(\Theta(k)\) time. If we use \emph{binary-search} instead (which takes \(\Theta(\log k)\) time), it is possible to optimize the total running time to \(\Theta(n\log n)\).
+		\CorrectChoice Traditional implementations of merge-sort need \(\Theta(n\log n)\) time when the input sequence is sorted or reversely sorted, but it is possible to make it \(\Theta(n)\) on such input while still \(\Theta(n\log n)\) on average case.
+		\CorrectChoice Insertion-sort takes \(\Theta(n)\) time if the number of inversions in the input sequence is \(\Theta(n)\).
+		\CorrectChoice The running time of a comparison-based algorithm could be \(\Omega(n)\).
+	\end{choices}
+
+	\part[2] Which of the following implementations of quick-sort take \(\Theta(n\log n)\) time in \textbf{worst case}?
+
+	\begin{choices}
+		\choice Randomized quick-sort, i.e. choose an element from \(\left\{a_l,\cdots,a_r\right\}\) randomly as the pivot when partitioning the subarray \(\langle a_l,\cdots,a_r\rangle\).
+		\choice When partitioning the subarray \(\langle a_l,\cdots,a_r\rangle\) (assuming \(r-l\geqslant 2\)), choose the median of \(\left\{a_l,a_m,a_r\right\}\) as the pivot, where \(m=\lfloor(l+r)/2\rfloor\).
+		\choice When partitioning the subarray \(\langle a_l,\cdots,a_r\rangle\) (assuming \(r-l\geqslant 2\)), choose the median of \(\left\{a_x,a_y,a_z\right\}\) as the pivot, where \(x,y,z\) are three different indices chosen randomly from \(\{l,l+1,\cdots,r\}\).
+		\CorrectChoice None of the above.
+	\end{choices}
+
+	\part[2] Which of the following situations are \textbf{true} for an array of \(n\) random numbers?
+		
+	\begin{choices}
+		\CorrectChoice The number of inversions in this array can be found by applying a recursive algorithm adapted from merge-sort in \(\Theta(n\log n)\) time.
+		\choice It is expected to have \(O(n\log n)\) inversions.
+		\CorrectChoice If it has exactly \(n(n-1)/2\) inversions, it can be sorted in \(O(n)\) time.
+		\CorrectChoice If the array is \(\langle 6,4,5,2,8\rangle\), there are 5 inversions. 
+	\end{choices}
+\end{parts}

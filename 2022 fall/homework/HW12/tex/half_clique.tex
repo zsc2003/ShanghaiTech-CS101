@@ -1,0 +1,88 @@
+\newcommand{\HC}{\operatorname{HALF-CLIQUE}}
+\newcommand{\CLQ}[1]{\operatorname{{#1}-CLIQUE}}
+\titledquestion{$\HC \in \NPC$}
+
+In an undirected graph $G=(V,E)$, a subset of the vertices $S\subseteq V$ is said to be a \textbf{clique}
+if for all pairs of vertices in $S$ are connected or formally $\forall (u,v)\in S\times S (u\neq v\to \{u,v\}\in E)$.\\
+Note that a subset of zero or one vertex is also considered as a clique.\\
+
+The $\CLQ{k}$ problem is a classic $\NPC$ problem stated as follows:\\
+Given $(k,G)$ where $k$ is a non-negative integer and $G$ is an undirected graph,
+determine if $G$ contains a clique of at least $k$ vertices.\\
+
+Now let's consider the $\HC$ problem which is defined as follows:\\
+Given an undirected graph $G=(V,E)$, determine if $G$ contains a clique of $\lfloor V/2 \rfloor$ vertices.\\
+Show that $\HC$ is a $\NPC$ problem.\\
+
+\textbf{Hint}: reduce from $\CLQ{k}$, consider the cases where $k=|V|/2$, $k<|V|/2$ and $k>|V|/2$.
+
+
+\begin{parts}
+	\part[2]{$\HC\in \NP$}
+	\begin{solution}
+		% \vspace{5ex}
+		\\for a given vertex set $S \subseteq V$,\\
+		when can check whether $|S|=\lfloor\frac{|V|}{2}\rfloor$ in polynomial time.\\
+		If so, we can check whether $\forall (u,v)\in S\times S (u\neq v\to \{u,v\}\in E)$ in polynomial time.\\
+		If all these two checks are satisfied, then the half-clique is hold, we can check it in polynomial time.\\
+		so above all, $\HC\in \NP$\\
+	\end{solution}
+	\part[7]{Polynomial time reduction: construction and correctness}
+	\begin{solution}
+		% \vspace{50ex}
+		\begin{itemize}
+			\item $k=\lfloor\frac{|V|}{2}\rfloor$
+			the k-clique is exactly the half-clique, so it can be seen as reducted.\\
+			\item $k>\lfloor\frac{|V|}{2}\rfloor$
+			we can generate $2k-|V|$ new vertices, and do not conntect them with any other vertices, so the new vertex set $V'=V+{the\ new\ 2k-|V|\ points}$\\
+			and the new graph is $G'=(V',E)$, and $|V'|=|V|+2k-|V|=2k$\\
+			so $k=\frac{|V'|}{2}$\\
+			$\Rightarrow:$  if $(k,G)$ is a yes-instance for k-clique, then $(k,G')$ is a yes-instance for k-clique, so half-clique is a yes-instance for graph $G'$\\
+
+			$\Leftarrow:$ if $G'$ for half-clique is a yes-instance, then $(k,G')$ is a yes-instance for k-clique,\\
+			and since no new edges are added, so the new vertices do not have any edge connected to other vertices,\\
+			so $(k,G)$ is a yes-instance for k-clique\\
+			so k-clique can be reducted to half-clique when $k>\lfloor\frac{|V|}{2}\rfloor$\\
+			\item $k<\lfloor\frac{|V|}{2}\rfloor$
+			we can generate $|V|-2k$ new vertices, and connect each of the new vertices with all the origin vertices,\\
+			so we get $V'=V\cup \{\ the\ |V|-2k\ new\ vertices\}$,\\
+			so $|V'|=|V| + (|V|- 2k) = 2|V|-2k$\\
+			and $E'=E\cup \{\ the\ new\ edges\ we\ said\ above\}$\\
+			\\and let $G'=(V',E')$\\
+			$\Rightarrow:$  if $(k,G)$ is a yes-instance for k-clique,\\
+			and let $S$ be the clique.\\
+			let $S' = S \cup \{\ the\ (|V|-2k)\ new\ vertices\ we\ newly\ generate\}$\\
+			since $|S| = k$, so $|S'| = k + |V| - 2k = |V| - k$,\\
+			and since $|V'|=2|V|-2k$,\\
+			so $|S'|=\frac{|V'|}{2}$,\\
+			so it is yes-instance for half-clique.\\
+
+			$\Leftarrow:$ if $G'$ for half-clique is a yes-instance\\
+			Suppose that the clique is $S$,\\
+			so $|S|=\frac{|V'|}{2}=\frac{2|V|-2k}{2}=|V|-k$,\\
+			and let $S'=S\backslash \{\ the\ (|V|-2k)\ vertices\ we\ newly\ added\}$\\
+			$|S'|=|S|-(|V|-2k)=(|V|-k)-(|V|-2k)=k$\\
+			since the $|V|-2k$ vertices we newly added are connect to all vertices in $V$,\\
+			so if we remove all the newly added vertices, the new clique is still following
+			$\forall (u,v)\in S'\times S' (u\neq v\to \{u,v\}\in E)$\\
+			i.e. the k-clique is a yes-instance.\\
+
+			so k-clique can be reducted to half-clique when $k<\lfloor\frac{|V|}{2}\rfloor$\\
+		\end{itemize}
+		
+		and all operations we have done are in polynomial time.\\
+		so above all, the k-clique can be reducted into half-clique in polynomial time.\\
+		i.e. k-clique$\leq _p$ half-clique\\
+	\end{solution}
+	
+	\part[1]{Conclusion}
+	\begin{solution}
+		% \vspace{5ex}
+		\\the half-clique is in $NP$\\
+		the k-clique can be reducted to half-clique in polynomial time\\\\
+		let $A$ be half-clique, $B$ be k-clique,\\
+		since $B\in NP-complete, B\leq _PA, A\in NP$\\
+		so $A\in NP-complete$.\\\\
+		so the half-clique is also in $NP-Complete$.\\
+	\end{solution}
+\end{parts}

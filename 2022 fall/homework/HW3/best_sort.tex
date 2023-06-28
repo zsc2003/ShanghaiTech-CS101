@@ -1,0 +1,35 @@
+\titledquestion{Best Sort}
+
+There is no such thing as a generally `best' sorting algorithm on all kinds of problems. For each of the following situations, choose (\(\surd\)) the most suitable sorting algorithm. Your choice should be the one that satisfies all the special constraints and is most efficient.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% On the correct choice, replace `\choice' with `\CorrectChoice'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{parts}
+  \part[2] Sorting an array of coordinates of points \(\langle(x_1,y_1),\cdots,(x_n,y_n)\rangle\) on a 2d plane in ascending order of the \(x\) coordinate, while preserving the original order of the \(y\) coordinate for any pair of elements \((x_i,y_i),(x_j,y_j)\) with \(x_i=x_j\).
+
+  \begin{oneparcheckboxes}
+    \choice Insertion-sort
+    \choice Bubble-sort
+    \CorrectChoice Merge-sort
+    \choice Quick-sort
+  \end{oneparcheckboxes}
+
+  \part[2] Sorting an array that is \emph{almost} sorted with only \(n/2\) inversions due to some kind of perturbation.
+
+  \begin{oneparcheckboxes}
+    \CorrectChoice Insertion-sort
+    \choice Bubble-sort
+    \choice Merge-sort
+    \choice Quick-sort
+  \end{oneparcheckboxes}
+
+  \part[2] Sorting an array on an embedded system with quite limited memory. You may only use \(\Theta(1)\) extra space, but a higher time cost is acceptable.
+
+  \begin{oneparcheckboxes}
+    \CorrectChoice Insertion-sort
+    \choice Quick-sort
+    \choice Merge-sort
+  \end{oneparcheckboxes}
+\end{parts}

@@ -1,0 +1,100 @@
+\titledquestion{Algebraic Geometry}
+Liu Big God, who loves pure math, has bought \(n\) books on algebraic geometry, the \(i\)-th of which has price \(a_i\), \(i=1,\cdots,n\). He will give his students some books to arouse their interest in pure math. For each student, Liu Big God is going to give him/her \textbf{one or two} books with total price not exceeding \(P\).
+
+Liu Big God is not going to keep any of these books, because he has read all of them. He wants to send all these books to students. What is the minimum number of students that can receive books?
+
+It is guaranteed that \(0\leqslant a_i\leqslant P\) for every \(i=1,\cdots,n\). You should come up with a greedy algorithm with time complexity \(O(n\log n)\).
+\begin{parts}
+  \part[3] Description of your algorithm in \textbf{pseudocode} or \textbf{natural language}.
+  \part[4] Proof of correctness of your algorithm.
+  \part[2] Time complexity.
+\end{parts}
+
+\begin{solution}
+  %\vspace{5.5in}
+(a) algorithm:\\
+firstly sort the price array in the decending order.\\
+we can use the two pointers to get the answer. So we need to set a right pointer,
+which story the right-most book that has not been given out. So the initial of the right pointer is at $n$ \\
+And we use the left pointer to go through the sorted sequence from left to right.\\
+If the value of the book that the left pointer pointing to plus the value of the book that the right pointer pointing to is not exceeding P,
+then we will give the two books to one student, and move backward the left pointer, move forward the right point.\\
+otherwise, we will just give the book that left pointer pointing to to the student, and move the 
+backward the left pointer.\\
+At the time the left pointer and the right pointer are pointing to the same book, we will give the book to a student and finish giving books.\\
+If the right pointer is on the left of the left pointer, we will immediately stop giving books because that means all books have been given out. 
+
+(b) correctness:\\
+mark the answer we get is $A$, suppose there exist an optimal solution $O$ which can give the books to less students than $A$.\\
+and we can write down the solution $A$ as a pair sequence\\$(a_1,b_1),(a_2,b_2),\cdots,(a_k,b_k)$\\where $a_i,b_i$ are the value of the books that the ith student has recived.\\
+and let $a_i$ be the more expensive book. If ith student only recived one book, then $b_i=0$.\\
+similarly, we can also write the solution of $O$ as\\$(a_1',b_1'),(a_2',b_2'),\cdots,(a_l',b_l')$\\they have the same explanation with $A$.\\
+since we consider the $O$ is optimal, then $l \leq k$.\\
+Assume the first $m-1$ pairs are the same of the 2 algorithms, which means\\
+$(a_m,b_m) \neq (a_m',b_m')$\\
+there are three possibilities:\\
+1. $a_m = a_m' , b_m \neq b_m'$\\
+2. $a_m \neq a_m' , b_m = b_m'$\\
+3. $a_m \neq a_m' , b_m \neq b_m'$\\
+based on our $A$'s description, $a_m$ is the most value in the rest of the books, $b_m$ is the least value in the rest of the books(if $b_m \neq =$).\\
+1. according to the analize above, $b_m < b_m'$, so we can just let $b_m'$ change to $b_m$, the sequence is still legal, then $(a_1,b_1),(a_2,b_2),\cdots,(a_m,b_m)$ is exactly same as \\$(a_1',b_1'),(a_2',b_2'),\cdots,(a_m',b_m')$\\
+2. according to the analize above, $a_m > a_m'$, so we can just let $a_m'$ change to $a_m$, the sequence is still legal, then $(a_1,b_1),(a_2,b_2),\cdots,(a_m,b_m)$ is exactly same as \\$(a_1',b_1'),(a_2',b_2'),\cdots,(a_m',b_m')$\\
+3. according to the analize above, $a_m > a_m'$ and $b_m < b_m'$, so we can just let $a_m'$ change to $a_m$ and  $b_m'$ change to $b_m$, the sequence is still legal, then $(a_1,b_1),(a_2,b_2),\cdots,(a_m,b_m)$ is exactly same as $(a_1',b_1'),(a_2',b_2'),\cdots,(a_m',b_m')$\\
+
+Also, if there exist two pairs in $O$ such as $(a_{k_1},b_{k_1}),(a_{k_2},b_{k_2})$\\
+and $a_{k_1}>a_{k_2}$, but $b_{k_1}>b_{k_2}$\\
+we can just swap the $b_{k_1}$ and $b_{k_2}$, since $a_{k_1}>a_{k_2}$\\
+so pairs $(a_{k_1},b_{k_2}),(a_{k_2},b_{k_1})$ are still legal, and that is same as what $A$ is doing.\\
+
+so above all, no matter which case above, the optimal $O$ is the same with the our solution $A$.\\
+so the greedy solution $A$ is the optimal.
+
+(c) time complexity:\\
+the sort of the price array $a$ takes the time of $\Theta(nlogn)$\\
+and during the processing of giving out the books, each book has only been visit by one pointer once, so it takes time of $\Theta(n)$\\
+so the whole time complexity is $\Theta(nlogn + n) = O(nlogn)$\\
+so above all, the time complexity is $O(nlogn)$
+\end{solution}
+
+\newpage
+
+\titledquestion{} Given a set of \(n\geqslant 3\) distinct positive numbers \(S=\left\{s_1,s_2,\cdots,s_n\right\}\), we want to find a permutation \(A=\langle A_1,\cdots,A_n\rangle\) of \(S\), where \(A_i\in S\) for all \(i\in\{1,\cdots,n\}\), such that
+\[f(A)=A_1^2+\sum_{i=2}^n\left(A_i-A_{i-1}\right)^2\]
+is maximized.
+\begin{parts}
+  \part[3] Describe your algorithm that finds the permutation \(A\) for which \(f(A)\) is maximized. Use \textbf{pseudocode} or \textbf{natural language}.
+  \part[4] Prove the correctness of your algorithm by showing that your choice on the value of \(A_1\) is optimal, i.e. any other choice would not lead to a better solution.
+  \part[2] Time complexity. Your algorithm should be \(O(n\log n)\).
+\end{parts}
+
+\begin{solution}
+  %\vspace{5.8in}
+\\
+(a) algorithm:\\
+sort the sequence $S$ and we can get an ascending sequence $a$.\\
+and since $S$'s elements are distinct, so $a_1 < a_2 < \cdots < a_n$.\\
+and let $A_1 = a_n , A_2 = a_1 , A_3 = a_{n-1} , A_4 = a_2 , \cdots$\\
+let $A$ be staggered put the maximum and minimum values of $a$.
+in this way, we can get the maximum $f(A)$.\\
+(b) proof:\\
+if we swap $a_1$ with any ohter elements in the sequence $a_i (i \neq 1)$ and get a new permutation $A'$\\
+if $i=2$, then $f(A) - f(A') = 2A_3(A_1 - A_2)$,
+since $A_3 > 0, A_1 = a_n = max\{a_1,\cdots,a_n\}$,
+so $f(A)>f(A')$\\
+if $i\neq 1$ and $i\neq 2$ and $i\neq n$, then $f(A) - f(A') = 2(A_1-A_i)(A_{i-1}+A_{i+1}-A_2)$,
+since $A_1=a_n=max\{a_1,\cdots,a_n\},A_2=a_1=min\{a_1,\cdots,a_n\}$,
+so $A_1-A_i > 0, A_{i-1}+A_{i+1}-A_2 > 0$\\
+so $f(A) > f(A')$\\
+if $i=n$, then $f(A)-f(A')=(A_1-A_n)(A_1+A_n-2A_2+2A_{n-1})$,
+since $A_1=a_n=max\{a_1,\cdots,a_n\},A_2=a_1=min\{a_1,\cdots,a_n\}$,
+so $A_1-A_n > 0, 2A_{n-1}-2A_2 > 0$\\
+so $f(A) > f(A')$\\
+so above all, if the rest of the permutation is the same, swap any of the elements with $A_1$, the $f(A)$ cannot be bigger.\\
+so $A_1 = a_n$ is optimal.\\
+
+(c) time complexity:\\
+to sort the sequence $S$ takes the time complexity of $\Theta(nlogn)$\\
+and calculating the function $f(A)$ takes time of $\Theta(n)$ if we can regard that the numbers are small enough to compute the multiplication and addition operations in $O(1)$ time.(i.e. high precision calculation is not required)\\
+so the whole time complexity is $\Theta(nlogn + n) = O(nlogn)$\\
+so above all, the time complexity is $O(nlogn)$
+\end{solution}

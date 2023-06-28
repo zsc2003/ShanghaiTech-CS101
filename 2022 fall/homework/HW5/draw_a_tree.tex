@@ -1,0 +1,92 @@
+\titledquestion{Draw a binary tree}
+\begin{parts}
+    \part[3]Given the in-order and pre-order traversal of a binary tree T are IGDHBAECF and ABDGIHCEF respectively.\\
+    Draw the tree T.\\
+    \vspace{1cm}
+    \begin{tikzpicture}
+    \Tree
+    [.A
+        \edge[]; [.B
+            \edge[]; [.D
+                \edge[]; [.G
+                    \edge[]; [.I ]
+                    \edge[blank]; \node[blank]{};
+                    ]
+                \edge[]; [.H ]
+                ]
+            \edge[blank]; \node[blank]{};
+            ]
+        \edge[]; [.C
+            \edge[]; [.E ]
+            \edge[]; [.F ]
+            ]
+    ]
+    \end{tikzpicture}
+    \vspace{1cm}
+
+    \part[3]Given the in-order and post-order traversal of a binary tree T are ADHGKLMRUXTW and AHDLKGUXRWTM respectively.\\
+    Draw the tree T.\\
+    \vspace{1cm}
+    \begin{tikzpicture}
+    \Tree
+    [.M
+        \edge[]; [.G
+            \edge[]; [.D
+                \edge[]; [.A ]
+                \edge[]; [.H ]
+                ]
+            \edge[]; [.K
+                \edge[blank]; \node[blank]{};
+                \edge[]; [.L ]
+                ]
+            ]
+        \edge[]; [.T
+            \edge[]; [.R
+                \edge[blank]; \node[blank]{};
+                \edge[]; [.X
+                    \edge[]; [.U ]
+                    \edge[blank]; \node[blank]{};
+                ]
+            ]
+            \edge[]; [.W ]
+        ]
+    ]
+    \end{tikzpicture}
+    \vspace{6cm}
+
+    \part[2]Given the pre-order and post-order traversal of a binary tree T, can you decide the tree T? If yes, please describe an algorithm to construct T; if no, please provide a counterexample.
+    \\
+    
+    \vspace{2cm}
+    No.
+
+   
+    \begin{tikzpicture}
+    \Tree
+    [.A
+        \edge[]; [.B
+            \edge[blank]; \node[blank]{};
+            \edge[]; [.C ]
+            ]
+        \edge[blank]; \node[blank]{};
+    ]
+    \end{tikzpicture}
+
+    \vspace{2cm}
+
+    \begin{tikzpicture}
+        \Tree
+        [.A
+            \edge[blank]; \node[blank]{};
+            \edge[]; [.B
+                \edge[]; [.C ]
+                \edge[blank]; \node[blank]{};
+                ]
+        ]
+    \end{tikzpicture}
+
+    these two trees both have the \\
+    pre-orfer traversal \ \ $ABC$\\
+    and the post-orfer traversal \ \ $CBA$\\
+    so we can not get a tree with it pre-oder and post-order traversal.
+\end{parts}

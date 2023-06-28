@@ -1,0 +1,831 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.13)  30 OCT 2022 20:34
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (d:/texlive/2022/texmf-dist/tex/latex/exam/exam.cls
+Document Class: exam 2021/02/26 Version 2.7 by Philip Hirschhorn
+(d:/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (d:/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(d:/texlive/2022/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+\@extrawidth=\skip49
+\@rightmargin=\skip50
+\@extrahead=\skip51
+\@extrafoot=\skip52
+\run@exhd=\skip53
+\fp@exhd=\skip54
+\run@exft=\skip55
+\fp@exft=\skip56
+\covrun@exhd=\skip57
+\covfp@exhd=\skip58
+\covrun@exft=\skip59
+\covfp@exft=\skip60
+\c@num@coverpages=\count189
+\c@latest@ques=\count190
+\c@ques@end=\count191
+\c@last@object=\count192
+\c@incmp@ques=\count193
+\c@next@ques=\count194
+\c@next@page=\count195
+\c@tmp@hlfcntr=\count196
+\c@ifpos@cntr=\count197
+\c@question=\count198
+\c@partno=\count199
+\c@subpart=\count266
+\c@subsubpart=\count267
+\c@choice=\count268
+\c@numpoints=\count269
+\c@numbonuspoints=\count270
+\c@pointsof@thisquestion=\count271
+\c@bonuspointsof@thisquestion=\count272
+\c@numquestions=\count273
+\c@numparts=\count274
+\c@numsubparts=\count275
+\c@numsubsubparts=\count276
+\c@Curr@Page=\count277
+\c@@pagepoints=\count278
+\c@@pagebonuspoints=\count279
+\c@pageof@pagepoints=\count280
+\c@pageof@pagebonuspoints=\count281
+\c@latest@points=\count282
+\c@latest@bonuspoints=\count283
+\pageinfo@commands=\toks16
+\temp@toks=\toks17
+\pagepoint@commands=\toks18
+\point@toks=\toks19
+\c@ques@object=\count284
+\marginpointssep=\skip61
+\rightpointsmargin=\skip62
+\choice@toks=\toks20
+\answerlinelength=\skip63
+\answerskip=\skip64
+\answerclearance=\skip65
+\fillinlinelength=\skip66
+\linefillheight=\skip67
+\linefillthickness=\skip68
+\dottedlinefillheight=\skip69
+\gridsize=\skip70
+\gridlinewidth=\skip71
+\minboxheight=\skip72
+\c@@iterator=\count285
+\@cellwidth=\skip73
+\c@tbl@points=\count286
+\c@tbl@bonuspoints=\count287
+\c@pq@index=\count288
+\c@pq@index@pts=\count289
+\c@pq@index@bpts=\count290
+\c@num@cols=\count291
+\c@num@rows=\count292
+\c@current@row=\count293
+\c@cols@done=\count294
+\exam@box=\box50
+\saved@totalleftmargin=\dimen139
+\@sollistdepth=\count295
+\exam@FrameRule=\dimen140
+\exam@FrameSep=\dimen141
+) (d:/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip74
+
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (d:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen142
+)) (d:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (d:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count296
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count297
+\leftroot@=\count298
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count299
+\DOTSCASE@=\count300
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count301
+\c@MaxMatrixCols=\count302
+\dotsspace@=\muskip16
+\c@parentequation=\count303
+\dspbrk@lvl=\count304
+\tag@help=\toks22
+\row@=\count305
+\column@=\count306
+\maxfields@=\count307
+\andhelp@=\toks23
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks24
+\multlinegap=\skip75
+\multlinetaggap=\skip76
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (d:/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip77
+\thm@postskip=\skip78
+\thm@headsep=\skip79
+\dth@everypar=\toks31
+) (d:/texlive/2022/texmf-dist/tex/latex/euler/euler.sty
+Package: euler 1995/03/05 v2.5
+
+Package: `euler' v2.5 <1995/03/05> (FJ and FMi)
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 35.
+LaTeX Font Info:    Encoding `OML' has changed to `U' for symbol font
+(Font)              `letters' in the math version `normal' on input line 35.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> U/eur/m/n on input line 35.
+LaTeX Font Info:    Encoding `OML' has changed to `U' for symbol font
+(Font)              `letters' in the math version `bold' on input line 35.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> U/eur/m/n on input line 35.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 48.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 49.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 50.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 53.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 54.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 55.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 57.
+\symEulerFraktur=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `EulerFraktur' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 63.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 64.
+LaTeX Info: Redefining \oldstylenums on input line 85.
+\symEulerScript=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `EulerScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 93.
+LaTeX Font Info:    Redeclaring math symbol \aleph on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \Re on input line 98.
+LaTeX Font Info:    Redeclaring math symbol \Im on input line 99.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 101.
+LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 103.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 106.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 108.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 112.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 113.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 114.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 116.
+LaTeX Font Info:    Redeclaring math symbol \mathsection on input line 117.
+\symEulerExtension=\mathgroup8
+LaTeX Font Info:    Redeclaring math symbol \coprod@ on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \prod@ on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \sum@ on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 130.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 131.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 133.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 135.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 153.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 154.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 157.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 163.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 166.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 168.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 170.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 172.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 174.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 177.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 178.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 179.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 180.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 182.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 184.
+\symcmmigroup=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `cmmigroup' in version `bold'
+(Font)                  OML/cmm/m/it --> OML/cmm/b/it on input line 200.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 201.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 204.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 205.
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 206.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 207.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 208.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 209.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 210.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 211.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 254.
+) (d:/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (d:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+ (d:/texlive/2022/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (d:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks32
+) (d:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (d:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (d:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+) (d:/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (d:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen153
+\pgfutil@tempdimb=\dimen154
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box53
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (d:/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (d:/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks36
+))
+\pgf@x=\dimen155
+\pgf@y=\dimen156
+\pgf@xa=\dimen157
+\pgf@ya=\dimen158
+\pgf@xb=\dimen159
+\pgf@yb=\dimen160
+\pgf@xc=\dimen161
+\pgf@yc=\dimen162
+\pgf@xd=\dimen163
+\pgf@yd=\dimen164
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count308
+\c@pgf@countb=\count309
+\c@pgf@countc=\count310
+\c@pgf@countd=\count311
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count312
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-xetex.def
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)
+\pgfsys@objnum=\count313
+))) (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count314
+\pgfsyssoftpath@bigbuffer@items=\count315
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen165
+\pgfmath@count=\count316
+\pgfmath@box=\box54
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count317
+)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen166
+\pgf@picmaxx=\dimen167
+\pgf@picminy=\dimen168
+\pgf@picmaxy=\dimen169
+\pgf@pathminx=\dimen170
+\pgf@pathmaxx=\dimen171
+\pgf@pathminy=\dimen172
+\pgf@pathmaxy=\dimen173
+\pgf@xx=\dimen174
+\pgf@xy=\dimen175
+\pgf@yx=\dimen176
+\pgf@yy=\dimen177
+\pgf@zx=\dimen178
+\pgf@zy=\dimen179
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen180
+\pgf@path@lasty=\dimen181
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen182
+\pgf@shorten@start@additional=\dimen183
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count318
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen184
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen185
+\pgf@pt@y=\dimen186
+\pgf@pt@temp=\dimen187
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen188
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen189
+\pgf@sys@shading@range@num=\count319
+\pgf@shadingcount=\count320
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box58
+)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (d:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box59
+) (d:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (d:/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen190
+\pgf@nodesepend=\dimen191
+) (d:/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (d:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (d:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (d:/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen192
+\pgffor@skip=\dimen193
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count321
+\pgfplotmarksize=\dimen194
+)
+\tikz@lastx=\dimen195
+\tikz@lasty=\dimen196
+\tikz@lastxsaved=\dimen197
+\tikz@lastysaved=\dimen198
+\tikz@lastmovetox=\dimen199
+\tikz@lastmovetoy=\dimen256
+\tikzleveldistance=\dimen257
+\tikzsiblingdistance=\dimen258
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count322
+\tikznumberofchildren=\count323
+\tikznumberofcurrentchild=\count324
+\tikz@fig@count=\count325
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count326
+\pgfmatrixcurrentcolumn=\count327
+\pgf@matrix@numberofcolumns=\count328
+)
+\tikz@expandcount=\count329
+ (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (d:/texlive/2022/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.sty (d:/texlive/2022/texmf-dist/tex/latex/tikz-qtree/pgftree.sty (d:/texlive/2022/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.sty (d:/texlive/2022/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.tex
+\pgf@subpicminx=\dimen259
+\pgf@subpicminy=\dimen260
+\pgf@subpicmaxx=\dimen261
+\pgf@subpicmaxy=\dimen262
+)) (d:/texlive/2022/texmf-dist/tex/latex/tikz-qtree/pgftree.tex
+\levelsep=\dimen263
+\subtreesep=\dimen264
+\smuggle@levelsep=\dimen265
+\smuggle@subtreesep=\dimen266
+\this@levelsep=\dimen267
+\this@subtreesep=\dimen268
+\pgftree@childx=\dimen269
+\pgftree@savechildx=\dimen270
+\pgftree@childy=\dimen271
+\pgftree@savechildy=\dimen272
+\pgftree@childi=\count330
+\pgftree@savechildi=\count331
+\pgftree@level=\count332
+\pgftree@depth=\dimen273
+\pgf@subpic@hbox@children=\box64
+\pgf@subpic@minx@children=\dimen274
+\pgf@subpic@miny@children=\dimen275
+\pgf@subpic@maxx@children=\dimen276
+\pgf@subpic@maxy@children=\dimen277
+\pgftree@lastchildx=\dimen278
+\pgftree@lastchildy=\dimen279
+)) (d:/texlive/2022/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.tex
+\@result=\toks45
+\child@list=\toks46
+\root@node=\toks47
+)) (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.code.tex
+File: tikzlibrarygraphs.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\tikz@lib@auto@number=\count333
+\tikz@qnode@count=\count334
+) (d:/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count335
+\lst@gtempboxa=\box65
+\lst@token=\toks48
+\lst@length=\count336
+\lst@currlwidth=\dimen280
+\lst@column=\count337
+\lst@pos=\count338
+\lst@lostspace=\dimen281
+\lst@width=\dimen282
+\lst@newlines=\count339
+\lst@lineno=\count340
+\lst@maxwidth=\dimen283
+ (d:/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count341
+\lst@skipnumbers=\count342
+\lst@framebox=\box66
+) (d:/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (d:/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (d:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen284
+\captionmargin=\dimen285
+\caption@leftmargin=\dimen286
+\caption@rightmargin=\dimen287
+\caption@width=\dimen288
+\caption@indent=\dimen289
+\caption@parindent=\dimen290
+\caption@hangindent=\dimen291
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count343
+\c@continuedfloat=\count344
+Package caption Info: listings package is loaded.
+) (d:/texlive/2022/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (d:/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count345
+\float@exts=\toks49
+\float@box=\box67
+\@float@everytoks=\toks50
+\@floatcapt=\box68
+)
+\@float@every@algorithm=\toks51
+\c@algorithm=\count346
+) (d:/texlive/2022/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count347
+\c@ALG@rem=\count348
+\c@ALG@nested=\count349
+\ALG@tlm=\skip80
+\ALG@thistlm=\skip81
+\c@ALG@Lnr=\count350
+\c@ALG@blocknr=\count351
+\c@ALG@storecount=\count352
+\c@ALG@tmpcounter=\count353
+\ALG@tmplength=\skip82
+) (d:/texlive/2022/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (d:/texlive/2022/texmf-dist/tex/latex/underscore/underscore.sty
+Package: underscore 2006/09/13
+LaTeX Info: Redefining \_ on input line 42.
+) (d:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (d:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (d:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (d:/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+) (d:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
+ (|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count354
+\l__color_backend_stack_int=\count355
+\g__color_backend_stack_int=\count356
+\g__graphics_track_int=\count357
+\l__pdf_internal_box=\box69
+\g__pdf_backend_object_int=\count358
+\g__pdf_backend_annotation_int=\count359
+\g__pdf_backend_link_int=\count360
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 73.
+(d:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 73.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/up on input line 73.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/m/up on input line 73.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/m/up --> OT1/lmr/b/up on input line 73.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/b/up on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/b/up on input line 73.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/up on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/m/up on input line 73.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/m/it on input line 73.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/up on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/up on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/m/up --> OT1/lmss/b/up on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/m/it --> OT1/lmr/b/it on input line 73.
+\c@lstlisting=\count361
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 75.
+ (d:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+LaTeX Font Warning: Font shape `OT1/lmr/m/up' undefined
+(Font)              using `OT1/lmr/m/n' instead on input line 75.
+
+LaTeX Font Info:    Trying to load font information for U+eur on input line 75.
+(d:/texlive/2022/texmf-dist/tex/latex/amsfonts/ueur.fd
+File: ueur.fd 2013/01/14 v3.01 Euler Roman
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+euf on input line 75.
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+LaTeX Font Info:    Trying to load font information for U+eus on input line 75.
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
+LaTeX Font Info:    Trying to load font information for U+euex on input line 75.
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/ueuex.fd
+File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
+) [1
+
+]
+\openout2 = `multiple_choices.aux'.
+
+ (./multiple_choices.tex
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+) [2
+
+]
+\openout2 = `BST.aux'.
+
+ (./BST.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+[3
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 62--79
+
+ []
+
+) [4]
+\openout2 = `Huffman.aux'.
+
+ (./Huffman.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+[5
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 58--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--66
+
+ []
+
+) [6]
+This exam contains 3 questions with 10 parts, 0 subparts, and 0 subsubparts.
+This exam has a total of 30 points.
+This exam has a total of 0 bonus points.
+
+Class exam Warning: Point totals have changed. Rerun to get point totals right.
+
+(./main.aux (./multiple_choices.aux) (./BST.aux) (./Huffman.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 18892 strings out of 476179
+ 374254 string characters out of 5813072
+ 852750 words of memory out of 5000000
+ 39312 multiletter control sequences out of 15000+600000
+ 489650 words of font info for 73 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 84i,14n,80p,413b,1114s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (6 pages).

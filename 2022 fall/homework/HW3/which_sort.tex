@@ -1,0 +1,75 @@
+\titledquestion{Which Sort?}
+
+Given a sequence
+\[A=\langle 4,10,18,15,5,1,5,14,7,7\rangle,\]
+we have performed some different sorting algorithms on it, during which some intermediate results are printed. Note that the steps you see below are \textbf{not} necessarily consecutive steps in the algorithm, but they are guaranteed to be in the correct order.
+
+For each group of steps, guess (\(\surd\)) what the algorithm is. The algorithm might be one among the following choices:
+\begin{itemize}
+  \item Insertion-sort, implemented in the way that avoids swapping elements
+  \item Bubble-sort, which stops immediately when no swap happens during one iteration
+  \item Merge-sort
+  \item Quick-sort, with pivot chosen to be \(A_l\) when partitioning a subarray \(A_l,\cdots,A_r\).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% On the correct choice, replace `\choice' with `\CorrectChoice'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{parts}
+  \part[2]
+  \[\begin{aligned}
+    \langle 4,10,18,15,5,1,5,14,7,7\rangle,\\
+    \langle 4,10,18,5,15,1,5,14,7,7\rangle,\\
+    \langle 4,10,5,15,18,1,5,14,7,7\rangle,\\
+    \langle 4,5,10,15,18,1,5,14,7,7\rangle.
+  \end{aligned}\]
+  \begin{oneparcheckboxes}
+    \choice Insertion-sort
+    \choice Bubble-sort
+    \CorrectChoice Merge-sort
+    \choice Quick-sort
+  \end{oneparcheckboxes}
+  
+  \part[2]
+  \[\begin{aligned}
+    \langle 4,10,15,18,5,1,5,14,7,7\rangle,\\
+    \langle 4,5,10,15,18,1,5,14,7,7\rangle,\\
+    \langle 1,4,5,10,15,18,5,14,7,7\rangle,\\
+    \langle 1,4,5,5,10,15,18,14,7,7\rangle.
+  \end{aligned}\]
+  \begin{oneparcheckboxes}
+    \CorrectChoice Insertion-sort
+    \choice Bubble-sort
+    \choice Merge-sort
+    \choice Quick-sort
+  \end{oneparcheckboxes}
+
+  \part[2]
+  \[\begin{aligned}
+    \langle 4,10,15,5,1,5,14,7,7,18\rangle,\\
+    \langle 4,10,5,1,5,14,7,7,15,18\rangle,\\
+    \langle 4,5,1,5,10,7,7,14,15,18\rangle,\\
+    \langle 4,1,5,5,7,7,10,14,15,18\rangle.
+  \end{aligned}\]
+  \begin{oneparcheckboxes}
+    \choice Insertion-sort
+    \CorrectChoice Bubble-sort
+    \choice Merge-sort
+    \choice Quick-sort
+  \end{oneparcheckboxes}
+
+  \part[2]
+  \[\begin{aligned}
+    \langle 1,4,18,15,5,7,5,14,7,10\rangle,\\
+    \langle 1,4,18,15,5,7,5,14,7,10\rangle,\\
+    \langle 1,4,10,15,5,7,5,14,7,18\rangle,\\
+    \langle 1,4,7,5,7,5,10,14,15,18\rangle.
+  \end{aligned}\]
+  \begin{oneparcheckboxes}
+    \choice Insertion-sort
+    \choice Bubble-sort
+    \choice Merge-sort
+    \CorrectChoice Quick-sort
+  \end{oneparcheckboxes}
+\end{parts}

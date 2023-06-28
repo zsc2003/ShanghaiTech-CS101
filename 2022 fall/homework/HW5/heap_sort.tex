@@ -1,0 +1,167 @@
+\titledquestion{Heap Sort}
+\begin{parts}
+\part[10] You are given such a max heap like this:
+\end{parts}
+
+\begin{minipage}{1\textwidth}
+\centering
+\begin{tikzpicture}
+\Tree
+[.88
+    [.85
+        \edge[]; [.72
+            \edge[]; [.11
+                \edge[blank]; \node[blank]{};
+                \edge[blank]; \node[blank]{};
+            ]
+            \edge[]; [. 48
+                \edge[blank]; \node[blank]{};
+                \edge[blank]; \node[blank]{};
+            ]
+        ]
+        \edge[]; [.73
+            \edge[]; [.60
+                \edge[blank]; \node[blank]{};
+                \edge[blank]; \node[blank]{};
+            ]
+            \edge[blank]; \node[blank]{};
+        ]
+    ]
+    [.83
+    % \edge[blank]; \node[blank]{};
+        \edge[]; [.42
+            \edge[blank]; \node[blank]{};
+            \edge[blank]; \node[blank]{};
+        ]
+        \edge[]; [.57
+            \edge[blank]; \node[blank]{};
+            \edge[blank]; \node[blank]{};
+        ]
+    ]
+]
+\end{tikzpicture}
+\end{minipage}%
+
+Then you need to use array method to show each step of heap sort in increasing order. Fill in the value in the table below. Notice that the value we have put is the step of each value sorted successfully. For each step, you should always make you heap satisfies the requirement of max heap property.
+
+
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $88 $ & $85 $ &$83 $  &$72 $  & $73 $ &$42 $  &$57 $  & $11 $ &$48 $  &$60 $  \\ \hline
+    \end{tabular}%
+}
+\caption{The original array to represent max heap.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value &$85 $  &$73 $  &$83 $  &$72 $  & $60 $ &$42 $  &$57 $  &$11 $  &$48 $  & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{First value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value &$83 $ & $73 $ & $57 $ & $72 $ & $60 $ & $42 $ & $48 $& $11 $ & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Second value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $73 $ & $72 $ & $57 $ & $11 $ & $60 $ & $42 $ & $48 $ & \color{blue}83 & \color{blue}85 & \color{blue}88  \\ \hline
+    \end{tabular}%
+}
+\caption{Third value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $72 $ & $60 $ & $57 $ & $11 $ & $48 $ & $42 $ & \color{blue}73 & \color{blue}83 & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Fourth value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $60 $ & $48 $ & $57 $ & $11 $ & $42 $ & \color{blue}72 & \color{blue}73 & \color{blue}83 & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Fifth value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $57 $ & $48 $& $42 $ & $11 $ & \color{blue}60 & \color{blue}72 & \color{blue}73 & \color{blue}83 & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Sixth value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $48 $ & $11 $ & $42 $ & \color{blue}57 & \color{blue}60 & \color{blue}72 & \color{blue}73 & \color{blue}83 & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Seventh value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & $42 $ & $11 $ & \color{blue}48 & \color{blue}57 & \color{blue}60 & \color{blue}72 & \color{blue}73 & \color{blue}83 & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Eighth value is successfully sorted.}
+\label{}
+\end{table}
+\begin{table}[!hbtp]
+\centering
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        index & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+        value & \color{blue}11 & \color{blue}42 & \color{blue}48 & \color{blue}57 & \color{blue}60 & \color{blue}72 & \color{blue}73 & \color{blue}83 & \color{blue}85 & \color{blue}88 \\ \hline
+    \end{tabular}%
+}
+\caption{Last 2 values are successfully sorted.}
+\label{}
+\end{table}

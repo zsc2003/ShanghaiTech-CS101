@@ -1,0 +1,117 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\CorrectChoice', as what you did in the previous questions. However, there are 
+% still many students who would like to handwrite their homework. To make TA's work 
+% easier, you have to fill your selected choices in the table below, no matter whether 
+% you use LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+		\hline
+		(a) & (b) & (c) & (d) \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		  BC  &  B   &  B  & C  \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{parts}
+	\part[2] Which of the following is/are true about Trees?
+
+	\begin{choices}
+		\choice A full binary tree with n nodes has height of $O(\ln n)$.
+		\CorrectChoice Only given the depth of all leaf nodes in a tree, we can infer the height of this tree.
+		\CorrectChoice If $T$ was transformed from a general tree $T'$ through \textbf{Knuth transform}, which means $T$ is a left-child right-sibling binary tree. Then the post-order traversal of $T'$ identical to the in-order traversal of $T$.
+		\choice None of the above.
+	\end{choices}
+	
+	\part[2] Let’s look at some magic properties about trees, which of the following statements is/are true?
+
+	\begin{choices}
+		\choice A tree is a full binary tree if and only if every node has an odd number of descendants.
+		\CorrectChoice A rooted binary tree has the property that the number of leaf nodes equals to the number of full nodes plus $1$.
+		\choice There are 133 distinct shapes of binary trees with 6 nodes.
+		\choice None of the above.
+	\end{choices}
+	
+	\part[2] Which of the following statements about the binary heap is/are true? Note that binary heaps mentioned in this problem are implemented by complete binary trees. 
+		
+	\begin{choices}
+	    \choice If a binary tree is a min-heap, then the post-order traversal of this tree is a descending sequence.
+	    \CorrectChoice We have a binary heap of $n$ elements and wish to add n more elements into it while maintaining the heap property. It can be done in $O(n)$.
+		\choice There exists a heap with seven distinct elements so that the in-order traversal gives the element in sorted order. 
+		\choice If item A is an ancestor of item B in a heap, then it must be the case that the $Push$ operation for item A occurred before the $Push$ operation for item B.
+		\choice None of the above.
+	\end{choices}
+	
+	\part[2] Which traversals of the left tree and right tree, will produce the same sequence node name? \\
+\begin{minipage}{1\textwidth}
+\centering
+\begin{tikzpicture}
+\Tree
+[.A
+    [.B
+        \edge[blank]; \node[blank]{};
+        \edge[];[.D
+            \edge[];[.E
+                \edge[];[.G ]
+                \edge[];[.H
+                    \edge[blank]; \node[blank]{};
+                    \edge[];[.I 
+                        \edge[blank]; \node[blank]{};
+                        \edge[];[.J
+                        ] 
+                    ]
+                ]
+            ]
+            \edge[]; [.F
+            ]
+        ]
+    ]
+    [.C
+    ]
+]
+\end{tikzpicture}
+\begin{tikzpicture}
+\Tree
+[.G
+    \edge[blank]; \node[blank]{};
+    \edge[]; [.F
+        \edge[]; [.E 
+            \edge[];[.I 
+                \edge[];[.J ]
+                \edge[];[.H ]
+            ]
+            \edge[blank]; \node[blank]{};
+        ]
+        \edge[]; [.C 
+            \edge[]; [.D
+                \edge[blank]; \node[blank]{};
+                \edge[];[.B ]  
+            ]
+            \edge[]; [.A ]
+        ] 
+    ]
+]
+\end{tikzpicture}
+\end{minipage} \\
+
+	\begin{choices} 
+	    \choice left: Post-order, right: Post-order 
+		\choice left: Pre-order, right: Pre-order 
+		\CorrectChoice left: Post-order, right: In-order
+		\choice left: In-order, right: In-order 
+	\end{choices}
+	
+\end{parts}

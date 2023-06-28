@@ -1,0 +1,31 @@
+
+\titledquestion{Proving a problem in $\NPC$}[0]
+
+When proving problem $A\in \NPC$, please clearly divide your answer into the following (1+2) sections:
+\begin{enumerate}
+	\item Show that $A\in \NP$.
+	\item Choose a problem $B\in \NPC$ and show that $B\leq_p A$.
+	      \begin{enumerate}
+		      \item For every instance $I_B$ of $B$, construct an instance $I_A$ of problem $A$.
+		      \item Prove that $I_B\in B\iff I_A\in A$.
+	      \end{enumerate}
+	\item Conclude that $A$ is in $\NPC$.
+\end{enumerate}
+
+\section*{Proof Example}
+Suppose you are going to schedule courses for the SIST and try to make the number of conflicts no more than K. You are given 3 sets of inputs: $C=\{\cdots\},S=\{\cdots\},R=\{\{\cdots\},\{\cdots\},\cdots\}$. C is the set of distinct courses. S is the set of available time slots for all the courses. R is the set of requests from students, consisting of a number of subsets, each of which specifies the course a student wants to take. A conflict occurs when two courses are scheduled at the same slot even though a student requests both of them. Prove this schedule problem is NP-complete.\\
+
+\begin{enumerate}
+  \item For any given schedule as a certificate, we can traverse every student's requests and check whether the courses in his/her requests conflicts and count the number of conflicts, and at last check if the total number is fewer than K, which can be done in polynomial time. Thus the given problem is in NP.
+  \item We show that 3-COLOR can be reduced to this problem.
+    \begin{enumerate}
+      \item For any instance of 3-coloring problem with graph $G$, we can construct an instance of the given problem: let every node $v$ becomes a course, thus construct $C$; let every edge $(u,v)$ becomes a student whose requests is $\{u,v\}$, thus construct $R$; let each color we use becomes a slot, thus construct $S$; at last let $K$ equals to $0$.
+      \item We now prove $G$ is a yes-instance of 3-coloring problem if and only if $(C,S,R,K)$ is a yes-instance of
+        the given problem:
+        \begin{itemize}
+          \item "$\Rightarrow$": if $G$ is a yes-instance of 3-coloring problem, then schedule the courses according to their color. Since for each edge $(u,v)$, $u$ and $v$ will be painted with different color, then for each student, his/her requests will not be scheduled to the same slot, which means the given problem is also a yes-instance.
+          \item "$\Leftarrow$": if $(C,S,R,K)$ is a yes-instance of the given problem, then painting the nodes in $G$ according to their slots. Since $K=0$, then for every student, there is no conflict between their requests, which suggests that for every edge $(u,v)$, $u$ and $v$ will not be painted with the same color. It is also a yes-instance of 3-coloring problem.
+        \end{itemize}
+    \end{enumerate}
+  \item The given problem is in $\NP$ and a $\NPC$ problem can be reduced to it in polynomial time, so it is also $\NPC$.
+\end{enumerate}

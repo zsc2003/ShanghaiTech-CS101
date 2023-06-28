@@ -1,0 +1,62 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\CorrectChoice', as what you did in the previous questions. However, there are 
+% still many students who would like to handwrite their homework. To make TA's work 
+% easier, you have to fill your selected choices in the table below, no matter whether 
+% you use LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{6cm}|}
+		\hline
+		(a) & (b) & (c) \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		  BD  &  AC   &  C   \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{parts}
+	\part[2] A problem in $\NP$ is $\NPC$ if:
+	\begin{choices}
+		\choice It can be reduced to another $\NPC$ problem in polynomial time.
+		\CorrectChoice There exists a $\NPC$ problem which can be reduced to it in polynomial time.
+		\choice It can be reduced to any other $\NP$ problem in polynomial time.
+		\CorrectChoice Any other $\NP$ problem can be reduced to it in polynomial time.
+	\end{choices}
+
+
+	\part[2] Assuming that $\P\neq\NP$, which of the following problems are in $\NPC$?
+	You may search the Internet for more information if you are unfamiliar with the problems.
+	\begin{choices}
+		\CorrectChoice \texttt{LONG-PATH}: $(G,s,t,k)$ Given an undirected graph $G$,
+		determine whether there exists a simple path from \(s\) to \(t\) whose length is greater or equal to $k$.
+		\choice \texttt{HALTING}: $(P,I)$ Given a compilable C++ program $P$ and the input $I$ for $P$,
+		determine if $P$ runs infinitely on $I$.
+		\CorrectChoice \texttt{4-SAT}: $\phi$ Given a CNF (conjunction normal form)
+		where each clause is the disjunction of exactly 4 literals,
+		determine whether $\phi$ is satisfiable.
+		\choice \texttt{PRIME}: $n$ Given a positive integer $n$, determine whether it is a prime number.
+	\end{choices}
+
+	\part[2] For two decision problems $A$ and $B$, suppose that $A\leq_p B$.
+	Which of the following statements are true?
+	(Hint: there exists complexity classes that are strictly bigger than $\NP$)
+	\begin{choices}
+		\choice $A\in \P \implies B\in \P$
+		\choice $A\in \NPC\implies B\not\in \NPC$.
+		\CorrectChoice $B\in \P\implies A\in \P$.
+		\choice $B\in \NPC\implies A\in \NPC$.
+	\end{choices}
+
+\end{parts}

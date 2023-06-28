@@ -1,0 +1,71 @@
+\titledquestion{Discovery}
+\newcommand{\R}{\mathbb R}
+\newcommand{\txtif}{\textnormal{if }}
+\begin{parts}
+  \part[1] Let \(G=(V,E)\) be an unweighted undirected graph where \(V=\left\{v_1,\cdots,v_n\right\}\) and \(E=\left\{e_1,\cdots,e_m\right\}\). For simplicity we assume there are no multiple edges (i.e. two or more edges incident to the same two vertices). Let \(D\in\R^{n\times n}\) be the \emph{degree matrix} whose \((i,j)\)-th entry is
+  \[d_{ij}=\begin{cases}
+    \deg\left(v_i\right),&\txtif i=j,\\
+    0,&\txtif i\neq j.
+  \end{cases}\]
+  Let \(A\in\R^{n\times n}\) be the \emph{adjacency matrix} of \(G\), whose \((i,j)\)-th entry is
+  \[a_{ij}=\begin{cases}
+    1,&\txtif \{v_i,v_j\}\in E,\\
+    0,&\txtif \{v_i,v_j\}\notin E.
+  \end{cases}\]
+  Note that \(\deg\left(v_i\right)=\sum_{j=1}^na_{ij}\). The matrix \(L=D-A\) is the \emph{Laplacian matrix}. Prove that \(L\) is positive semidefinite. (Hint: Try to show that \(x^TLx\geqslant 0\) holds for every \(x\in\R^n\).)
+  \begin{solution}
+    %\vspace{3.2in}
+    since the graph is undirected, so the matrix have the property that\\
+    $D^T = D \ , \ A^T = A$\\
+    and $L^T = (D - A)^T = D^T - A^T = D - A = L$\\
+    so $L^T = L$\\
+    \(\forall x\in\R^n\), we can write $x = $ \begin{pmatrix}  x_1\\ \vdots \\ x_n  \end{pmatrix} \\
+    so $x^TLx = x^T(D-A)x = x^TDx - x^TAx$\\
+   and $x^TAx =$
+   \begin{pmatrix}  x_1 , \cdots , x_n  \end{pmatrix}
+   \begin{pmatrix}  a_{11} , \cdots , a_{1n}\\
+    \vdots \ddots \vdots \\
+    a_{n1} , \cdots , a_{nn} \end{pmatrix}
+    \begin{pmatrix}  x_1\\ \vdots \\ x_n  \end{pmatrix}
+   $=\sum_{i=1}^n \sum_{j=1}^n x_ix_ja_{ij}$\\
+    so $x^TLx = \sum_{i=1}^n d_{ii}x_i^2 - \sum_{i=1}^n \sum_{j=1}^n x_ix_ja_{ij}$\\
+    $= \frac{1}{2}(\sum_{i=1}^n d_{ii}x_i^2 - 2\sum_{i=1}^n \sum_{j=1}^n x_ix_ja_{ij} + \sum_{j=1}^n d_{jj}x_j^2)$\\
+    and since $d_{ii} = deg(v_i) = \sum_{j=1}^na_{ij}$\\
+    so $x^TLx = \frac{1}{2}(\sum_{i=1}^n \sum_{j=1}^n a_{ij}x_i^2 + 2\sum_{i=1}^n \sum_{j=1}^n a_{ij}x_ix_j + 2\sum_{j=1}^n \sum_{i=1}^n a_{ji}x_j^2)$\\
+    $=\frac{1}{2}\sum_{i=1}^n \sum_{j=1}^na_{ij}(x_i-x_j)^2$\\
+    $\geq 0$\\
+    so above all, $x^TLx \geq 0 $ \(\forall x\in\R^n\).\\
+    so L is positive semidefinite.
+
+
+
+  \end{solution}
+
+  \newpage
+
+  \part[0] STFW (Search The Friendly Web) about how the Laplacian matrix is related to the number of spanning trees of a graph.
+  \begin{solution}
+   % \vspace{1.5in}
+    \\
+    After searching the friendly web, we could discover that there exist a theorem called \emph{Matrix-tree Theorem}.\\
+    With a long and complicated proof.\\
+    It is a wonderful proof, but the blank space is too little, and I am lazy to copy it.\\
+    And it is described as:\\
+    the undirected graph $G=(V,E)$ with its Laplacian matrix $L$.\\
+    the number of $G$'s spanning tree is $det(L_0)$\\
+    where $L_0$ is the submatrix of $L$ obtained by removing the ith row and the ith column of $L$.(i could be any number).
+    \\ \\ \\
+    furthermore, since the Laplacian matrix of the graph is mentioned, I will take some small notes by the way.\\
+    \begin{itemize}
+      \item The number of eigenvalues which is equal to $0$ is the number of connected regions of the graph.
+      \item the complete graph $K_n$ with $n$ vertices. Then the number of its spanning trees is $n^{n-2}$
+      \item The sum of each line of $L$ is $0$.
+      \item the eigenvalues of $L$ are nonnegetive, and at least have one $0$.
+    \end{itemize}
+
+    
+
+
+  
+  \end{solution}
+\end{parts}

@@ -1,0 +1,69 @@
+\titledquestion{Huffman Coding}
+
+After you compress a text file using Huffman Coding Algorithm, you accidentally spilled some ink on it and you found that one word becomes unrecognizable. Now, you need to recover that word given the following information:\\
+
+    \textbf{Huffman-Encoded sequence of that word: } \\
+    11101001011111101\\
+    \textbf{Frequency table that stores the frequency of some characters: }\\
+    \begin{table}[!hbtp]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+    \hline
+    characters & 0 & 1 & a & b & c & d & s \\ \hline
+    frequency  & 2 & 3 & 3 & 4 & 1 & 4 & 2 \\ \hline
+    \end{tabular}
+    \end{table}\\\\
+\begin{parts}	
+	\part[5] Please construct the binary Huffman Coding Tree according to the given frequency table and draw the final tree below.\\
+	Note: The initial priority queue is given as below. When popping nodes out of the priority queue, the nodes with the same frequency follows ``First In First Out".
+		
+	\begin{table}[!hbtp]
+	\centering
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    \begin{tabular}[c]{@{}l@{}}c\\ 1\end{tabular} & \begin{tabular}[c]{@{}l@{}}0\\ 2\end{tabular} & \begin{tabular}[c]{@{}l@{}}s\\ 2\end{tabular} & \begin{tabular}[c]{@{}l@{}}1\\ 3\end{tabular} & \begin{tabular}[c]{@{}l@{}}a\\ 3\end{tabular} & \begin{tabular}[c]{@{}l@{}}b\\ 4\end{tabular} & \begin{tabular}[c]{@{}l@{}}d\\ 4\end{tabular} \\ \hline
+    \end{tabular}
+    \end{table}
+    
+    \vspace{2cm}
+
+    \begin{tikzpicture}
+    \Tree
+    [.19
+        \edge[]; [.8
+                    \edge[]; [.b,4 ]
+                    \edge[]; [.d,4 ]
+                ]
+        \edge[]; [.11
+                    \edge[]; [.5
+                                \edge[]; [.s,2 ]
+                                \edge[]; [.1,3 ]
+                            ]
+                    \edge[]; [.6
+                                \edge[]; [.a,3 ]
+                                \edge[]; [.3
+                                            \edge[]; [.c,1 ]
+                                            \edge[]; [.0,2 ]
+                                        ]
+                            ]
+                ]
+    ]
+    \end{tikzpicture}
+    \vspace{2cm}
+
+    for the inner node: the number is the frequency of all its children,\\
+    for the leaf node, the thing before $,$ is the character, the thing after $,$ is the character's frequency.\\\\
+	\part[3] Now you can "decompress" the encoded sequence and recover the original word you lost. Please write the original word below.
+	
+    the characters and their huffman code:\\
+    $b \ \ 00$\\
+    $d \ \ 01$\\
+    $s \ \ 100$\\
+    $1 \ \ 101$\\
+    $a \ \ 110$\\
+    $c \ \ 1110$\\
+    $0 \ \ 1111$\\\\
+    
+    so the original word is $cs101$
+	
+\end{parts}

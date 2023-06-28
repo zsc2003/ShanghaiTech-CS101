@@ -1,0 +1,71 @@
+\documentclass[11pt, addpoints, answers]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% headers, footers, titles
+\newcommand{\CourseName}{CS101 Algorithms and Data Structures}
+\newcommand{\HomeworkNO}{Homework 12}
+\newcommand{\DueDate}{Due date: 23:59, December 21th, 2022}
+
+\pagestyle{headandfoot}
+\runningheadrule{}
+\runningheader{\CourseName}{\HomeworkNO}{\DueDate}
+\runningfooter{}{\thepage}{}
+
+\title{
+	\CourseName\\
+	Fall 2022\\
+	\HomeworkNO\\
+}
+\author{}
+\date{\DueDate}
+
+% formats of questions, choices, points, etc.
+\qformat{\bf\thequestion. (\totalpoints\ points) \thequestiontitle\hfill}
+\pointname{'}
+\CorrectChoiceEmphasis{\bf\color{blue}}
+\SolutionEmphasis{\color{blue}}
+
+% We frequently use this font.
+\newcommand{\ttt}{\texttt}
+\newcommand{\bluett}[1]{\textcolor{blue}{\ttt{#1}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item Please write your solutions in English.
+	\item Submit your solutions to Gradescope.
+	\item If you want to submit a handwritten version, scan it clearly.
+	\item When submitting, match your solutions to the problems correctly.
+	\item No late submission will be accepted.
+	\item Violations to any of the above may result in zero credits.
+	\item You are recommended to finish the algorithm design part of this homework with \LaTeX.
+	\item Please check your Account Settings for Gradescope when submitting! Set your FULL name to your Chinese name and your 10-digit STUDENT ID correctly.
+\end{enumerate}
+
+\newpage
+
+\renewcommand{\P}{\mathbf{\operatorname{P}}}
+\newcommand{\NP}{\mathbf{\operatorname{NP}}}
+\newcommand{\NPC}{\mathbf{\operatorname{NP-Complete}}}
+\newcommand{\NPH}{\mathbf{\operatorname{NP-Hard}}}
+
+\begin{questions}
+	\include{example}
+	\newpage
+
+	\include{multiple_choices}
+	\newpage
+
+	\include{partition}
+	\newpage
+
+	\include{half_clique}
+
+\end{questions}
+
+\end{document}

@@ -1,0 +1,243 @@
+\titledquestion{Establishing the asymptotic bounds}
+
+\newcommand{\emphA}[1]{\textit{#1}}
+\newcommand{\emphB}[1]{\textbf{#1}}
+
+You are trying to compute the coefficients of the polynomial \(B_n(x) = {(1+x)}^n\)
+
+\begin{cpp}
+class Polynomial {
+  std::vector<double> coeff;
+
+ public:
+  Polynomial(std::size_t deg) : coeff(deg + 1) {}
+  std::size_t deg() const { return this->coeff.size() - 1; }
+  const double &operator[](std::size_t i) const { return coeff[i]; }
+  double &operator[](std::size_t i) { return coeff[i]; }
+  Polynomial operator*(const Polynomial &rhs) const {
+    Polynomial prod(deg() + rhs.deg());
+    for (std::size_t i = 0; i <= deg(); i++)
+      for (std::size_t j = 0; j <= rhs.deg(); j++)
+        prod[i + j] += coeff[i] * rhs[j];
+    return prod;
+  }
+};
+\end{cpp}
+
+In the following questions, you may assume that arithmetic operations of 64-bit floating-point numbers take \emphA{constant time}.\par
+\emphB{NOTE}: Please clearly demonstrate your steps. The answer alone only accounts for 1pt in every sub-problem.
+\begin{itemize}
+  \item Show the recurrence relation and explain its meaning,
+  \item show your upper/lower bound estimator,
+  \item and show your answers.
+\end{itemize}
+
+\begin{parts}
+	\part[1] For any non-negative integer \(n\), find out \(\deg(B_n(x))\).
+  \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Replace the `\vspace' command with your answer.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \(\deg(B_n(x))\) \(=\) \(n\)
+
+    % \vspace{1in}
+  \end{solution}
+
+	\part[1] What is the time complexity of the polynomial multiplication for the given implementation? Suppose the two operands are of degree \(n\) and \(m\) respectively.
+  \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Replace the `\vspace' command with your answer.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    the times of multiplication is \((deg()+1)*(rhs.deg()+1)\)
+
+    since the rwo operands are of degree \(n\) and \(m\) respectively
+
+    so the time of multiplication is \((n+1)*(m+1)=nm+n+m+1\)
+
+    and since \(\lim\limits_{\substack{n \to \infty\\ m \to \infty}} \frac{nm+n+m+1}{nm} = 1\)
+    
+    1 is constant
+
+    so the time complexity is \(\Theta(nm)\)
+    
+    %\vspace{1in}
+  \end{solution}
+
+  \newpage
+
+	\part[4] \textbf{First trial: brute force solution}\par
+	You decided to use an iterative algorithm: First find \(B_1(x)\), and then \(B_2(x)\), and so on.
+	The solution can be implemented with the following C++ code.
+
+	\begin{cpp}
+Polynomial solve(std::size_t n) {
+  if (n == 0) {
+    Polynomial result(0);
+    result[0] = 1;
+    return result;
+  }
+  Polynomial factor(1);
+  factor[0] = factor[1] = 1;
+  return factor * solve(n - 1);
+}
+	\end{cpp}
+
+	Please find the asymptotic tight bound of running time of this algorithm. Your answer should be like \(\Theta(\cdot)\).
+	\begin{solution}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Replace the `\vspace' command with your answer.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		set the compute time of \(solve(n)\) be  \(T(n)\)
+
+    \(T(0) = \Theta(1)\)
+
+    the assignment statement takes \(\Theta(1)\)
+
+    the \(solve(n-1)\) takes \(T(n-1)\)
+
+    the degree of \(factor\) is 1 and the degree of the returning polynomial \(solve(n-1)\) is \(n-1\)
+
+    so the operation \(*\) takes time \((degree(factor)+1)*(degree(solve(n-1))+1)=2*n\)
+
+    so the recuurence relation is \(T(n)=\Theta(1)+T(n-1)+2n\)
+
+    write all these relative equations we have
+
+    \(T(n)=T(n-1)+2n+1\)
+
+    \(T(n-1)=T(n-2)+2(n-1)+1\)
+
+    \(...\)
+
+    \(T(1)=T(0)+2*1+1\)
+
+    sum up all these \(n\) equations we have
+    
+    \(T(n)=T(0)+2*(1+2+...+n)+1\)
+
+    and since \(T(0)=1\)
+
+    Simplify the equations
+    
+    \(T(n)=n^2+2n+1\)
+
+    it is clear that when \(n \to +\infty\)
+
+    \(1*n^2 \leq n^2+2n+1 \leq 2*n^2\)
+
+    so we can say that the time complexity is 
+
+    \( \Theta(n^2)\)
+    % \vspace{4in}
+	\end{solution}
+
+  \newpage
+
+	\part[4] \textbf{Accelerate the Algorithm with Doubling}\par
+	After STFW (Searching The Friendly Web), you come up with a doubling algorithm:
+
+	\begin{cpp}
+Polynomial solve(std::size_t n) {
+  if (n == 0) {
+    Polynomial result(0);
+    result[0] = 1;
+    return result;
+  }
+  auto half = solve(n / 2);
+  auto double_half = half * half;
+  if (n % 2 == 1) {
+    Polynomial factor(1);
+    factor[0] = factor[1] = 1;
+    return factor * double_half;
+  }
+  return double_half;
+}
+	\end{cpp}
+
+	Please find the asymptotic tight bound of running time of this algorithm. Your answer should be like \(\Theta(\cdot)\).
+	\begin{solution}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Replace the `\vspace' command with your answer.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%\vspace{4in}
+    set the compute time of \(solve(n)\) be  \(T(n)\)
+
+    \(T(0)=\Theta(1)\)
+    
+    % in the code
+    
+    % when n is odd:
+    
+    % the anouncement of half takes \(T(\frac{n-1}{2})\)
+
+    % and the polynomial half has the degree of \(\frac{n-1}{2}\)
+
+    % and the anouncement of \(double \_ half\) takes  
+    
+    % \( (\frac{n-1}{2}+1)*(\frac{n-1}{2}+1) + 2*\frac{n-1}{2} = \Theta(\frac{n^2}{4})\)
+    
+    % and when  n is even 
+
+    % the anouncement of half takes \(T(\frac{n}{2})\)
+
+    % and the polynomial half has the degree of \(\frac{n}{2}\)
+
+    % and the anouncement of \(double \_ half\) takes 
+
+    % \( (\frac{n}{2}+1)*(\frac{n}{2}+1) + (n-1) = \Theta(\frac{n^2}{4})\)
+
+    % so above all, the recurrence relation can be written as: 
+    
+   
+
+    \begin{equation}
+      T(n)=\left\{
+        \begin{aligned}
+          T(\frac{n}{2})+\frac{n}{2}*\frac{n}{2}=T(\frac{n}{2})+\Theta(\frac{n^2}{4}) \quad n \ is \ even \\
+          T(\frac{n-1}{2})+\frac{n-1}{2}*\frac{n-1}{2}+2*\frac{n-1}{2}=T(\frac{n-1}{2})+\Theta(\frac{n^2}{4}) \quad n \ is \  odd\\
+        \end{aligned}
+        \right
+        .
+      \end{equation}
+      
+    we can see that for two adjacent numbers, the even one is less complex than the odd one
+
+    Assume that \(n=2^k\) where k is an interger, then the number will always be even
+   
+    so we have \(T(n)=T(2^k)=T(2^{k-1})+\Theta(2^{2k-2})\)
+
+    \(T(2^{k-1})=T(2^{k-2})+\Theta(2^{2k-4})\)
+
+    \(...\)
+
+    \(T(2^1)=T(2^0)+\Theta(2^0)\)
+
+    sum the k equations we have
+
+    \(T(n)=\Theta((2^k)^2)\)
+
+    since \(n=2^k\)
+
+    so \(T(n)=\Theta(n^2)\)
+
+    and similarly,
+    
+    assume that \(n=2^k-1\) where k is an interger, then the number will always be odd
+    
+    so \(T(2^k-1)=T(2^{k-1}-1)+\Theta(\frac{n^2}{4})\)
+    
+    \(=T(2^{k-2}-1)+\Theta(\frac{n^2}{4})+\Theta(\frac{n^2}{16})\)
+    
+    \(=...=\Theta((2^k)^2)\)
+
+    and since \(n=2^k-1\)
+
+    so \(T(n)=\Theta(n^2)\)
+
+    so above all, the best and the worst case are all \(\Theta(n^2)\)
+  
+    we can say that the time complexity is  \( \Theta(n^2)\)
+	\end{solution}
+
+\end{parts}

@@ -1,0 +1,162 @@
+\titledquestion{New $k$-th Minimal Value}
+
+Given two \textbf{sorted} arrays $\langle a_1,\cdots,a_n\rangle$ of length $n$ and $\langle b_1,\cdots,b_m\rangle$ of length $m$ with $n + m$ \textbf{distinct} elements and an integer $k$ ($1 \le k \le n + m$), we will design a \textbf{divide and conquer} algorithm to find $k$-th minimal element in the merged array $\langle a_1,\cdots,a_n, b_1, \cdots, b_m\rangle$ of length $n + m$. We say $a_x$ is the $k$-th minimal value of $a$ if there are exactly $k-1$ elements in $a$ that are less than $a_x$, i.e.
+\[\left|\left\{i\mid a_i<a_x\right\}\right|=k-1.\]
+
+\begin{parts}
+    \part[6] You should design a \textbf{divide and conquer} algorithm with time complexity $O(\log n + \log m)$.
+    \begin{solution}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Replace `\vspace{2in}' with your answer.
+        we do binary search for two arrays together
+        
+        let mida,midb be the middle point of array a,b
+
+        and we take out two subarray a', b' from array a,b
+      
+        start at their left bound, end at their middle,and mark the subarray's size be la,lb
+
+        without loss of generality, we regard a'[mida] < b'[midb].(if opposite, we just need to swap the two array and do it again)
+
+        and we need to discuss:
+
+        if $l1+l2\leq k$,then all of the elements in a' must have the index $\leq k$ in the merged array,so we take them and solve the subproblem.
+
+        if $l1+l2 > k$,then all of the elements in b but not in b' must not have the index $\leq k$ in the merged array,so we do not take them, and solve the subproblem
+        \paragraph{Algorithm Design:} 
+        we do binary search for two arrays together
+        \begin{enumerate}
+          \item get the middle point mida, midb of array a,b 
+          \item compare a[mida] and b[midb], to make sure that a have the less element, if not, just swap the two arrays and do it again
+          \item compare $l1+l2$ and $k$, and solve the subproblem we discussed above
+        \end{enumerate}
+
+        \paragraph{Pseudocode :}
+        the lefta, righta is the left,right bound of array a in this subproblem,
+
+        the leftb, rightb is the left,right bound of array b in this subproblem,
+
+        $k$ means that we need to find the kth minimal element in the subprolem.
+
+        $mida,midb$ are the middle point of the arrays
+
+        l1,l2 are the length of the subarray that start at left bound and end at the middle
+        \begin{algorithm}[H]
+          \begin{algorithmic}[1]
+            \Function {kth\_min}{$a$, $b$, $lefta$, $righta$, $leftb$, $rightb$, $k$}
+            \If {$righta < lefta$} 
+            \State \Return b[leftb+k-1]
+            \EndIf
+            \If {$rightb < leftb$} 
+            \State \Return a[lefta+k-1]
+            \EndIf
+            \State $mida\gets (righta+lefta)/2$
+            \State $midb\gets (rightb+leftb)/2$
+            \If {$a[mida] > b[midb]$} 
+            \State \Return kth\_min($b$, $a$, $leftb$, $rightb$, $lefta$, $righta$, $k$)
+            \EndIf
+            \State $l1\gets mida-lefta+1$
+            \State $l2\gets midb-leftb+1$
+            \If {$l1+l2 \leq k$} 
+            \State \Return kth\_min($a$, $b$, $mida+1$, $righta$, $leftb$, $rightb$, $k-l1$)
+            \Else
+            \State \Return kth\_min($a$, $b$, $lefta$, $righta$, $leftb$, $midb-1$, $k$) 
+            \EndIf   		
+            \EndFunction
+          \end{algorithmic}
+        \end{algorithm}
+
+        \paragraph{Time Complexity Analysis:}
+        During each recursion, the calculation of 
+        
+        $mida,midb,l1,l2$ and comparison can be done in constant time, which is $O(1)$. 
+        We ignore half of the elements after each comparison, thus we need $O(\log n)$ recursions for each array.
+        and we have two arrays with length of n and m, so the complexity is to sum them usepackage
+
+        which means that the complexity is $O(log n + log m)$.
+        %\vspace{2.5in}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \end{solution}
+    \part[6] You should design \textbf{another divide and conquer} algorithm with better time complexity $O(\log k)$. 
+    \begin{solution}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      % Replace `\vspace{2in}' with your answer.
+      to shortly explain, in each subprolem, we need to take the first few elements from the remaining elements of array a and b, mark the new subarray we take out as a' and b'
+
+      since a' and b' are sorted and have distincy elements,so we need to compare the last element of each new array,
+
+      the new subarray with the shorter last element must all be involed in the first k element of the merged array, 
+
+      so we need to delete them before solving the subproblem,
+
+      as for the new subarray with the larger last element, we cannot make sure how many elements are in the merged array, so we just remain them, and figure out in the subproblem.
+      \paragraph{Algorithm Design:} 
+      we divide and conquer by using the half of the $k$
+      \begin{enumerate}
+          \item we get the value of $len=\lfloor \frac{k}{2} \rfloor$
+          \item then we need to pick one element from each array, mark as a\_pick,b\_pick.
+          which means that we are going to take the sequence from $pos$ to $pick$.(pos will be explained in the pseudo code part)
+          \item to make it easier to write, we just let array a has less remaining elements.(if opposite, just swap the two arrays)
+          \item if the length of the remaining elements of the array a $<len$, we just take the end of the element as pick.
+          But we need to make sure that the sum of elements we take from array a and b should be $k$.
+          \item then compare the element at a\_pick in a and at b\_pick in b.
+          \item delete the elements from the array that is the less one from the result above, and let 
+          $k\_new= k$ - (the number of elements we removed), and repeat the above operations until $k=1$ or one of the array is empty.
+        
+        
+        \end{enumerate}
+
+        \paragraph{Pseudocode:}
+        $posa$ and $posb$ are indecies of the leftmost that still remain in given array $a,b$ respectively.
+        
+        $len(\cdot)$ is the function the get the array's size.
+        And we set the index of the elements in array start at $1$
+        
+        to easier get the element that we need to compare, just let the array a be the short one,
+        so we just need to add a judge that is the remaining of array a is less than b, then swap them.(the 2nd to 4th row of the pseudo code)
+        then the array a always has less remain elements.
+        
+        \begin{algorithm}[H]
+          \begin{algorithmic}[1]
+            \Function {$kth\_min$}{$a$, $b$, $posa$, $posb$, $k$}
+            \If {$(len(a)-posa+1) > (len(b)-posb+1)$} 
+            \State \Return $kth\_min$($b$, $a$, $posb$, $posa$, $k$)
+            \EndIf
+            \If {$posa > len(a)$} 
+            \State \Return b[posb+k-1]
+            \EndIf
+            \If {$posb > len(b)$} 
+            \State \Return a[posa+k-1]
+            \EndIf
+            \If {$k==1$} 
+            \State \Return max\{a[posa],b[posb]\}
+            \EndIf
+            \State $length\gets \lfloor k/2 \rfloor$
+            \State $a\_remain\gets (len(a)-posa+1)$
+            \If {$a\_remain<=length$}
+            \State new\_posa=len(a)
+            \Else
+            \State new\_posa=(posa+length-1)
+            \EndIf
+            \State $new\_posb\gets(posb+k-(posa-new\_posa+1)-1)$
+            \If {$a[new\_posa] < b[new\_posb]$} 
+            \State \Return $kth\_min$($a$, $b$, $new\_posa+1$, $posb$, $k-(new\_posa-posa+1)$) 		
+            \Else
+            \State \Return $kth\_min$($a$, $b$, $posa$, $new\_posb+1$, $k-(new\_posb-posb+1)$) 		
+            \EndIf
+            \EndFunction
+          \end{algorithmic}
+        \end{algorithm}
+
+        \paragraph{Time Complexity Analysis:}
+        During each recursion, the calculation of
+        
+        $length,new\_posa,new\_posb$ and comparison can be done in constant time, which is $O(1)$. 
+        after one recursion, the k become $\frac{k}{2}$ unless the short array turn to the end, but in that case, the function will finish,so
+      
+        $T(k) = T(\frac{k}{2})+O(1)$
+        Therefore, by the Master Theorem $a=1,b=1,d=0,\log_{b}{a}=0=d$, so $T(k) = O(\log k)$.
+      %\vspace{2.5in}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{solution}
+  \end{parts}

@@ -1,0 +1,49 @@
+\titledquestion{Graph traversal}
+Consider this directed graph starting with \(s\).
+\begin{center}
+	\begin{tikzpicture}
+		\begin{scope}[every node/.style = {circle, thick, draw}]
+			\node[fill={rgb:black,1;white,3}] (S) at (0,0) {S};
+			\node (A) at (3,0) {A};
+			\node (B) at (-3, -3) {B};
+			\node (C) at (0, -3) {C};
+			\node (D) at (-3, 0) {D};
+			\node (E) at (3, -3) {E};
+		\end{scope}
+		\begin{scope}[>={Stealth[black]}]
+			\path[->] (S) edge (A);
+			\path[->] (S) edge (C);
+			\path[->] (S) edge (D);
+			\path[->] (B) edge (D);
+			\path[->] (C) edge (B);
+			\path[->] (C) edge (E);
+			\path[->] (D) edge (C);
+			\path[->] (E) edge (S);
+		\end{scope}
+	\end{tikzpicture}
+
+\end{center}
+
+\begin{parts}
+	\part[3] Give the adjacency list for the graph. You should write the node in alphabetical order. (If no item, leave it blank).\\
+	\[
+		\begin{array}{ll}
+			adj(S) & = [\fillin[A,C,D]], \\
+			adj(A) & = [\fillin[]], \\
+			adj(B) & = [\fillin[D]], \\
+			adj(C) & = [\fillin[B,E]], \\
+			adj(D) & = [\fillin[C]], \\
+			adj(E) & = [\fillin[S]], \\
+		\end{array}
+	\]
+	\part[3] Give the visited node order using the above adjacency list for Breadth First Search.
+	\begin{solution}
+		%\vspace{4ex}
+		S,A,C,D,B,E
+	\end{solution}
+	\part[3] Give the visited node order using the above adjacency list for Depth First Search.
+	\begin{solution}
+		%\vspace{4ex}
+		S,A,C,B,D,E
+	\end{solution}
+\end{parts}

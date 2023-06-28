@@ -1,0 +1,90 @@
+\documentclass[11pt, addpoints, answers]{exam}
+
+\usepackage{amsmath, amssymb, euler}
+\usepackage{xcolor}
+
+% For inserting code snippets.
+\usepackage{listings}
+\lstset{
+    columns = fixed,
+    basewidth = {0.5em},
+    breaklines = true,
+    backgroundcolor = \color{white},
+    keywordstyle = \color[RGB]{40, 40, 255},
+    numberstyle = \footnotesize\color{darkgray},
+    commentstyle = \ttfamily\color{violet},
+    basicstyle = \ttfamily,
+    stringstyle = \ttfamily\color[RGB]{128, 0, 0},
+    showstringspaces = false,
+    language = {[11]C++},
+    escapechar = \@
+}
+\lstnewenvironment{cpp}[1][]{\lstset{language = {[11]C++}, #1}}{}
+
+\usepackage{tikz}
+
+% headers, footers, titles
+\newcommand{\CourseName}{CS101 Algorithms and Data Structures}
+\newcommand{\HomeworkNO}{Homework 3}
+\newcommand{\DueDate}{Due date: 23:59, October 12th, 2022}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\runningheader{\CourseName}{\HomeworkNO}{\DueDate}
+\runningfooter{}{\thepage}{}
+
+\title{
+	\CourseName\\
+	Fall 2022\\
+	\HomeworkNO
+}
+\author{}
+\date{\DueDate}
+
+% formats of questions, choices, points, etc.
+\qformat{\bf\thequestion. (\totalpoints\ points) \thequestiontitle\hfill}
+\pointname{'}
+\CorrectChoiceEmphasis{\bf\color{blue}}
+
+% We frequently use this font.
+\newcommand{\ttt}{\texttt}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item Please write your solutions in English.
+	\item Submit your solutions to gradescope.com.
+	\item Set your FULL name to your Chinese name and your STUDENT ID correctly in Account Settings.
+	\item If you want to submit a handwritten version, scan it clearly. \ttt{CamScanner} is recommended.
+	\item When submitting, match your solutions to the problems correctly.
+	\item No late submission will be accepted.
+	\item Violations to any of the above may result in zero points.
+\end{enumerate}
+
+\begin{questions}
+
+\newpage
+
+\include{which_sort}
+
+\newpage
+
+\include{best_sort}
+
+\newpage
+
+\include{multiple_choices}
+
+\newpage
+
+\include{kth_min}
+
+\newpage
+
+\include{discovery}
+
+\end{questions}
+
+\end{document}

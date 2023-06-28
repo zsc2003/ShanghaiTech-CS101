@@ -1,0 +1,68 @@
+\titledquestion{PARTITION is $\NPC$}
+
+Given an array \(A=[a_1,a_2,...,a_n]\) of non-negative integers, consider the following problems:
+
+\textbf{1.Partition}: Determine whether there is a subset $P\subseteq[n] ([n]=\{1,2,...,n\})$ such that $\sum_{i\in P} a_i = \sum_{j\in[n]\backslash P} a_j $.\\
+For example, given $A=[2,4,6,8]$, then $P=\{1, 4\}$ is a partition of $A$ since $a_1+a_4=a_2+a_3=10$.
+
+\textbf{2.Subset Sum}: Given some integer $K$, determine whether there is a subset $P \subseteq [n]$ such that $\sum_{i\in P}a_i = K$.\\
+For example, given $A=[1, 3, 5, 7]$ and $K=6$ , then $P=\{1, 3\}$ gives a subset sum of $a_1+a_3=6$.
+
+Suppose we have proven that Subset Sum problem is in NP-complete, prove that Partition problem is also in NP-complete.
+
+\begin{parts}
+  \part[2] Prove that the partition problem is in NP.
+  \begin{solution}
+    % \vspace{5ex}
+    \\for any given partition $P$\\
+    we can calculate $s_1 = \sum_{i\in P}a_i$, and $s_2 = \sum_{i\in [n]\backslash P}a_i$\\
+    both $s_1,s_2$ can be compute in polynomial time.\\
+    we just need to check whether $s_1=s_2$ or not.\\
+    so the partition problem is in NP\\
+  \end{solution}
+  \part[7] Find a polynomial time reduction from subset sum problem to parittion problem, and prove its correctness.
+  \begin{solution}
+    % \vspace{50ex}
+    \\let $M=\sum_{i\in [n]}a_i$,\\
+    and let $N$ be a number that is big enough, such as take $N>10M$,\\
+    we can generate a new array $A'=[a_1,a_2,\cdots,a_n,N-k,N+k-M]$\\
+    and below we all talk about the new array $A'$.\\
+
+    $\Rightarrow:$ if the Subset Sum problem $(A,k)$ is a yes-instance,\\
+    then there exist a partition $P\subseteq [n]$ s.t. $\sum_{i\in P}a_i=k$\\
+    let $P'=P\cup \{n+1\}$,\\
+    so $\sum_{i\in P'}a_i=k+(N-k)=N$\\
+    and since $\sum_{i\in [n+2]\backslash P'}a_i=(M+(N-k)+(N+k-M))-N=N$\\
+    which means that $\sum_{i\in P'} a_i = \sum_{j\in[n+2]\backslash P'} a_j $\\
+    so the partition problem is yes-instance.\\
+
+    $\Leftarrow:$ if the partition problem is yes-instance\\
+    then there must exist a partition $P,s.t. \sum_{i\in P} a_i = \sum_{j\in[n+2]\backslash P} a_j $
+    and since we took $N$ as a very big number that $N>10M$,\\
+    so $a_{n+1}+a_{n+2}=(N-k)+(N+k-M)=2N-M>M$,\\
+    so we can make sure that $a_{n+1}=N-k,a_{n+2}=N+k-M$ is impossible to be in the same partition.\\
+    Without loss of generality, we suppose that $(n+1)\in P$, then $(n+2)\in [n+2]\backslash P$\\
+    and since for the partition problem, each sum of the partition is half of the sum of the whole array,
+    i.e. the value is $\frac{\sum_{i\in [n+2]}a_i}{2}=\frac{M+(N-k)+(N+k-M)}{2}=N$,\\
+    so $\sum_{i\in P\backslash \{n+1\}}a_i=N-(N-k)=k$,\\
+    so $(A,k)$ is a yes-instance, i.e. the Subset Sum problem is a yes-instance.\\
+    and all operations we have done are in polynomial time.\\
+
+    so above all, the subset sum problem can be reducted to partition problem in polynomial time.\\
+		i.e. subset sum problem$\leq _p$ partition problem\\
+
+
+  \end{solution}
+  \part[1] Conclusion:
+  \begin{solution}
+    % \vspace{5ex}
+    \\the partition problem is in $NP$\\
+    the subset sum problem can be reducted to the partition problem in polynomial time\\\\
+    let $A$ be the partition problem, $B$ be the subset sum problem,\\
+    since $B\in NP-complete, B\leq _PA, A\in NP$\\
+    so $A\in NP-complete$.\\\\
+    so the partition problem is also in $NP-Complete$.\\
+
+  \end{solution}
+\end{parts}
+\color{black}

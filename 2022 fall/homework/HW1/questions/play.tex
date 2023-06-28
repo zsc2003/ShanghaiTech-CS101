@@ -1,0 +1,138 @@
+\titledquestion{Let's Play with Linked-List, Stack and Queue}
+
+In the following questions, we want to implement the \ttt{push} and \ttt{pop} operations of stacks and queues with singly-linked-lists in the most efficient way. You can only access the head node of the linked-list. Access to the tail node is not allowed.
+
+You can answer this question using pseudocode or natural language. Please make sure your description is clear and easy to understand.
+
+\begin{parts}
+	\part[5]\label{part:5a} \textbf{Stack Using Linked-List}\par
+	Please specify how you implement stack's \ttt{push} and \ttt{pop} operations.
+	\begin{solution}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Replace the `vspace{2.5in}' with your answer.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%\vspace{2.5in}
+
+		To implement the \ttt{push} and \ttt{pop} operations of stacks by using Linked-List
+		
+		we need to set a structure called Node, each node contains the some elements that we need to store,
+		and a next pointer, points to the node which is the early one to enter the stack 
+		
+		we also need a head pointer, points to the top node of the stack
+
+		the implement of push operator:
+		
+		\begin{cpp}
+void push(Node* new_element)
+{
+  Node* new_head = new_element;
+  new_head->next = head;
+  head = new_element;
+}
+		\end{cpp}
+
+		for pop operator, one thing needs to notice is that if the stack is empty, we can not execute the pop instruction
+		
+		so we need to check whether the stack is empty or not before removing the top node of the stack
+		
+		the implement of pop operator:
+		
+		\begin{cpp}
+int pop()
+{
+  if(head->next == nullptr)
+    return 0;   // the stack is empty, 
+			// we failed to execute the pop instruction
+  Node* old_head = head;
+  head = head->next;
+  delete old_head;
+  old_head = nullptr;
+  return 1;       // the stack is not empty, 
+			// we successed to execute the pop instruction
+}
+		\end{cpp}
+
+	\end{solution}
+
+	\newpage
+	
+	\part[5] \textbf{Queue Using Linked-Lists}\par
+	Please specify how you implement queue's \ttt{push} and \ttt{pop} operations with linked-list operations. You may directly use the operations you implemented in part (\ref{part:5a}).\par
+	\emph{\textbf{Hint:} Use multiple stacks to implement a queue.}
+	\begin{solution}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Replace the `vspace{2.5in}' with your answer.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%\vspace{2.5in}
+
+		To implement the \ttt{push} and \ttt{pop} operations of queues by using Linked-List
+		
+		we can use two stacks to implement a queue
+		name two stacks A and B (each has their own head pointer: headA ,head B)
+		
+		for the push implement:
+
+		1. we need to check whether stack B is empty
+		   
+			if stack B is not empty, we need to remove all the elements in stack B into stack A with the push and pop implments of stacks
+		
+		2. after stack B becomes empty, we put the new element into stack A
+
+		the implement of push operator:
+		
+		some part of the function is pseudocode(stackA. means the operations of stack A , stackB. means the operations of stack B)
+		
+		\begin{cpp}
+void push(Node* new_element)
+{
+  if(headB->next != nullptr)
+  {
+    while(headB->next != nullptr)
+    {
+      stackA.push(stackB.top());
+      stackB.pop();
+    }
+  }
+  stackA.push(new_element);
+}
+		\end{cpp}
+
+		for the pop implement:
+		
+		1. we need to check whether stack A is empty
+		   
+			if stack A is not empty, we need to remove all the elements in stack A into stack B with the push and pop implments of stacks
+		
+		
+		2. after stack A becomes empty, we need to check whether stack B is empty
+			
+			a. if stack B is empty, then it means that the queue is empty, so we fail to implement pop operate this time
+			
+			b. if stack B is not empty, we just need to pop the top element of stack B
+
+		the top() operate means that get the head element of the stack
+		
+		the implement of pop operator:
+		
+		some part of the function is pseudocode(stackA. means the operations of stack A , stackB. means the operations of stack B)
+		
+		\begin{cpp}
+int pop()
+{
+  if(headA->next != nullptr)  // the stackA is not empty, 
+  {		    // we need to remove the elements into stackB
+    while((headA->next != nullptr)
+    {
+      stackB.push(stackA.top());
+      stackA.pop();
+    }
+  }
+  if(headB->next == nullptr)  // the stackB is empty,
+    return 0;   // we failed to execute the pop instruction
+  stackB.pop();
+  return 1;       // the stackB is not empty, 
+	        // we successed to execute the pop instruction
+}
+		\end{cpp}
+	\end{solution}
+\end{parts}

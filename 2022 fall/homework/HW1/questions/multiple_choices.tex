@@ -1,0 +1,65 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\CorrectChoice', as what you did in the first question. However, there are still
+% many students who would like to handwrite their homework. To make TA's work easier,
+% you have to fill your selected choices in the table below, no matter whether you use 
+% LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+		\hline 
+		(a) & (b) & (c) & (d) \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		C & AD & AC & D \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular} 
+\end{table}
+
+\begin{parts}
+	\part[2] Assume we insert one element before the element at index \(i(0\leqslant i\leqslant n-1)\) in an array of length \(n\) and get a new array of length \(n+1\). What is the minimum number of moves that the elements in the array need in total?
+
+	\begin{choices}
+		\choice \(0\)
+		\choice \(i\)
+		\CorrectChoice \(n-i\)
+		\choice \(n-i-1\)
+	\end{choices}
+
+	\part[2] Which of the following statements about arrays and linked-lists are true?
+
+	\begin{choices}
+		\CorrectChoice Gaining access to the \(k\)-th element in an array takes constant time.
+		\choice Gaining access to the \(k\)-th element in a linked-list takes constant time.
+		\choice Erasing the \(k\)-th element in an array takes constant time.
+		\CorrectChoice With access to the \(k\)-th element, inserting an element after the \(k\)-th element in a linked-list takes constant time.
+	\end{choices}
+
+	\part[2] Please evaluate the following reverse-Polish expressions using stacks. Which of the following expressions are \textbf{illegal}?
+
+	\begin{choices}
+		\CorrectChoice \ttt{1 2 * + 3 5 +}
+		\choice \ttt{4 5 6 / * 1 /}
+		\CorrectChoice \ttt{1 + 2 - 3 + 4}
+		\choice \ttt{7 8 9 1 + - *}
+	\end{choices}
+
+	\part[2] Assume we implement a queue with a circular array indexed from \(0\) to \(n-1\), and the \ttt{front} pointer is currently at index \(m\). We will know that the queue is full if the \ttt{back} pointer is at index \fillin[][0.5in]. (Options below are mapped to integers modulo \(n\): \(\mathbb{Z}_n=\{0,1,2,\cdots,n-1\}\).)
+
+	\begin{choices}
+		\choice \(0\)
+		\choice \(m\)
+		\choice \(n-1\)
+		\CorrectChoice \(m-1\)
+	\end{choices}
+\end{parts}

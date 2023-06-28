@@ -1,0 +1,65 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more}  answer(s). Select all the  answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the  answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\Choice', as what you did in the previous questions. However, there are 
+% still many students who would like to handwrite their homework. To make TA's work 
+% easier, you have to fill your selected choices in the table below, no matter whether 
+% you use LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+		\hline
+		(a) & (b) & (c) & (d) \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		  AC  &  C  & C   & ABCD  \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{parts}
+	\part[2] Which of the followings are true?  
+
+	\begin{choices}
+	    \CorrectChoice One Floyd-Warshall algorithm's step is to find $d^{(k)}_{i,j}$: that is, the shortest path allowing intermediate visits to vertices $v_1,v_2, ...,v_{k-1},v_k$.
+		\choice Like Dijkstra's algorithm, Floyd-Warshall algorithm cannot work with any graph with negative weight edge.
+        \CorrectChoice Floyd-Warshall algorithm can find the shortest path between all pairs of nodes while Dijkstra's algorithm is used to find single-source shortest path.
+		\choice Floyd-Warshall algorithm uses greedy idea.
+	\end{choices}
+	
+	\part[2] Which of the followings are true?  
+
+	\begin{choices}
+		\choice For A* graph search algorithm, it will always return an optimal solution if it exists.
+		\choice For A* graph search algorithm with admissible heuristic, it will always return an optimal solution if it exists.
+		\CorrectChoice For A* graph search algorithm with consistent heuristic, it will always return an optimal solution if it exists.
+		\choice None of the above.
+	\end{choices}
+	
+	\part[2] We run Floyd-Warshall algorithm on a graph with $n$ vertices $v_1,v_2,...,v_{n/2},..., v_n$ ($n$ is even). Suppose all three loops $(k, i, j)$ are iterated from $1$ to $n$. After running at least ______ iterations of the out-most loop $k$, it is ensured to find the shortest path between $v_{n/2}$ and $v_n$. 
+		
+	\begin{choices}
+	    \choice $\frac{n}{2}-1$
+	    \choice $\frac{n}{2}$
+		\CorrectChoice $n-1$
+		\choice $n$
+	\end{choices}
+	
+	\part[2] Which of the following statements about shortest path algorithms is/are true?
+	\begin{choices} 
+	    \CorrectChoice If we modify the outer loop of Dijkstra’s algorithm to execute $|V|-1$ iterations instead of $|V|$ iterations (i.e. only pop $|V|-1$ times from the heap), the algorithm can still find the shortest path on a positive-weighted graph.
+		\CorrectChoice We can modify Bellman-Ford algorithm to detect whether there exists a negative cycle or not in a directed graph.
+		\CorrectChoice If we modify the outer loop of Bellman-Ford algorithm to execute $|V|$ iterations instead of $|V|-1$ iterations (i.e. apply update rule to each edge for $|V|$ times), the algorithm can still find the shortest path on a positive-weighted graph.
+		\CorrectChoice We can modify Floyd-Warshall algorithm to detect whether there exists a negative cycle or not in a directed graph.
+	\end{choices}
+	
+\end{parts}

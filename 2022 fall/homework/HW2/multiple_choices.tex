@@ -1,0 +1,111 @@
+\titledquestion{Multiple Choices}
+
+Each question has \underline{\textbf{one or more}} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choice question is to replace `\choice'
+% with `\CorrectChoice', as you did in the first question. However, there are still
+% many students who would like to handwrite their homework. To make TA's work easier,
+% you have to fill your selected choices in the table below, no matter whether you use 
+% LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+		\hline
+		(a) & (b) & (c) & (d) & (e) & (f) & (g) \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		  AD  &  BCD   &  ACD   &   D  &  C   &  AB   &  AC   \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{parts}
+	\part[2] Which of the following scenarios are appropriate for using hash tables?
+
+	\begin{choices}
+		\CorrectChoice The bookmark in the browser to store your favourite website URLs and their addresses.
+		\choice An output stream buffer used to store the output data before stream flush to optimize write speed.
+		\choice A debugger to trace back function calls of the program.
+		\CorrectChoice An index for the library management application to record the location of the books by their names.
+	\end{choices}
+
+	\part[2] Which of the following statements about the hash table are true?
+
+	\begin{choices}
+		\choice We have a hash table of size \(2n\) with a uniformly distributed hash function. If we store \(n\) elements into the hash table, then with a very high probability, there will be \textbf{no} hash collision.
+		\CorrectChoice In a hash table where collisions are resolved by chaining, an unsuccessful search (i.e. the required element does not exist in the table) takes \(\Theta(1)\) on average if the load factor of the hash table is \(O(1)\).
+		\CorrectChoice Lazy erasing means marking the entry/bin as erased rather than deleting it.
+		\CorrectChoice Rehashing is a technique used to resolve hash collisions.
+	\end{choices}
+
+	\part[2] Consider a table of capacity 11 using open addressing with hash function \(h(k) = k \bmod 11\) and linear probing. After inserting 6 values into an empty hash table, the table is below. Which of the following choices give a possible order of the key insertion sequence?
+
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			Index & 0 & 1 & 2  & 3  & 4  & 5  & 6  & 7  & 8 & 9 & 10 \\
+			\hline
+			Keys  &   &   & 24 & 47 & 26 & 15 & 61 & 49 &   &   &    \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\begin{choices}
+		\CorrectChoice 24, 47, 26, 15, 61, 49
+		\choice 47, 24, 26, 49, 15, 61
+		\CorrectChoice 61, 24, 26, 47, 15, 49
+		\CorrectChoice 26, 61, 15, 49, 24, 47
+	\end{choices}
+
+
+	%%%
+
+	\part[2] Which of the following statements are true?
+
+	\begin{choices}
+		\choice \( f(n) = \Omega(g(n)) \implies g(n) = o(f(n)) \).
+		\choice \( f(n) = O(g(n)) \implies g(n) = \omega(f(n)) \).
+		\choice \( f(n) = \Theta(g(n)) \implies f(n)=o(g(n)) \land g(n) = \omega(f(n)) \).
+		\CorrectChoice \( f(n) = O(g(n)) \land f(n) = \Omega(g(n)) \implies f(n) = \Theta(g(n)) \).
+	\end{choices}
+
+	\part[2] Consider the recurrence relation \(a_n={\left( a_{n-1} \right)}^2\) where \(a_1=2\).
+	Which of the following statements are true?
+	\begin{choices}
+		\choice \( a_n = 2^{n-1} \)
+		\choice \( a_n = O(n) \)
+		\CorrectChoice \( a_n = \Omega\left(3^n\right) \)
+		\choice \( \log a_n = O(n) \)
+	\end{choices}
+
+	\part[2] Suppose that an algorithm's running time is a function \(f(n)\) of the input size \(n\)
+	where \(f(n) = g(n) 2^n \log_2 n\) and \(\frac{1}{2}n^2 \leq g(n) \leq n^2\).
+	Which of the following statements are true?
+
+	\begin{choices}
+		\CorrectChoice The worst case time complexity is in \(\Omega(n)\).
+		\CorrectChoice The best case time complexity is in \(O(n^n)\).
+		\choice The running time is \(\omega(n^2 2^n \ln n)\).
+		\choice The running time is \(o(n^2 2^n\ln n)\).
+	\end{choices}
+
+	\part[2] Your new randomized algorithm for the max-clique problem runs in
+	\[T(n)= f(n) n^{1926} + 1\]
+	time, where \(n\) is the vertices number of the given graph and \(0\leq f(n)\leq 0.618\) is a random number depending on the input.
+	Which of the following statements are true?
+
+	\begin{choices}
+		\CorrectChoice \( T(n) = O\left(2^n\right) \).
+		\choice \( T(n) = \omega\left(n^{1025}\right) \).
+		\CorrectChoice The worst case running time is \( o(n!)\).
+		\choice The best  case running time is \( \Omega\left(\sqrt{\log\log n}\right) \).
+	\end{choices}
+\end{parts}

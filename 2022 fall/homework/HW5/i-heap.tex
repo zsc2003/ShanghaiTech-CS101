@@ -1,0 +1,105 @@
+\titledquestion{$k$-ary Heap}
+
+In class, our professor has mentioned the method of the array storage of a binary heap. In order to have a better view of heap, we decide to extend the idea of a binary heap to a $k$-ary heap. In other words, each node in the heap now has at most $k$ children instead of just two, which is stored in a complete binary tree.
+
+For example, the following heap is a 3-heap.
+~\\
+
+\begin{minipage}{1\textwidth}
+	\centering
+	\begin{tikzpicture}
+	\Tree
+	[.10
+		[.7
+			\edge[]; [.4
+			]
+			\edge[]; [.5
+			]
+			\edge[]; [.6
+			]
+		]
+		[.9
+			\edge[]; [.1 
+			]
+			\edge[]; [.2 
+			]
+			\edge[blank]; \node[blank]{};
+		]
+		[.8
+			\edge[blank]; \node[blank]{};
+			\edge[blank]; \node[blank]{};
+			\edge[blank]; \node[blank]{};
+		]
+	]
+	\end{tikzpicture}
+\end{minipage}%
+
+~\\
+
+\begin{parts}
+  \part[4] If you are given the node with index $i$, what is the index of its parent and its $j$th child ($1 \leq j \leq k$)?
+
+\textbf{Notice: }We assume the root is kept in $A[1]$. For your final answer, please represent it in terms of $k$, $i$ and $j$. Please use flooring or ceiling to ensure that your final answer is as tight as possible if you need, i.e. $\lfloor m \rfloor$, $\lceil m \rceil$.
+
+    \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Replace `\vspace{2in}' with your answer.
+    %\vspace{2in}
+    \\parent: \ $\lfloor \frac{i+k-2}{k} \rfloor$\\
+	j\_th child: $k\cdot(i-1)+j+1$
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+ 
+\newpage
+
+  \part[4] What is the height of a $k$-ary heap of $n$ elements? Please show your steps.
+
+\textbf{Notice: }For your final answer, please represent it in terms of $i$ and $n$. Please use flooring or ceiling to ensure that your final answer is as tight as possible if you need, i.e. $\lfloor m \rfloor$, $\lceil m \rceil$.
+
+    \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Replace `\vspace{2in}' with your answer.
+	%\vspace{2.5in}
+    \\suppose that the $k$-ary heap with $n$ elements has the height $h$\\
+	it is meaningless when $k \leq 1$, so we just let $k \geq 2$\\
+	and the heap is a complete $k$-ary tree, so the number of its node is 
+	more than a perfect $k$-ary tree with height $h-1$, and is less than or equal
+	to a perfect $k$-ary tree with height $h$\\
+	and since a perfect $k$-ary tree with height $h$ has the number of node:\\
+	$1+k+k^2+\cdots+k^h=\frac{k^{h+1}-1}{k-1}$\\
+	so $\frac{k^{(h-1)+1}-1}{k-1} < n \leq \frac{k^{h+1}-1}{k-1}$\\
+	since $k\geq 2$, so $k-1>0$, so simplify it we have\\
+	$log_k{(n(k-1)+1)}-1\leq h < log_k{(n(k-1)+1)}$\\
+	so we can take $h=\lceil log_k{(n(k-1)+1)}\rceil$\\
+	above all, the height of heap is $\lceil log_k{(n(k-1)+1)}-1\rceil$
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+  
+  \part[4] Now we want to study the complexity of operations on $k$-ary heap. Suppose the $Push$, $Pop$ and $Heap-sort$ operations execute the same as what we mentioned in our lectures. Denote the height of the heap as $h$, please analyse the worst-case time complexity of $Push$ and $Pop$ operations on $k$-ary heap in terms of $n,h,k$ with tight bound. For heap-sort, given a built heap, explain why the worst-case number of comparisons is $\Theta(nhk)$.
+
+    \begin{solution}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Replace `\vspace{2in}' with your answer.
+    %\vspace{2.5in}
+    \\let the heap be the min heap.\\
+	$push$ operation: after putting a new node into the heap, the new node need to compare with its father,
+	and if its value is less than its father's, then swap the two nodes.
+	for the worst case, the new node become the root of the heap, with needs to compare $n$ times,\\
+	so the complexity of $push$ is $\Theta(h)$\\
+	\\
+	$pop$ operation: after removing the root of the heap, we put the last node to the root, and it need to compare with all its $k$ children,
+	if there exist some children with less value, then we need to swap the child with minimum value with it.
+	since the node have $k$ children, so we need to compare $k$ times each time. And for the worst case, the node 
+	become the leaf node, so we need to repeat $h$ times above.\\
+	so the complexity of $pop$ operation is $\Theta(k\cdot h)$\\
+	\\
+	for $heap-sort$: for the worst case, each time when we want to pop,
+	the pop operation takes the worst time, and the heap-sort of $n$ elements
+	requires total $n$ pop operations, so it takes time of $n\cdot$ pop()'s complexity
+	=$n\cdot(k\cdot h)=nhk$\\
+	so above all, the worst case of heap-sort's complexity is $\Theta(nhk)$.
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{solution}
+ 
+
+\end{parts}

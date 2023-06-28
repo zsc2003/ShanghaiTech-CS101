@@ -1,0 +1,81 @@
+\titledquestion{BST and AVL tree}
+
+\begin{parts}
+    \part[3] Draw a valid BST of minimum height containing the keys 1, 2, 4, 6, 7, 9, 10.\\\\\\\\
+    \begin{tikzpicture}
+    \Tree
+    [.6
+        \edge[]; [.2
+                \edge[]; [.1 ]
+                \edge[]; [.4 ]
+            ]
+        \edge[]; [.9
+                \edge[]; [.7 ]
+                \edge[]; [.10 ]
+            ]
+    ]
+    \end{tikzpicture}
+    \vspace{1cm}
+    
+    \part[4] Given an empty AVL tree, insert the sequence of integers $15, 20, 23, 10, 13, 7, 30, 25$ from left to right into the AVL tree. Draw the final AVL tree.\\\\\\\\
+    
+    \begin{tikzpicture}
+    \Tree
+    [.13
+        \edge[]; [.10
+                \edge[]; [.7 ]
+                \edge[blank]; \node[blank]{};
+            ]
+        \edge[]; [.20
+                \edge[]; [.15 ]
+                \edge[]; [.25
+                    \edge[]; [.23 ]
+                    \edge[]; [.30 ]
+                ]
+            ]
+    ]
+    \end{tikzpicture}
+    \vspace{1cm}
+   
+    \part[2]For the final AVL tree in the question (b), delete $7$. Draw the AVL tree after deletion.
+    \begin{tikzpicture}
+    \Tree
+    [.20
+        \edge[]; [.13
+                \edge[]; [.10 ]
+                \edge[]; [.15 ]
+            ]
+        \edge[]; [.25
+                \edge[]; [.23 ]
+                \edge[]; [.30 ]
+            ]
+    ]
+    \end{tikzpicture}
+    \vspace{1cm}
+   
+   \newpage
+   
+   \part[5]For an AVL tree, define D = the number of descendants of the left child of the root - the number of descendants of the right child of the root. Then what is the maximum of D for an AVL tree with height n? 
+   
+   $D_{max}=k_1\times 2^n+k_2\times B^n+k_3\times(-\frac{1}{B})^n$, please write down the value of B and $k_i$.
+   
+   since we want to make $D_{max}$\\
+   so we can make the number of descendants of the left child of the root as big as possible,\\
+   and make the number of descendants of the right child of the root as small as possible.\\
+   for the left child, the max situation is that the left subtree is a perfect tree with the height of $n-1$,
+   and since its height is $n-1$,so its number of nodes is $2^n-1$.\\
+   and for right subtree, the min number of nodes to mention the tree as a AVL tree,\\
+   so the min height of the right subtree is $n-2$, and the number is min nodes with height of $n-2$ is  
+   $F(n-2)=\frac{1}{\sqrt{5}}[(\frac{\sqrt{5}+1}{2})^{n+1}-(\frac{1-\sqrt{5}}{2})^{n+1}]-1$\\
+   so $D_{max}=$left\_max\_number-right\_min\_number$=2^n-1-\{\frac{1}{\sqrt{5}}[(\frac{\sqrt{5}+1}{2})^{n+1}-(\frac{1-\sqrt{5}}{2})^{n+1}]-1\}$\\
+   $=2^n-\frac{1}{\sqrt{5}}(\frac{\sqrt{5}+1}{2})^{n+1}+\frac{1}{\sqrt{5}}(-\frac{1}{\frac{\sqrt{5}+1}{2}})^{n+1}$\\
+   $=2^n-\frac{1+\sqrt{5}}{2\sqrt{5}}(\frac{\sqrt{5}+1}{2})^n+\frac{1-\sqrt{5}}{2\sqrt{5}}(-\frac{1}{\frac{\sqrt{5}+1}{2}})^n$\\
+   $=k_1\times 2^n+k_2\times B^n+k_3\times(-\frac{1}{B})^n$\\\\
+   so above all\\
+   $k_1=1$\\
+   $k_2=-\frac{1+\sqrt{5}}{2\sqrt{5}}$\\
+   $k_3=\frac{1-\sqrt{5}}{2\sqrt{5}}$\\
+   $B=\frac{\sqrt{5}+1}{2}$
+   
+
+\end{parts}

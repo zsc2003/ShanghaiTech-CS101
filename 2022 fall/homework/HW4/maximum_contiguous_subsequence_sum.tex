@@ -1,0 +1,105 @@
+\titledquestion{Maximum Contiguous Subsequence Sum}[8]
+
+Given an array $\langle a_1,\cdots,a_n\rangle$ of length $n$ with both \textbf{positive} and \textbf{negative} elements, we will design a \textbf{divide and conquer} algorithm to find the maximum contiguous subsequence sum of $a$. We say $m$ is the  maximum contiguous subsequence sum of $a$ such that for any integer pair $(l,r)$ ($1 \le l \le r \le n$), 
+$$
+m \ge \sum_{i = l} ^ r a_i.
+$$
+The time complexity should be $\Theta(n \log n)$.
+\begin{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Replace `\vspace{2in}' with your answer.
+%\vspace{6in}
+\paragraph{Algorithm Design:} 
+after divide the sequence into two parts from the middle
+
+the maximum contiguous subsequence may have three possible location distributions
+\begin{enumerate}
+	\item the whole subsequence is in the left part
+	\item the whole subsequence is in the right part
+	\item the subsequence is in both left part and right part, and it get through the middle
+\end{enumerate}
+
+\iffalse
+so we need to maintain four variables during the divide and conquer
+
+they are the $maxn, lmax, rmax, sum$
+
+\begin{itemize}
+	\item $sum$ , it is the easist one, just the sum of all numbers of the subsequence,
+	and we can maintain it by adding left-subsequence's $sum+$ right-subsequence's $sum$
+
+	\item $lmax$, it is the maximum contiguous subsequence start from the left point of the subsequence,
+	there are two possibilites:
+	
+	\begin{itemize}
+		\item it may be the left subsequence's $lmax$
+		\item it may be the whole left sequence with part of the right-subsequence
+	\end{itemize}
+	
+	and we can maintain it by acquiring the maximum one bewteen left-subsequence's $lmax$ and (left-subsequence's $sum+$ right-subsequence's $lmax$	)
+
+	\item $rmax$, it is similar to the $lmax$,
+	so just let $rmax=max\{$ right-subsequence's $rmax$ , (right-subsequence's $sum+$ left-subsequence's $rmax)\}$
+	
+	\item $maxn$, it is the maximum contiguous subsequence of the whole subsequence,
+	from the discuss at the begining, we can maintain it by letting 
+	
+	$maxn=max\{ left-subsequence's \ maxn , right-subsequence's \ maxn , left-subsequence's \ rmax \ +\  right-subsequence's\ lmax\}$
+	
+\end{itemize}
+
+and at last, we only need to know the $maxn$ of the whole sequence.
+
+\fi
+
+and for the first two situations,
+for the left-subsequence and right-subsequence, they have the samilar situation above
+
+and for the third situation, we just need to start at the middle point, expand to the left and right respectively,
+and find the maximum contiguous subsequence respectively, then sum them up.
+
+so we can recursively divide and conquer the problem
+\paragraph{Pseudocode :}
+$left$ and $right$ are indecies of the leftmost and rightmost elements in given array $a$ respectively.
+\begin{algorithm}[H]
+	\begin{algorithmic}[1]
+		\Function {get\_max\_contiguous\_subsequence}{$a$, $left$, $right$}
+		\If {$right == left$} 
+		\State \Return max(0,a[left])
+		\EndIf
+		\State $mid\gets \lfloor (left + right)/2 \rfloor$
+		\State $left\_subsequence\gets get\_max\_contiguous\_subsequence(a,left,mid)$
+		\State $right\_subsequence\gets get\_max\_contiguous\_subsequence(a,mid+1,right)$
+
+		define sum=0,lmax=0
+
+		for(i from mid to left):
+
+		\ \ \ \ \	sum+=a[i]
+
+		\ \ \ \ \ 	lmax=max(lmax,sum)
+
+		similarly, define sum=0,rmax=0
+
+		for(i from (mid+1) to right):
+
+		\ \ \ \ \ 	sum+=a[i]
+
+		\ \ \ \ \ 	rmax=max(rmax,sum)
+		\State $mid\_subsequence\gets (lmax+rmax)$
+
+		\State $maxn\gets max\{left\_subsequence, right\_subsequence, mid\_subsequence\}$
+		\State \Return maxn
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Time Complexity Analysis:}
+During each recursion, the calculation of $mid$ and comparison can be done in constant time, 
+and getting the $lmax$ and $rmax$ takes the time of the sequence's length, which is exactly $\Theta(n)$. We will take both half part of the sequence, thus there are two times of each subproblem.
+$$T(n) = 2\cdot T(\frac{n}{2})+\Theta(n)$$
+Therefore, by the Master Theorem,
+
+$a=2,b=2,\log_{b}{a}=1=d$, so $T(n) = \Theta(nlogn)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{solution}

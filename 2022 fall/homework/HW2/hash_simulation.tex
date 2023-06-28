@@ -1,0 +1,110 @@
+\titledquestion{Hash table insertion simulation}
+Given a hash table with \(M = 11\) slots and hash function \(h_1(x) = (3x+6)\bmod 11\). We want to insert integer keys \(A = [33, 20, 2, 16, 23, 48, 35, 6, 31, 44]\).
+\begin{parts}
+  \part[4]\textbf{Chained hash table}\par
+  \begin{enumerate}[i.]
+    \item Suppose that collisions are resolved through chaining. If there exists a collision when inserting a key, the inserted key (collision) is stored at the end of a chain. Below is the hash table implemented by the array, and we want to insert all the keys into it. If a chain exists, please write the keys in the same order as they were inserted in the same cell and separate them by a comma.
+      \begin{table}[ht]
+        \begin{tabular}{|l|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|}
+          \hline
+          Index & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+          \hline
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          % YOUR ANSWER HERE.
+          Keys  & 20,31  & 2,35  &  6 &   &   &   &  33,44 & 48  &   & 23  & 16   \\
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          \hline
+        \end{tabular}
+        \caption{Chained hash table}
+      \end{table}
+    \item What is the load factor \(\lambda\)?
+    \begin{solution}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      % Replace \vspace{1.5cm} with your answer. %
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %\vspace{1.5cm}
+      \(n=10\)
+
+      \(M=11\)
+
+      \(\lambda=\frac{n}{M}=\frac{10}{11}=0.909\)
+    
+    \end{solution}
+  \end{enumerate}
+
+
+  \part[5]\textbf{Linear probing hash table}\par
+  \begin{enumerate}[i.]
+    \item Suppose that collisions are resolved through linear probing. The integer key values listed below will be inserted in the order given. Write down the index of the home slot (the slot to which the key hashes before any probing) and the probe sequence (do not write the home slot again) for each key. If there's no probing, leave the cell blank.
+    \begin{table}[ht]
+      \begin{tabular}{|p{1.7cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|}
+        \hline
+        Key Value      & 33 & 20 & 2 & 16 & 23 & 48 & 35 & 6 & 31 & 44 \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % YOUR ANSWER HERE.
+        Home Slot      &  6  &  0  & 1  & 10   &  9  &  7  & 1   & 2  & 0   & 6   \\
+        \hline
+        Probe Sequence &    &    &   &    &    &    &  2  & 3  & 1,2,3,4   &  7,8  \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \hline
+      \end{tabular}
+      \caption{Linear probing sequence}
+    \end{table}
+    \item Write down the content of the hash table after all the insertions.
+      \begin{table}[ht]
+        \begin{tabular}{|l|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|}
+          \hline
+          Index & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+          \hline
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          % YOUR ANSWER HERE.
+          Keys  & 20  & 2  & 35  & 6  & 31  &   & 33  &  48 & 44  & 23  & 16   \\
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          \hline
+        \end{tabular}
+        \caption{Linear probing hash table}
+      \end{table}
+  \end{enumerate}
+
+  \part[5]\textbf{Double hashing hash table}\par
+  \begin{enumerate}[i.]
+    \item Suppose that collisions are resolved through double hashing. The probing function is described as
+    \[
+      H_i(k) = (h_1(k) + i\cdot h_2(k)) \bmod 11
+    \]
+    for any give key value \(k\) in the \(i\)-th probing (\(i\) starts from \(0\)). \(h_2(k)\) is the second hash function defined as
+    \[h_2(k) = 7 - (k \bmod 7)\]
+    Write down the index of the home slot and the probe sequence for each key.
+    \begin{table}[ht]
+      \begin{tabular}{|p{1.7cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|}
+        \hline
+        Key Value      & 33 & 20 & 2 & 16 & 23 & 48 & 35 & 6 & 31 & 44 \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % YOUR ANSWER HERE.
+        Home Slot      &  6  &  0  &  1 &   10 & 9   & 7   &  1  & 2  &  0  & 6   \\
+        \hline
+        Probe Sequence &    &    &   &    &    &    &  8  &   &  4  &  0,5  \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \hline
+      \end{tabular}
+      \caption{Double hash sequence}
+    \end{table}
+    \item Write down the content of the hash table after all the insertions.
+      \begin{table}[ht]
+        \begin{tabular}{|l|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|p{0.95cm}|}
+          \hline
+          Index & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+          \hline
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          % YOUR ANSWER HERE.
+          Keys  &  20 &  2 & 6  &   & 31  & 44  & 33  & 48  &  35 & 23  & 16   \\
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          \hline
+        \end{tabular}
+        \caption{Double hashing hash table}
+      \end{table}
+  \end{enumerate}
+
+\end{parts}

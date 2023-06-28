@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "forward_list": "cpp",
+        "random": "cpp",
+        "iterator": "cpp",
+        "algorithm": "cpp",
+        "xiosbase": "cpp",
+        "xutility": "cpp",
+        "list": "cpp"
+    }
+}

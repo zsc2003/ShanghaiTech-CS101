@@ -1,0 +1,38 @@
+type: default
+time: 2000ms
+memory: 512MB
+checker_type: testlib
+checker: chk.cc
+user_extra_files:
+  - dsa.h
+  - compile.sh
+  - main.cc
+subtasks:
+  - score: 100
+    id: 1
+    type: sum
+    cases:
+      - input: dsa.hashtable1.in
+        output: dsa.hashtable1.out
+      - input: dsa.queue1.in
+        output: dsa.queue1.out
+      - input: dsa.stack1.in
+        output: dsa.stack1.out
+      - input: dsa.hashtable2.in
+        output: dsa.hashtable2.out
+      - input: dsa.queue2.in
+        output: dsa.queue2.out
+      - input: dsa.stack2.in
+        output: dsa.stack2.out
+      - input: dsa.hashtable3.in
+        output: dsa.hashtable3.out
+      - input: dsa.queue3.in
+        output: dsa.queue3.out
+      - input: dsa.stack3.in
+        output: dsa.stack3.out
+      - input: dsa.hashtable4.in
+        output: dsa.hashtable4.out
+langs:
+  - cc.cc17o2
+  - cc
+

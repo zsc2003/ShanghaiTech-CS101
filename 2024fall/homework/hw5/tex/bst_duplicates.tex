@@ -1,0 +1,103 @@
+\titledquestion{BST with Duplicates}
+
+In our lecture, we require each BST node stands for a single unique element. However, in this question we are talking about BST with duplicated elements. That is, we need to maintain how many identical elements are in the BST. Now, each node may stands for multiple elements with the same value, and we call it the \ttt{count} of a node. Here we assume the value is \ttt{int} type. 
+
+First we give the definition of our \ttt{Node} struct.
+
+\begin{cpp}
+struct Node {
+    int val;    // The value of the node.
+    int sumCount;    // The number of all elements in the sub-tree
+    Node *left, *right; //the left and right child.
+};
+\end{cpp}
+
+Note that \ttt{sumCount} stands for the number of all elements in the \textbf{entire sub-tree}, i.e. the sum of \ttt{count} in the entire sub-tree. You will see why we use this definition in the following questions.
+
+For example, if root $r$ has two children $a$ and $b$, and neither $a$ nor $b$ has a child. Suppose $r\ttt{.count}=n_r$, $a\ttt{.count}=n_a$ and $b\ttt{.count}=n_b$. Then $r\ttt{.sumCount}=n_r+n_a+n_b$, $a\ttt{.sumCount}=n_a$, and $b\ttt{.sumCount}=n_b$.
+
+\begin{parts}
+    \part[3] After figuring out the definition of member variable \ttt{sumCount}, you need to design a function that calculates the \ttt{count} of a node, using \ttt{sumCount} variable. Please complete this function below, and make sure you do not access \ttt{nullptr}.
+
+\begin{cpp}
+// return how many elements a single node stands for
+int get_count(Node *a){
+    if(a == nullptr) return 0;
+    int ans = /* (1) */ ;
+    if(a->left != nullptr) ans = /* (2) */ ;
+    if(a->right != nullptr) ans = /* (3) */ ;
+    return ans;
+}
+\end{cpp}
+
+\begin{solution}
+    \vspace{1in}
+\end{solution}
+
+
+\part[4] Given a value $v$, we want to figure out how many elements are no more than $v$. Complete the function below, and make sure you do not access \ttt{nullptr}. You may use \ttt{get\_count} function if needed.
+By calling \ttt{count\_no\_more\_than(root, v)}, we can get the number of such elements in the entire BST.
+
+\begin{cpp}
+// return how many elements are no more than v.
+int count_no_more_than(Node *a, int v){
+    if(a == nullptr) return 0;
+    int ans = 0, tmp = 0;
+    if (a->left != nullptr)
+        tmp = /* (1) */ ;
+    if(v < a->value)
+        ans = /* (2) */ ;
+    else if(v > a->value)
+        ans = /* (3) */ ;
+    else
+        ans = /* (4) */ ;
+    return ans;
+}    
+\end{cpp}
+
+\begin{solution}
+    \vspace{0.8in}
+\end{solution}
+
+
+\part[2] Now suppose you have finished the following two functions correctly. Given the root node of our BST, and two integers $l$ and $r$, how do you find out the number of elements in the range $[l,r]$? Use variables \ttt{root}, \ttt{l}, and \ttt{r}, and function \ttt{count\_no\_more\_than} to write an expression that computes the desired number.
+
+\begin{cpp}
+count_in_l_to_r = /* Your code */ ;
+\end{cpp}
+
+\begin{solution}
+    \vspace{0.5in}
+\end{solution}
+
+\part[3] \textbf{True or False}
+
+\begin{enumerate}
+    \item[(i)] If we insert an element into our BST with duplicates, we may need to modify multiple nodes.
+    \hfill \parbox[t]{1.50in}{
+    \begin{oneparcheckboxes}
+        \choice True
+        \choice False
+    \end{oneparcheckboxes}
+    }
+    
+    \item[(ii)] If we delete a node in our BST with duplicates, the nodes that we need to modify are the nodes on the path from this node to the root.
+    \hfill \parbox[t]{1.50in}{
+    \begin{oneparcheckboxes}
+        \choice True
+        \choice False
+    \end{oneparcheckboxes}
+    }
+
+    \item[(iii)] If we use member variable \ttt{count} instead of \ttt{sumCount}, we can still run \ttt{count\_no\_more\_than} in $O(h)$ time, where $h$ is the height of the tree.
+    \hfill \parbox[t]{1.50in}{
+    \begin{oneparcheckboxes}
+        \choice True
+        \choice False
+    \end{oneparcheckboxes}
+    }
+\end{enumerate}
+
+
+
+\end{parts}

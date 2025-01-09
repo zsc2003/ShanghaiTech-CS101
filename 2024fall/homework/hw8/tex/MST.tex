@@ -1,0 +1,46 @@
+\titledquestion{Simulation of MST}
+Given a graph $G$ as below: \\
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,auto] 
+    \node[circle,draw] (S) {S}; 
+    \node[circle,draw] (A) [right=9cm of S] {A}; 
+    \node[circle,draw] (B) [right=2cm of S] {B}; 
+    \node[circle,draw] (C) [below=4cm of S] {C};
+    \node[circle,draw] (D) [right=4cm of C] {D}; 
+    \node[circle,draw] (E) [below right=1.5cm and 6cm of S] {E}; 
+    \node[circle,draw] (F) [right=9cm of C] {F};
+    \path[-] 
+    (D) edge [swap] node {11} (F)
+    (D) edge [bend right=35] node {25} (A)
+    (F) edge [swap] node {69} (A)
+    (A) edge [swap] node {48} (E)
+    (D) edge node {76} (E)
+    (A) edge [swap] node {30} (B)
+    (B) edge [swap] node {52} (E)
+    (B) edge [swap] node {19} (D)
+    (D) edge node {15} (C)
+    (C) edge node {22} (B)
+    (C) edge node {49} (S)
+    (B) edge [swap] node {24} (S);
+\end{tikzpicture}
+\begin{parts}
+    \part[6]
+    Use Prim's algorithm to find the Minimal Spanning Tree of the graph. You should select $S$ as the root node. Write the visit order of all nodes. \\
+    \textbf{S}$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]
+    \part[6] Use Kruskal's algorithm to find the Minimal Spanning Tree of the graph.  Write the edges chosen in order. \\
+    \fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]$\to$\fillin[][2cm]
+    \part[2] Are the MST obtained by Prim's algorithm and the one obtained by Kruskal's algorithm the same? (\textbf{Please write "Yes" or "No".}) 
+    \fillin[][2cm]
+    
+    \part[6] Let's modify the weights of some edges. Please give out the maximum and minimum weight of the edges given that won't change the MST. (You can write $+\infty$ or $-\infty$ if there is no maximum or minimum weight. You should consider every method of breaking ties.)
+    \begin{itemize}
+        \item AD: 
+        Maximum: \fillin[]
+        Minimum: \fillin[]
+        \item BC:
+        Maximum: \fillin[]
+        Minimum: \fillin[]
+        \item DE:
+        Maximum: \fillin[]
+        Minimum: \fillin[]
+    \end{itemize}
+\end{parts}

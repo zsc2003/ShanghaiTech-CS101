@@ -1,0 +1,129 @@
+\documentclass[11pt, addpoints, answers]{exam}
+
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{subfigure}
+\usetikzlibrary{positioning}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows.meta}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+% For inserting code snippets.
+\usepackage{listings}
+\lstset{
+    columns = fixed,
+    numbers=left,
+    basewidth = {0.5em},
+    breaklines = true,
+    backgroundcolor = \color{white},
+    keywordstyle = \color[RGB]{40, 40, 255},
+    numberstyle = \footnotesize\color{darkgray},
+    commentstyle = \ttfamily\color{violet},
+    basicstyle = \ttfamily,
+    stringstyle = \ttfamily\color[RGB]{128, 0, 0},
+    showstringspaces = false,
+    language = {[11]C++},
+    escapechar = \@
+}
+\lstnewenvironment{cpp}[1][]{\lstset{language = {[11]C++}, #1}}{}
+
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parskip}{1.25\baselineskip}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+    blank/.style={draw=none},
+    edge from parent/.style=
+    {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+    level distance=1.2cm}
+
+
+% headers, footers, titles
+\newcommand{\CourseName}{CS101 Algorithms and Data Structures}
+\newcommand{\HomeworkNO}{11}
+\newcommand{\DueDate}{December 22, 2024}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\runningheader{CS101 Fall24}{Homework \HomeworkNO}{Due on: \DueDate}
+\runningfooter{}{\thepage}{}
+
+\title{
+    \vspace{25pt}
+    \LARGE ShanghaiTech University \\
+    \bigskip
+    \textbf{\CourseName} \\
+    \textbf{Fall 2024}   \\
+    \bigskip
+    Homework \HomeworkNO
+}
+\author{}
+\date{Due date: \DueDate, at 23:59}
+
+% formats of questions, choices, points, etc.
+\qformat{\bf\thequestion. (\totalpoints\ points) \thequestiontitle\hfill}
+\pointname{'}
+\bonuspointname{' (bonus)}
+% \CorrectChoiceEmphasis{\bf\color{blue}}
+% \SolutionEmphasis{\color{blue}}
+
+% We frequently use this font.
+\newcommand{\ttt}{\texttt}
+\newcommand{\bluett}[1]{\textcolor{blue}{\ttt{#1}}}
+
+\newcommand*{\TrueFalse}[1]{%
+\ifprintanswers
+    \ifthenelse{\equal{#1}{T}}{
+        \hfill \parbox[t]{1.50in}{\begin{oneparcheckboxes} \CorrectChoice True \choice False \end{oneparcheckboxes}}
+    }{
+        \hfill \parbox[t]{1.50in}{\begin{oneparcheckboxes} \choice True \CorrectChoice False \end{oneparcheckboxes}}
+    }
+\else
+    \hfill \parbox[t]{1.50in}{\begin{oneparcheckboxes} \choice True  \choice False \end{oneparcheckboxes}}
+\fi
+} 
+
+
+\begin{document}
+
+\maketitle
+
+\vspace{50pt}
+
+\begin{enumerate}
+    \item Please write your solutions in English.
+    \item Submit your solutions to Gradescope.
+    \item Set your FULL name to your Chinese name and your STUDENT ID correctly in Gradescope account settings.
+    \item If you want to submit a handwritten version, scan it clearly. \ttt{CamScanner} is recommended.
+    \item We recommend you to write in \LaTeX.
+    \item When submitting, match your solutions to the problems correctly.
+    \item No late submission will be accepted.
+    \item Violations to any of the above may result in zero points.
+\end{enumerate}
+\newpage
+
+\include{0_instruction}
+
+\begin{questions}
+
+% \include{1_multiple_choices}
+\include{1_example}
+\include{2_coins_changing}
+\include{3_happiness}
+\include{4_greedy_doesnt_work}
+\include{5_dna}
+\include{6_pizza_partitioning}
+
+\end{questions}
+
+\end{document}

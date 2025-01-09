@@ -1,0 +1,113 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choice question is to replace `\choice'
+% with `\choice', as what you did in the first question. However, there are still
+% many students who would like to handwrite their homework. To make TA's work easier,
+% you have to fill in your selected choices in the table below, no matter whether you use 
+% LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+		\hline 
+		(a) & (b) & (c) & (d) & (e) \\
+		\hline
+  		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		   &  &  &  &  \\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\hline
+	\end{tabular} 
+\end{table}
+
+\begin{parts}
+
+
+\part[2] Which of the following statement(s) is/are true for an AVL tree?
+\begin{choices}
+    \choice Inserting an item can unbalance non-consecutive (not directly connected) nodes on the path from the root to the inserted item before the restructuring.
+    \choice Inserting an item can cause at most one node imbalanced before the restructuring.
+    \choice Only at most one node-restructuring has to be performed after inserting an item.
+    \choice Removing an item in leaf nodes can cause at most one node imbalanced before the restructuring. 
+    
+\end{choices}
+
+\part[2] Consider an AVL tree whose height is h, which of the following is/are true? 
+
+\begin{choices}
+
+\choice This tree contains $\Omega(\alpha^h)$ nodes, where $\alpha = \dfrac{\sqrt{5}-1}{2}$.
+
+\choice This tree contains $\Theta(2^h)$ nodes.
+
+\choice This tree contains $O(h)$ nodes in the worst case.
+
+\choice None of them above.
+
+\end{choices}
+
+\part[2]  Which of the following about the comparison between AVL-tree and BST is/are true? Suppose $n$ is the number of nodes in the tree.
+
+\begin{choices}
+    
+    \choice The cost of searching an AVL tree is $O(\log n)$ but that of a complete binary search tree is $O(n \log n)$.
+
+    \choice The cost of searching an AVL tree is $\Theta(\log n)$ but that of a binary search tree is $O(n)$.
+    
+    \choice The cost of searching a binary search tree with height h is $O(h)$ but that of an AVL tree is $O(\log n)$.
+    
+    \choice The corrections of both Insertion and Erasion cost $\Theta(\log n)$ time in worst cases in an AVL tree.
+
+\end{choices}
+
+\part[2] Which of the following statements is/are true for an AVL tree? Here one balance correction means a single rotation (in left-left or right-right cases) or a double rotation (in left-right or right-left cases). 
+
+\begin{choices}
+    \choice In an AVL tree, during the insert operation there are at most two rotations needed.
+    \choice Inserting an item causes at most one node imbalance before checking if any balance correction is needed.
+    \choice At most one balance correction has to be performed after inserting an item.
+    \choice At most one balance correction has to be performed after removing an item.
+\end{choices}
+
+\part[2] You are given an AVL tree as a blow. Suppose we promote the minimum element in the right sub-tree when erasing a node with 2 children. Which of the following operation sequences will cause 2 imbalances that must be corrected in total in order to rebalance the tree?
+
+\begin{tikzpicture}
+\Tree
+[.6
+    [.3
+        \edge[];[.2
+        ]
+        \edge[blank]; \node[blank]{};
+    ]
+    [.14
+        \edge[];[.10
+            \edge[];[.7
+            ]
+            \edge[];[.11
+            ]
+        ]
+        \edge[];[.16
+            \edge[blank]; \node[blank]{};
+            \edge[];[.18
+            ]
+        ]
+    ]
+]
+\end{tikzpicture}
+
+\begin{choices}
+    \choice Erase $2$, $6$.
+    \choice Insert $4$, $5$, $12$. Erase $2$.
+    \choice Erase $6$, $2$, $3$. Insert $20$.
+    \choice Insert $1$, $0$, $4$, $13$, $19$.
+\end{choices}
+
+\end{parts} 
+
+\newpage

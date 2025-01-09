@@ -1,0 +1,71 @@
+\titledquestion{Array Storage}
+Unlike arbitrary n-ary trees, binary trees can be easily stored within an array.
+
+\begin{parts}
+    \part[6] Complete the code below:
+    \begin{verbatim}
+    struct BinaryTree {
+        int data[SIZE]{};
+        
+        // Return the index of the root node
+        size_t head() {
+            return 1;
+        }
+        
+        // Return the index of the left child
+        size_t left_child_idx(size_t idx) {
+            return ________________;   
+            // Fill in the formula for the left child index
+        }
+
+        // Return the index of the right child
+        size_t right_child_idx(size_t idx) {
+            return ________________;   
+            // Fill in the formula for the right child index
+        }
+
+        // Return the index of the parent node
+        size_t parent_idx(size_t idx) {
+            return ________________;   
+            // Fill in the formula for the parent index
+        }
+    };
+    \end{verbatim}
+    \newpage
+    \begin{solution}
+    \begin{verbatim}
+        size_t left_child_idx(size_t idx) {
+        
+            return ___________________________; 
+            
+        }
+        size_t right_child_idx(size_t idx) {
+        
+            return ___________________________;   
+            
+        }
+        size_t parent_idx(size_t idx) {
+        
+            return ___________________________;   
+            
+        }
+    \end{verbatim}
+    \end{solution}
+
+    \newpage
+    \part[3] To ensure the code functions correctly for all trees with $n$ nodes, what should the minimum \textbf{SIZE} be? You should justify your answer correctly.
+
+    \begin{solution}
+    \vspace{8cm}
+    \end{solution}
+
+    \part[4] Consider a complete binary tree, the maximum index in this array is 2025, what is the height and number of leaf nodes of this tree? You should justify your answer correctly.
+
+    \begin{solution}
+    \vspace{8cm}
+    \end{solution}
+
+    
+    
+\end{parts}
+

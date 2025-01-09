@@ -1,0 +1,29 @@
+\titledquestion{Friend or enemy?}[6]
+\raggedright
+Consider a set of \( n \) individuals, each of whom can have two types of relationships with others: friendship and enmity. It is also possible for individuals to have no relationship at all, or even to be both friends and enemies simultaneously. The relationships satisfy the following properties:
+
+\begin{enumerate}
+    \item If person \( a_i \) is a friend of person \( a_j \), then person \( a_j \) is also a friend of person \( a_i \) (friendship is symmetric).
+    \item If person \( a_i \) is an enemy of person \( a_j \), then person \( a_j \) is also an enemy of person \( a_i \) (enmity is symmetric).
+    \item Friends of friends are also considered friends. That is, if person \( a_i \) is a friend of person \( a_j \) and person \( a_j \) is a friend with person \( a_k \), then person \( a_i \) is a friend of person \( a_k \).
+    \item Enemies of enemies are considered friends. That is, if person \( a_i \) is an enemy of person \( a_j \) and person \( a_j \) is an enemy of person \( a_k \), then person \( a_i \) is a friend of person \( a_k \).
+\end{enumerate}
+
+Given a set of relationships represented as:
+
+\begin{itemize}
+    \item A set of friendship pairs \( F \subseteq \{(a_i, a_j) \mid 1 \leq i, j \leq n, i \neq j\} \)
+    \item A set of enmity pairs \( E \subseteq \{(a_i, a_j) \mid 1 \leq i, j \leq n, i \neq j\} \)
+\end{itemize}
+
+\textbf{Your task is to determine the number of distinct groups that can be formed, where each group consists of individuals who are all friends with each other.} (When forming groups, we do not need to consider enemy relationships.)
+
+You should ensure that your algorithm has a time complexity of $O((m+n)\alpha(n))$, where $m$ is $|F|+|E|$ and $n$ is the number of individuals, but no proof is required.
+
+\textit{Hint: You may consider representing each individual as two nodes: one for their friendships and one for their enmities. Utilize the disjoint set to efficiently manage and merge these relationships.}
+
+\raggedright
+\begin{solution}
+\vspace{150pt}
+
+\end{solution}

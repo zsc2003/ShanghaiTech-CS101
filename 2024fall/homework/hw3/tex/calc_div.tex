@@ -1,0 +1,120 @@
+\titledquestion{Calculating with dividing}
+
+In this problem, we will give out some recurrence relation of the run-time $T_i(n)$. We want you to find the asymptotic order of $T_i(n)$ i.e. find a function $f(n)$ s.t. $T_i(n) = \Theta(f(n))$, depending on the recurrence relation given. You should justify your answer correctly.
+
+As a reminder, to receive the points, please keep in mind that:
+
+\begin{itemize}
+    \item[1.] Use $T_i(n)$ to represent the run-time in $i$-th problem.
+    \item[2.] Make sure your upper bound for $T_i(n)$ is tight enough.
+    \item[3.] Make sure you have a reasonable explanation other than just giving out an assumption and verifying it by your sense. 
+    \item[4.] For your convenience, you can always assume $T_i(n)$ is increasing. (May Not Strictly)
+\end{itemize}
+
+Hint: Guessing the upper bound of $T_i(n)$ and then proof it rigorously (e.g. using mathematical induction) is acceptable. However, simply plugging your guessed upper bound into the recurrence relation and verifying whether your guessed upper bound makes sense or not will make you lose points for reasoning. If you find it hard to prove something straight, try induction instead.
+
+In each subproblem, you may ignore any issue arising from whether a number is an integer as well as assuming \(T_i(0) = 0\) and \(T_i(1) = 1\). You can make use of the Master Theorem, Recursion Tree, or other reasonable approaches to solve the following recurrence relations. 
+
+\begin{parts}
+    \part[4] $T_1(n) = \begin{cases}\Theta(1),& 1\leq n\leq k\\ T_1(k) + T_1(n - k) + \Theta(n),& n> k \end{cases}.$ ($k$ is a constant.)
+    
+    \begin{solution}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+    
+    \part[4] 
+        $T_2(n) = T_2(\alpha n) + T_2((1 - \alpha)n) + \Theta(n)$ 
+    \begin{solution}\\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+    
+    \part[4] $T_3(n) = 2T_3(\sqrt{n}) + \Theta(\log n)$.
+    \begin{solution}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+
+    \part[4] $T_4(n) = T_4(\alpha n) + T_4(\beta n) + \Theta(n),(0<\alpha+\beta < 1,\alpha,\beta>0)$ \\
+    \textbf{Hint:} 
+    \begin{enumerate}
+        \item Think out binomial theorem. You may try to expand the expression using the recurrence relation several times. Find out the similarities between them.
+        \item Cases in $(b)$ are different from those in $(d)$ since the geometric series $\sum _ {i = 0} ^ \infty (\alpha + \beta)^i$ converges only when $\left| \alpha + \beta \right| < 1$.
+    \end{enumerate}
+    \begin{solution}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+\end{parts}

@@ -1,0 +1,44 @@
+\titledquestion{Problem Analysis}
+
+Consider the following basic problem:
+
+You're given an array $A$ consisting of n integers $A[1], A[2], ..., A[n]$. You'd like to output a two-dimensional $n$-by-$n$ array $B$ in which $B[i, j]$ (for $i < j$) contains the sum of array entries $A[i]$ through $A[j]$ -- that is, the sum $A[i] + A[i+1] + ... + A[j]$. (the value of array entry $B[i, j]$ is left unspecified whenever $i \ge j$.)
+
+Here's the pseudocode of a simple algorithm to solve this problem. (Initially $B[i,j]=0$ for all valid $i,j$)
+
+\begin{algorithmic}[1]
+\For{$i = 1$ \textbf{to} $n$}
+    \For{$j = i+1$ \textbf{to} $n$}
+        \For{$k = i$ \textbf{to} $j$}
+            \State $B[i,j]\gets B[i,j] + A[k]$
+        \EndFor
+    \EndFor
+\EndFor
+\end{algorithmic}
+
+For the following questions,
+\begin{itemize}
+    \item Define $T(n)$ as the total running time of the algorithm.
+    \item Suppose each operation like $B[i,j]\gets B[i,j] + A[k]$ costs a constant time $c$.
+    \item Ignore the time that \lstinline|for| loop iterations take.
+\end{itemize}
+\begin{parts}
+    \part[1] Give out a function $f$ satisfying that the running time of the algorithm is $\Theta(f(n))$. That is, $T(n)=\Theta($\fillin[]$)$. (Give your answer in the most simplified form.)
+
+    \part[3] For this function chosen \( f \), show that the running time of the algorithm on an input of size \( n \) is upper bounded by \( f(n) \). That is, prove $T(n)=O(f(n))$.
+    \begin{solution}
+        \vspace*{7cm}
+    \end{solution}
+
+    \part[4] For the same function \( f \), show that the running time of the algorithm on an input of size \( n \) is also lower bounded by \( f(n) \). That is, prove $T(n)=\Omega(f(n))$.
+    \begin{solution}
+        \vspace*{7cm}
+    \end{solution}
+
+    \part[3] Although the algorithm you just analyzed is the most natural way to solve the problem---after all, it just iterates through the relevant entries of the array \( B \), filling in a value for each---it contains some highly unnecessary sources of inefficiency. Give a different algorithm to solve the problem, with an asymptotically better running time. In other words, you should design another algorithm with running time \( \Theta(g(n)) \), where \( \lim\limits_{n \to \infty} \frac{g(n)}{f(n)} = 0 \).
+    
+    Just write the pseudocode below.
+    \begin{solution}
+        \vspace*{7cm}
+    \end{solution}
+\end{parts}

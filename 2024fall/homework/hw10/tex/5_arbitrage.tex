@@ -1,0 +1,39 @@
+\titledquestion{Arbitrage}
+
+\textbf{Preface:} Shortest-path algorithms can be applied to many real-life domains. One of the most challenging aspects is constructing the graph in a complex environment. Consider the scenario below:
+
+Recently, our beloved TA, Flash, was hired by an anonymous financial firm to assist with financial oversight. At the firm, Flash has access to a set of $n$ currencies $C = {c_1, c_2, \dots, c_n}$, including US dollars, Euros, Bitcoin, Dogecoin, and others. For every pair of currencies $c_i$ and $c_j$, Flash knows the exchange rate $r_{i,j}$ which indicates how many units of currency $c_j$ you can receive in exchange for one unit of currency $c_i$. Assume that $r_{i, i} = 1$ for all currencies and that $r_{i, j} > 0, r_{i,j} = \dfrac{1}{r_{j,i}}$ for all pairs $i, j$.
+
+Since the exchange rates between different currencies can be volatile and unpredictable, there may be times when you can start with one unit of arbitrary currency $c_i$ and end up with more than one unit of $c_i$ through exchanging. Such a situation is known as \textbf{arbitrage}.
+
+More formally, arbitrage occurs if there exists a sequence of currencies $c_{i_1}, c_{i_2}, \dots, c_{i_k}$ such that:
+$$ r_{i_1, i_2} \cdot r_{i_2, i_3} \cdot \cdots \cdot r_{i_{k-1}, i_k} \cdot r_{ik, i_1} > 1 $$
+
+A system of exchange rates is considered \textbf{arbitrage-free} if there is no such sequence of exchanges that results in a profit, i.e. it is impossible to gain more than one unit of any currency by performing a series of exchanges.
+
+Due to his heavy TA workload, Flash needs your help to design algorithms that can efficiently perform the tasks assigned by the company.
+
+\begin{parts}
+\part[5] Flash has access to a set of exchange rates of $(r_{i,j})_{i,j \in {1, 2, \dots, n}}$, his first task is to find the most profitable sequence between currencies $a$ and $b$. In other words, given a fixed amount of currency $a$, he can get the most amount of currency $b$ through this sequence of exchanges.
+\textbf{In this part, suppose the set of exchange rates is arbitrage-free.}
+
+To assist Flash, please provide your algorithm and analyze the time-cost of it. You don't need to prove the correctness of the algorithm. Your time complexity should not exceed the complexity of the algorithms taught in the current course.
+
+\textbf{Hint:} $\log(xy) = \log(x) + \log(y)$.
+
+\begin{solution} \\
+    \vspace{2in}
+
+\end{solution}
+
+
+\part[5] The second task of Flash is to detect whether arbitrage exits given an exchange rate set at any specific time, which is, obviously, too hard to do manually.
+
+For this part, please give your algorithm, analyze its time complexity, and briefly explain why it can work. Your time complexity should not exceed the complexity of the algorithms taught in the current course.
+
+\end{parts}
+
+\begin{solution} \\
+    \vspace{2in}
+
+\end{solution}

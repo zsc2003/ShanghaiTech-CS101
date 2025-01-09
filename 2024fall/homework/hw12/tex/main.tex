@@ -1,0 +1,85 @@
+\documentclass[11pt, addpoints, answers]{exam}
+\usepackage{amsmath, amssymb}
+% \usepackage{amsmath, amssymb, euler}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{complexity} % For HW12 complexity classes
+\usepackage{caption}
+\usepackage{float}
+
+\usepackage{blindtext} % For hyperlink
+\usepackage{hyperref}
+
+% headers, footers, titles
+\newcommand{\CourseName}{CS101 Algorithms and Data Structures}
+\newcommand{\HomeworkNO}{Homework 12}
+\newcommand{\DueDate}{Due date: 23:59, January 1st, 2025}
+
+\pagestyle{headandfoot}
+\runningheadrule{}
+\runningheader{\CourseName}{\HomeworkNO}{\DueDate}
+\runningfooter{}{\thepage}{}
+
+\title{
+	\CourseName\\
+	Fall 2024\\
+	\HomeworkNO
+}
+\author{}
+\date{\DueDate}
+
+% formats of questions, choices, points, etc.
+\qformat{\bf\thequestion. (\totalpoints\ points) \thequestiontitle\hfill}
+\pointname{'}
+\CorrectChoiceEmphasis{\bf\color{blue}}
+\SolutionEmphasis{\color{blue}}
+
+% We frequently use this font.
+\newcommand{\ttt}{\texttt}
+\newcommand{\bluett}[1]{\textcolor{blue}{\ttt{#1}}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\complete}[1]{\textsf{#1}\text{-}\textsf{Complete}}
+\newcommand{\hard}[1]{\textsf{#1}\text{-}\textsf{Hard}}
+\newcommand{\pnp}{\textsf{P}=\textsf{NP}}
+\newcommand{\sat}[1]{\textsf{#1}\text{-}\SAT}
+\newcommand{\aseq}[1]{\langle{#1}\rangle}
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item Please write your solutions in English.
+	\item Submit your solutions to gradescope.com.
+	\item Set your FULL name to your Chinese name and your STUDENT ID correctly in Account Settings.
+	\item If you want to submit a handwritten version, scan it clearly. \ttt{CamScanner} is recommended.
+	\item When submitting, match your solutions to the problems correctly.
+	\item No late submission will be accepted.
+	\item Violations to any of the above may result in zero points.
+ 	\item You are recommended to finish this homework with \LaTeX.
+\end{enumerate}
+
+\newpage
+
+\begin{questions}
+    \include{tutorial}
+    
+    \newpage
+    
+    \include{choices}
+    
+    \newpage
+    
+    \include{dichotomy}
+    
+    \newpage
+
+    \include{carpenter}
+
+    \newpage
+
+    \include{hamcycle}
+
+\end{questions}
+
+\end{document}

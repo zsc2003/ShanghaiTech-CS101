@@ -1,0 +1,95 @@
+\titledquestion{Negative Cycle Detection}
+The \textbf{inf($\infty$)} mentioned in this problem could be regarded as a pre-defined large enough constant. The graph mentioned in this problem is a simple directed graph. Please write down your codes in \textbf{standard C++}.
+
+\begin{parts}
+\part Consider the following implementation of the Floyd-Warshall algorithm. Suppose $W$ is the adjacency matrix of the graph, and assume that $W_{ij}=\infty$ where there is no edge between vertex $i$ and vertex $j$, and assume $W_{ii}=0$ for every vertex $i$. And other $W_{ij}$ are the weights of the edge between vertex $i$ and vertex $j$.  The array `graph' passed into the function is the adjacency matrix $W$.
+
+\begin{cpp}
+bool DetectNegCycle_Floyd(const int graph[][V])
+{
+    int dist[V][V];
+
+    for (int i = 0; i < V; ++i)
+        for (int j = 0; j < V; ++j)
+            dist[i][j] = graph[i][j];
+
+    for (int k = 0; k < V; ++k)
+        for (int i = 0; i < V; ++i)
+            for (int j = 0; j < V; ++j)
+                if (dist[i][j] > dist[i][k] + dist[k][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
+
+    _____________________________________
+    _____________________________________
+    _____________________________________
+    _____________________________________
+
+    return false;
+}
+\end{cpp}
+
+\begin{subparts}
+
+\subpart [2] Consider the three loop lines in the Floyd-Warshall algorithm: lines $9, 10$, and $11$. Which pair(s) of these lines can be swapped without affecting the correctness of the algorithm? List all possible pairs of lines that can be swapped.
+
+\begin{solution} \\
+    \vspace{2in}
+
+\end{solution}
+
+\subpart[4] Add some codes in the blank lines to detect whether there are negative cycles in the graph. (You may not use all blank lines, or you can add more lines.)
+
+\begin{solution}
+\begin{cpp}
+    _____________________________________
+    _____________________________________
+    _____________________________________
+    _____________________________________
+\end{cpp}
+\end{solution}
+\end{subparts}
+
+\part[4] Consider the following implementation of the Bellman-Ford algorithm. The `edge' structure is used to represent the edges of the graph, with its elements $u$, $v$, and $w$ denoting an edge from node $u$ to node $v$ and its corresponding weight $w$.
+
+\begin{cpp}
+struct edge
+{
+    int u, v, w;
+};
+
+bool detectNegCycle_BellmanFord(const std::vector<edge>& Edge, int s)
+{
+    int dist[V];
+
+    for (int i = 0; i < V; ++i)
+        dist[i] = inf;
+    dist[s] = 0;
+
+    for(i = 1; i <= V - 1; ++i)
+    {
+        for(const auto& e : Edge)
+            if (dist[e.v] > dist[e.u] + e.w)
+                dist[e.v] > dist[e.u] + e.w;
+    }
+
+    _____________________________________
+    _____________________________________
+    _____________________________________
+    _____________________________________
+
+    return false;
+}
+\end{cpp}
+
+Add some codes in the blank lines to detect whether there are negative cycles in the graph. (You may not use all blank lines, or you can add more lines.)
+
+\begin{solution}
+\begin{cpp}
+    _____________________________________
+    _____________________________________
+    _____________________________________
+    _____________________________________
+\end{cpp}
+\end{solution}
+
+\end{parts}

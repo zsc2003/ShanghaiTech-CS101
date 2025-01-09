@@ -1,0 +1,33 @@
+\titledquestion{Test Paper Arrangement Task}
+
+Midterm week is finally over! Now the CS101 course staff is filing the test papers. Suppose there are $t$ test papers waited to be filed, and the course staff was assigned $n$ file cabinets with various capacities. Mark the capacity of the file cabinet as $c_i$ ($i = 1, 2, \cdots, n$). It's guaranteed that $\sum_{i = 1}^n c_i \geq t$.\\
+
+
+
+\begin{parts}
+
+\part[5] Given the number of test papers $t$ and the capacities of each of the $n$ cabinets $c_1, c_2, \cdots, c_n$, come up with a greedy algorithm that can file the papers in cabinets such that the least number of cabinets is used. You should give out the steps of your algorithm \textbf{(as efficient as possible)} and the time complexity (tight).
+
+\newpage
+
+\part[5] Prove the optimality of your algorithm using \textbf{Exchange Arguments} (any optimal solution can be iteratively exchanged to your greedy solution without making it worse). Answer the questions in step 4.5. to give your sufficient proof.\\
+\textbf{Proof:}
+\begin{enumerate}
+    \item Assume $c_1>c_2>\cdots>c_n$ after sorted. Denote a solution $X=(x_1,x_2,\cdots,x_n)$ where we put $x_i$ test papers in the cabinet of capacity $c_i$. And the measurement $m(X)$ is counting how many cabinets have at least one test paper.
+    \item Assume the optimal solution is $X^*$, and the greedy solution is $X$.
+    \item Consider the first point of discrepancy between $X^*$ and $X$ at index $i$ (i.e. $x^*_i\ne x_i$).
+    \item How to perform changes to make $x^*_i=x_i$? You should ensure that such changes is always valid in all possible scenarios of $X^*$.
+    \begin{solution}
+    
+        \vspace*{5cm}
+    \end{solution}
+    \item Why such changes doesn't make $X^*$ worse? You should consider all possible scenarios of $X^*$.
+    \begin{solution}
+    
+        \vspace*{5cm}
+    \end{solution}
+    \item Continue Applying steps 3.4.5. until $X^*=X$. Finally we prove that $X$ is an equally optimal solution.
+\end{enumerate}
+
+\end{parts}
+\newpage

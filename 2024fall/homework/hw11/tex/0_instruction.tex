@@ -1,0 +1,16 @@
+{\large\textbf{Demand of the Algorithm Design:}} \textcolor{red}{(MUST READ! )}
+
+All of your algorithms should need the three-part solution, this will help us to score your algorithm. You should include {\large\textbf{main idea,  proof of correctness and run-time analysis.}} The detail is as below:
+\begin{enumerate}
+\item The {\textbf{main idea}} of your algorithm. You should correctly convey the idea of the algorithm in this part. It does not need to give all the details of your solutions or explain why they are correct. When grading these problems, we will emphasize how you define your sub-problems, whether your Bellman equation is correct, and the correctness of your complexity analysis:
+    \begin{enumerate}
+        \item \textbf{Define your subproblems clearly.} Your definition should include the variables you choose for each subproblem and a brief description of your subproblem in terms of the chosen variables. 
+        \item Your \textbf{Bellman equation} should be a recurrence relation whose \textbf{base case} is well-defined.
+        \item You can \textbf{briefly explain each term in the equation} if necessary, which might improve the readability of your solution and help us grade it.
+    \end{enumerate}
+\item A {\textbf{proof of correctness}}.  You must prove that your algorithm work correctly, no matter what input is chosen. For iterative or recursive algorithms, often a useful approach is to find an invariant. A loop invariant needs to satisfy three properties: (1) it must be true before the first iteration of the loop; (2) if it is true before the $i$th iteration of the loop, it must be true before the $i$ + 1st iteration of the loop; (3) if it is true after the last iteration of the loop, it must follow that the output of your algorithm is correct. You need to prove each of these three properties holds. Most importantly, you must specify your invariant precisely and clearly. \textbf{However, sometimes the problem does not require you to prove the correctness of your algorithm. But remember to give your bellman Equation clearly.}
+If you invoke an algorithm that was proven correct in class, you don’t need to re-prove its correctness.
+\item The asymptotic \textbf{running time} of your algorithm, stated using $\Theta$(·) notation. And you should have your \textbf{running time analysis}, i.e., the justification for why your algorithm’s running time is as you claimed. Often this can be stated in a few sentences (e.g.: “the loop performs $|E|$ iterations; in each iteration, we do $\Theta(1)$ Find and Union operations; each Find and Union operation takes $\Theta(\log|V|)$ time; so the total running time is $\Theta(|E|\log|V|)$”). Alternatively, this might involve showing a recurrence that characterizes the algorithm’s running time and then solving the recurrence.
+
+\item You only need to calculate the optimal value in each problem of this homework and you don’t have to back-track to find the optimal solution.
+\end{enumerate}

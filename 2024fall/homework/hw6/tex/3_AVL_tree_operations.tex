@@ -1,0 +1,77 @@
+\titledquestion{AVL tree operations}
+
+Here is an AVL tree. Denote it as $T$.
+
+\textbf{Note Again: We uniformly stipulate that when erasing a non-leaf node $x$, we will fill its successor (the minimum value greater than $x$ among all child nodes) to its original position. If $x$ has no successor, we will fill its predecessor (the maximum value less than $x$ among all child nodes) to its original position.}
+
+\begin{center}
+    \begin{tikzpicture}[]
+    \Tree
+    [.5
+        [.3
+            [.1
+                \edge[blank]; \node[blank]{};
+                [.2
+                ]
+            ]
+            [.4
+            ]
+        ]
+        [.11
+            [.9
+                [.7
+                    [.6
+                    ]
+                    [.8
+                    ]
+                ]
+                [.10
+                ]
+            ]
+            [.13
+                [.12
+                ]
+                [.14
+                    \edge[blank]; \node[blank]{};
+                    [.15
+                    ]
+                ]
+            ]
+        ]
+    ]
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+
+\part[2] Insert $8.5$ into $T$. Draw the AVL tree before checking if any balance correction is needed.
+
+\begin{solution}
+
+\vspace{2in}
+
+\end{solution}
+
+\part[2] Insert $8.5$ into $T$. Draw the AVL tree after balance corrections.
+\begin{solution}
+
+\vspace{2in}
+
+\end{solution}
+
+\part[2] Remove $3$ from $T$ (\textbf{NOT from the previous answer!}). Draw the AVL tree after replacing and before checking if any balance correction is needed.
+\begin{solution}
+
+\vspace{2in}
+
+
+\end{solution}
+
+\part[2] Remove $3$ from $T$. Draw the AVL tree after balance corrections.
+\begin{solution}
+
+\vspace{2in}
+
+\end{solution}
+
+\end{parts}

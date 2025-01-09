@@ -1,0 +1,123 @@
+\titledquestion{Tutorial on how to prove that a particular problem is in $\complete{\NP}$}[0]
+
+To prove problem $A$ is in $\complete{\NP}$, your answer should include:
+\begin{enumerate}
+
+  \item Prove that problem $A$ is in $\NP$ by showing: What your {\color{red} polynomial-size} certificate is and what your {\color{red} polynomial-time} certifier is.
+
+  \item Choose a problem $B$ in $\complete{\NP}$ to reduce from.
+  
+  \item Construct your {\color{red} polynomial-time many-one reduction} $f$ that maps instances of problem $B$ to instances of problem $A$. 
+  
+  (polynomial-time many-one reduction = polynomial transformation = Karp reduction, see presenter notes of page 7 \& 61 in lecture slides (.pptx file) for more details.) 
+
+  \item Prove the correctness of your reduction (i.e. Prove that your reduction $f$ do map $yes$-instance of problem $B$ to $yes$-instance of problem $A$ and map $no$-instance of problem $B$ to $no$-instance of problem $A$) by showing:
+  \begin{enumerate}
+      \item $x$ is a $yes$-instance of problem $B$ $\Rightarrow$ $f(x)$ is a $yes$-instance of problem $A$.
+      \item $x$ is a $yes$-instance of problem $B$ $\Leftarrow$ $f(x)$ is a $yes$-instance of problem $A$.
+  \end{enumerate}
+\end{enumerate}
+{\textbf{Proof Example}: Prove that the decision version of $\mathsf{Set\text{-}Cover}$ is in $\complete{\NP}$.}
+
+ Recall that the $yes$-instances of the decision version of $\mathsf{Set\text{-}Cover}$ is:
+\begin{align*}
+\mathsf{Set\text{-}Cover}= \left\{\langle{U, S_1, \ldots, S_n, k \rangle}~\middle|~~~
+ \begin{aligned}
+     &n \in \mathbb{Z}^+, S_1, \ldots, S_n \subseteq U \text{ and there exist $k$ sets } S_{i_1}, \ldots, \\& S_{i_k} 
+     \text{that cover all of $U$, i.e., }
+     S_{i_1} \cup S_{i_2} \cup \dots \cup S_{i_k} = U
+ \end{aligned}
+\right\}
+\end{align*}
+
+To prove that the decision version of $\mathsf{Set\text{-}Cover}$ is in $\complete{\NP}$, we follow these steps:
+ 
+\begin{enumerate}
+    \item \textbf{Membership in $\NP$}:
+        \begin{enumerate}
+        \item A set of indices $\left\{i_1, \dots, i_k\right\} \subseteq \left\{1, 2, \dots, n\right\}$, whose size is polynomial of input size .
+        \item Check whether $S_{i_1} \cup S_{i_2} \cup \dots \cup S_{i_k} = U$, whose run-time is polynomial of input size.
+        \end{enumerate}
+    \item \textbf{Reduction from $\mathsf{Vertex\text{-}Cover}$}:
+        \begin{enumerate}
+            \item We choose the decision version of $\mathsf{Vertex\text{-}Cover}$ as the problem to reduce from.
+            \begin{equation*}
+            \mathsf{Vertex\text{-}Cover} = \left\{\langle{G,k'\rangle}~\middle|~~~
+            \begin{aligned}
+                &\text{$G$ is an undirected graph and there exists a set of} \\&\text{$k'$ vertices that touches all edges in $G$.}
+            \end{aligned}\right\}
+            \end{equation*}
+            \item Given an undirected graph $G = (V, E)$ and a positive integer $k' \in \mathbb{Z}^+$, we construct the reduction $f(\langle G, k' \rangle) = \langle U, S_1, \ldots, S_n, k \rangle$ as follows: $U = E$. $n = |V|$ and $k = k'$. For each $i \in \{1, \ldots, n\}$, $S_i = \{e \in E \mid e = (v_i, u) \text{ for some } u \in V \setminus \{v_i\}\}$.
+            \item We prove the correctness of the reduction:
+                \begin{enumerate}
+                    \item[``$\Rightarrow$'':] If $\langle G, k' \rangle$ is a $yes$-instance of $\mathsf{Vertex\text{-}Cover}$, then there exists a set $V^* = \{v_{i_1}, \ldots, v_{i_{k'}}\}$ of vertices that covers all edges. By construction, $\{S_{i_1}, \ldots, S_{i_{k'}}\}$ covers all edges in $U$, so $\langle U, S_1, \ldots, S_n, k \rangle$ is a $yes$-instance of $\mathsf{Set\text{-}Cover}$.
+                    \item[``$\Leftarrow$'':] Conversely, if $\langle U, S_1, \ldots, S_n, k \rangle$ is a $yes$-instance of $\mathsf{Set\text{-}Cover}$, then there exists a set $\{S_{i_1}, \ldots, S_{i_k}\}$ of sets that covers all edges in $U$. By construction, the corresponding set of vertices $\{v_{i_1}, \ldots, v_{i_k}\}$ covers all edges in $G$, so $\langle G, k' \rangle$ is a $yes$-instance of $\mathsf{Vertex\text{-}Cover}$.
+                \end{enumerate}
+        \end{enumerate}
+\end{enumerate}
+ 
+Hence, the decision version of $\mathsf{Set\text{-}Cover}$ is in $\complete{\NP}$.
+
+\newpage
+In fact, any two problems in $\P$ can reduce to each other in polynomial time, indicating they share the same ``hardness.'' To illustrate, consider decision problems $A$ and $B$ in $\mathcal{P}$. Given an instance $x$ of $A$:
+ 
+\begin{enumerate}
+    \item Prepare polynomial-time copies of known $yes$- and $no$-instances of $B$.
+    \item Determine if $x$ is a $yes$-instance of $A$ in polynomial time.
+    \item Return the corresponding $yes$- or $no$-instance of $B$.
+\end{enumerate}
+ 
+For example, let $A$ be the minimum spanning tree cost problem and $B$ be the shortest path cost problem in undirected weighted graphs. Given an instance $G$ of $A$:
+ 
+\begin{enumerate}
+    \item Prepare graphs $G_1$ and $G_2$ with known shortest path costs relative to $c'$.
+    \item Find $G$'s minimum spanning tree cost using Kruskal's algorithm and compare it with $c$.
+    \item Return $G_1$ if the cost is no more than $c$, otherwise return $G_2$.
+\end{enumerate}
+
+A brief map of common NP-Complete problems:
+
+\begin{tikzpicture}[
+    every node/.style={rectangle, draw, align=center}, 
+    arrow/.style={-Stealth}
+]
+\centering
+\footnotesize
+\node (VLENP) {$\forall L \in NP$};
+\node (SAT) [below=15pt of VLENP] {SAT};
+\node (THREESAT) [below right=10pt and 200pt of SAT] {3SAT};
+\node (THREECOL) [below right=10pt and 50pt of THREESAT] {3COLORING};
+\node (EXACTONE3SAT) [below=15pt of THREESAT] {EXACTONE3SAT};
+\node (SUBSETSUM) [below=20pt of EXACTONE3SAT] {SUBSETSUM};
+\node (INDSET) [below left=10pt and 70pt of THREESAT] {INDSET};
+\node (CLIQUE) [below left=10pt and 0pt of INDSET] {CLIQUE};
+\node (VERTEXCOVER) [below right=10pt and -30pt of INDSET] {VERTEXCOVER};
+\node (MAXCUT) [below=20pt of VERTEXCOVER] {MAXCUT};
+\node (INTEGERPROG) [below right=10pt and 10pt of SAT] {INTEGERPROG}; 
+\node (dHAMPATH) [below left=10pt and 40pt of SAT] {dHAMPATH};
+\node (HAMPATH) [below=10pt of dHAMPATH] {HAMPATH};
+\node (TSP) [below left=10pt and -0pt of HAMPATH] {TSP};
+\node (HAMCYCLE) [below right=10pt and -40pt of HAMPATH] {HAMCYCLE};
+\node (THEOREMS) [below left=80pt and -10pt of SAT] {THEOREMS};
+\node (QUADEQ) [below right=20pt and -20pt of THEOREMS] {QUADEQ};
+\node (COMBINATORIAL) [right=10pt of QUADEQ] {COMBINATORIAL\\AUCTION};
+\draw [arrow] (VLENP) -- (SAT);
+\draw [arrow] (SAT) -- (THREESAT);
+\draw [arrow] (SAT) -- (INTEGERPROG);
+\draw [arrow] (THREESAT) -- (EXACTONE3SAT);
+\draw [arrow] (INDSET) -- (CLIQUE);
+\draw [arrow] (EXACTONE3SAT) -- (SUBSETSUM);
+\draw [arrow] (INDSET) -- (VERTEXCOVER);
+\draw [arrow] (THREESAT) -- (INDSET);
+\draw [arrow] (THREESAT) -- (THREECOL);
+\draw [arrow] (VERTEXCOVER) -- (MAXCUT);
+\draw [arrow] (SAT) -- (dHAMPATH);
+\draw [arrow] (dHAMPATH) -- (HAMPATH);
+\draw [arrow] (HAMPATH) -- (TSP);
+\draw [arrow] (HAMPATH) -- (HAMCYCLE);
+\draw [arrow] (SAT) -- (THEOREMS);
+\draw [arrow] (SAT) -- (QUADEQ);
+\draw [arrow] (SAT) -- (COMBINATORIAL);
+
+\end{tikzpicture}
+ (cite: Computational Complexity: A Modern Approach by Sanjeev Arora and Boaz Barak.)

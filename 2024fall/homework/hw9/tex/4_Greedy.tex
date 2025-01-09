@@ -1,0 +1,116 @@
+\titledquestion{Greedy algorithm}
+ 
+You are given a set of \( n \) cakes. Each cake \( i \) has:
+\begin{itemize}
+    \item A \textbf{satisfaction value} \( s_i\in\mathbb N^+ \), representing the enjoyment you get from eating the cake.
+    \item An \textbf{expiration date} \( e_i\in\mathbb N^+ \), specifying the latest day (starting from day 1) the cake can be eaten. If not eaten by day \( e_i \), the cake is no longer valid.
+\end{itemize}
+
+You can eat at most \textbf{one cake per day}, starting from day 1, up to day $E=\max\limits_{i\in[1,n]} \{e_i\}$ i.e. the maximum expiration date of any cake. Your goal is to determine the best strategy to eat the cakes to \textbf{maximize the total satisfaction}, defined as the sum of the satisfaction values of the cakes you consume.
+
+To illustrate, consider the following example of \( n = 9 \) cakes:
+
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    i & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
+    s_i & 10 & 20 & 10 & 15 & 14 & 40 & 18 & 5 & 20 \\ \hline
+    e_i & 5 & 3 & 3 & 3 & 5 & 4 & 5 & 7 & 5 \\ \hline
+\end{array}
+\]
+
+The maximum expiration date is \( m=7 \), so you need to decide which cake to eat on each day from day \( 1 \) to day \( 7 \). Note that:
+\begin{itemize}
+    \item You can only eat cake \( i \) on day \( j \) if \( j \leq e_i \), due to the expiration date constraint.
+    \item You can leave some days without eating any cake if that results in a higher total satisfaction.
+\end{itemize}
+
+We represent a possible allocation as \( C=\{c_1, c_2, \dots, c_E\} \), where \(c_j\) is the index of the cake eaten on day \( j \), and ``-" indicates no cake is eaten on that day.
+
+Here are three valid allocations for this example:
+\begin{itemize}
+    \item \( \{1, 2, 3, 5, 7, 8, -\} \), with a total satisfaction of \( 77 = 10 + 20 + 10 + 14 + 18 + 5 \).
+    \item \( \{1, 2, 3, 6, 7, -, 8\} \), with a total satisfaction of \( 103 = 10 + 20 + 10 + 40 + 18 + 5 \).
+    \item \( \{2, 4, 6, 7, 9, -, 8\} \), with a total satisfaction of \( 118 = 20 + 15 + 40 + 18 + 20 + 5 \).
+\end{itemize}
+
+For this instance, one of the optimal allocations is \( \{2, 4, 6, 7, 9, -, 8\} \), resulting in the maximum total satisfaction of \( 118 \).
+
+\newpage
+
+\textbf{Notes for how to answer:}
+
+For the following two greedy algorithms, you need to judge whether it always find an optimal solution.
+
+If not always, please give a counterexample, including the input, the greedy solution and an optimal solution.
+
+If always, please give a strict proof by \textbf{“Greedy Stays Ahead” Arguments} including:
+\begin{itemize}
+    \item (1pt) \textbf{A proper definition of a series of possible sub-problem solutions} $X_1, X_2, X_3, \cdots$, based on what this algorithm produces after each iteration.
+
+    For example, in coin changing problem, sub-problem solution $X_i$ is a multi-set of coins whose denominations add up to $i$.
+    \item (1pt) \textbf{The definition of optimality}. You should give a series of measurements on each sub-problem $m_1(X_1),m_2(X_2),\cdots$, and then define the optimal sub-problem solution $X_i^*$ by:
+    \[X_i^*\in\arg\max\{m_i(X_i)\}\text{ or }X_i^*\in\arg\min\{m_i(X_i)\}\]
+
+    For example, in coin changing problem, $m_i(X_i)=|X_i|$ is the number of coins, and the optimal solution is the minimal one.
+    \item (2pts) \textbf{The proof that your greedy algorithm always stays ahead by induction}. Denote $X_i$ as the greedy sub-problem solution, and you can prove like:
+    \[m_{i-1}(X_{i-1})=m_{i-1}(X_{i-1}^*)\implies m_i(X_i)=m_i(X_i^*)\]
+    And usually it is proved by contradiction. For example, prove
+    \[m_{i-1}(X_{i-1})\ne m_{i-1}(X_{i-1}^*)\impliedby m_i(X_i)\ne m_i(X_i^*)\]
+\end{itemize}
+
+\newpage
+
+\begin{parts}
+
+\part[4] Consider days in ascending order, and choose the cake with maximal $s_i$ first.
+
+\begin{algorithm}[H]
+\caption{Days ascending, Cake maximal $s_i$}
+\begin{algorithmic}[1]
+\Require A set of cakes, where each cake $i$ has satisfaction $s_i$ and expiration $e_i$.
+\Ensure An allocation with the maximum total satisfaction.
+
+\State $C\gets \{-,-,\cdots,-\}$ \Comment{Initial arrangement is empty}
+\State Sort the cakes by $s_i$ in descending order
+\State $i \gets 1$ \Comment{Consider cakes by $s_i$ in descending order}
+\For{$j=1$ \textbf{to} $E$} \Comment{Consider days in ascending order}
+    \While{$i\le n$ \textbf{and} $e_i<j$}
+        \State $i\gets i+1$ \Comment{Skip expired cakes}
+    \EndWhile
+    \If{$i\le n$}
+        \State $C_j\gets i$
+    \EndIf
+\EndFor
+\State \Return $C$
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
+
+\part[4] Consider days in descending order, and choose the cake with maximal $s_i$ first.
+
+\begin{algorithm}[H]
+\caption{Days descending, Cake maximal $s_i$}
+\begin{algorithmic}[1]
+\Require A set of cakes, where each cake $i$ has satisfaction $s_i$ and expiration $e_i$.
+\Ensure An allocation with the maximum total satisfaction.
+
+\State $C\gets \{-,-,\cdots,-\}$ \Comment{Initial arrangement is empty}
+\State $H\gets$ an empty heap, where $H.top()$ returns the index $i$ of the cake with maximal $s_i$.
+\For{$j=E$ \textbf{downto} $1$} \Comment{Consider days in descending order}
+    \For{every $i$ such that $e_i=j$}
+        \State $H.push(i)$ \Comment{Cake $i$ can be eaten before day $j$}
+    \EndFor
+    \If{$H.notEmpty()$}
+        \State $C_j\gets H.top()$ \Comment{Consider cakes by $s_i$ in ascending order}
+        \State $H.pop()$
+    \EndIf
+\EndFor
+\State \Return $C$
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\end{parts}

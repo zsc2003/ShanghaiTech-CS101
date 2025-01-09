@@ -1,0 +1,71 @@
+\titledquestion{Vocabulary List}
+
+Alice is memorizing English words to enlarge her vocabulary in preparation for her approaching CET-4 test and she needs your help! Alice uses a \ttt{Node} to define a word and a linked list which contains the words that she is trying to memorize now. The structure of \ttt{Node} is as follows.
+
+\begin{cpp}
+    struct Node {
+      string word;
+      Node *next;
+      Node(const string& _word, Node *_next)
+    	  : word(_word), next(_next) {}
+    };
+    Node *head;
+\end{cpp}
+
+Each time she reviews her vocabulary list, she steps through the linked list starting from \ttt{head}. However, sometimes there is a word that she doesn't know, so she wants to grab the corresponding \ttt{Node} out and put it at the start of the linked list, so next time she can review it first.
+
+For example, if the vocabulary list is 
+\begin{center}
+\ttt{algorithm $\rightarrow$ breath $\rightarrow$ capacity $\rightarrow$ degree}
+\end{center}
+and she doesn't know the word \ttt{capacity}, then she wants the list be modified to
+\begin{center}
+\ttt{capacity $\rightarrow$ algorithm $\rightarrow$ breath $\rightarrow$ degree}
+\end{center}
+
+\begin{parts}
+
+    \part[6] Alice needs your help to finish her function \ttt{move\_to\_first(Node *head, Node *p)} where \ttt{head} represents the first element of her non-empty vocabulary list and she wants to move the \textbf{next} word of \ttt{p} to the first. The function returns the \textbf{new} head pointer after this process. She can guarantee that \ttt{p} points to a \ttt{Node} in the linked list, but not the last one.
+
+    \begin{cpp}
+    Node* move_to_first(Node *head, Node *p) {
+        Node *to_move = p->next;
+        // Write something below
+        // ...
+        // Write something above
+    }
+    \end{cpp}   
+
+    Please help her complete the function. 
+
+    \begin{solution}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Replace the `\vspace*{5cm}' with your answer.
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \vspace*{5cm}
+    \end{solution}
+
+    \part[4] Now Alice wants to reverse the entire list using the \ttt{move\_to\_first} function. Please help her complete the reversion function \ttt{reverse\_list(Node *head)} where \ttt{head} is the head pointer of the vocabulary list to be reversed. The function returns the \textbf{new} head pointer after this process. She can guarantee that the list is non-empty.
+
+    \begin{cpp}
+    Node* reverse_list(Node *head){
+        Node *p = head;
+        while(/* (1) */){
+            /* (2) */ = move_to_first(/* (3) */, /* (4) */);
+        }
+        return head;
+    }
+    \end{cpp}
+
+    Please help her complete this function by filling your code into blank (1) to (4). Each blank should be just an expression or a variable.
+
+    \begin{solution}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Replace the `\vspace*{5cm}' with your answer.
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \vspace*{5cm}
+    \end{solution}
+    
+
+    
+\end{parts}

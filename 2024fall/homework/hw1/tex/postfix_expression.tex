@@ -1,0 +1,48 @@
+\titledquestion{Postfix Expression}
+Reverse Polish notation (RPN) is a mathematical notation in which operators follow their operands. Using a stack, we can evaluate postfix notation equations easily.
+
+A postfix expression (Reverse-Polish Notation) with single-digit operands is shown below: (where $\hat\ $ is the exponentiation operator)\\
+    $$\mathtt{8\ 2\ 3\ \hat \ /\ 2\ 3\ *\ +\ 5\ 1\ *\ -}$$
+    
+\begin{parts}
+    \part[1] What's the in-fix expression of the expression above?
+    \begin{solution}
+        \vspace*{1cm}
+    \end{solution}
+    
+    \part[4] The changing of the stack to calculate the final result is:
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|p{0.1cm}|p{0.25cm}|}
+            \cline{1-1} \cline{3-3} \cline{5-5} \cline{7-7} \cline{9-9} \cline{11-11} \cline{13-13} \cline{15-15} \cline{17-17} \cline{19-19} \cline{21-21} \cline{23-23} \cline{25-25}
+             &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1} \cline{3-3} \cline{5-5} \cline{7-7} \cline{9-9} \cline{11-11} \cline{13-13} \cline{15-15} \cline{17-17} \cline{19-19} \cline{21-21} \cline{23-23} \cline{25-25}
+             &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1} \cline{3-3} \cline{5-5} \cline{7-7} \cline{9-9} \cline{11-11} \cline{13-13} \cline{15-15} \cline{17-17} \cline{19-19} \cline{21-21} \cline{23-23} \cline{25-25}
+             &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1} \cline{3-3} \cline{5-5} \cline{7-7} \cline{9-9} \cline{11-11} \cline{13-13} \cline{15-15} \cline{17-17} \cline{19-19} \cline{21-21} \cline{23-23} \cline{25-25}
+             &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-1} \cline{3-3} \cline{5-5} \cline{7-7} \cline{9-9} \cline{11-11} \cline{13-13} \cline{15-15} \cline{17-17} \cline{19-19} \cline{21-21} \cline{23-23} \cline{25-25}
+        \end{tabular}
+    \end{table}
+
+    \part[3] Try to convert the following in-fix expression into post-fix expression: (You don't need to calculate them)
+
+    (1) $ 1*2+3 $
+    \begin{solution}
+        \vspace*{1cm}
+    \end{solution}
+    (2) $ 1 + 2*3 + (4 * 5 + 6) * 7 $
+    \begin{solution}
+        \vspace*{1cm}
+    \end{solution}
+    (3) $ 1 + (2*3  \hat\   4) /(5+6)+7$
+    \begin{solution}
+        \vspace*{1cm}
+    \end{solution}
+
+    \part[2] Please judge whether the following post-fix expression is legal. Tick (\(\surd\)) for the legal expressions.
+    
+    \begin{oneparcheckboxes}
+        \choice $ 1\ 2\ *\ +\ 3\ 5\ +\ $ 
+        \choice $ 4\ 5\ 6\ /\ *\ 1\ /\ $ 
+        \choice $ 1\ +\ 2\ -\ 3\ +\ 4\ $ 
+        \choice $ 7\ 8\ 9\ 1\ +\ -\ *\ $ 
+    \end{oneparcheckboxes}
+\end{parts}

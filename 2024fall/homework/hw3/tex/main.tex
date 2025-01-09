@@ -1,0 +1,126 @@
+\documentclass[11pt, addpoints, answers]{exam}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+% For inserting code snippets.
+\usepackage{listings}
+\lstset{
+    columns = fixed,
+    basewidth = {0.5em},
+    breaklines = true,
+    backgroundcolor = \color{white},
+    keywordstyle = \color[RGB]{40, 40, 255},
+    numberstyle = \footnotesize\color{darkgray},
+    commentstyle = \ttfamily\color{violet},
+    basicstyle = \ttfamily,
+    stringstyle = \ttfamily\color[RGB]{128, 0, 0},
+    showstringspaces = false,
+    language = {[11]C++},
+    escapechar = \@
+}
+\lstnewenvironment{cpp}[1][]{\lstset{language = {[11]C++}, #1}}{}
+
+\renewcommand{\baselinestretch}{1.15}
+\setlength{\parskip}{1.25\baselineskip}
+
+% headers, footers, titles
+\newcommand{\CourseName}{CS101 Algorithms and Data Structures}
+\newcommand{\HomeworkNO}{3}
+\newcommand{\DueDate}{October 23, 2024}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\runningheader{CS101 Fall24}{Homework \HomeworkNO}{Due on: \DueDate}
+\runningfooter{}{\thepage}{}
+
+\title{
+    \vspace{25pt}
+    \LARGE ShanghaiTech University \\
+    \bigskip
+    \textbf{\CourseName} \\
+    \textbf{Fall 2024}   \\
+    \bigskip
+    Homework \HomeworkNO
+}
+\author{}
+\date{Due date: \DueDate, at 23:59}
+
+% formats of questions, choices, points, etc.
+\qformat{\bf\thequestion. (\totalpoints\ points) \thequestiontitle\hfill}
+\pointname{'}
+
+% We frequently use this font.
+\newcommand{\ttt}{\texttt}
+\newcommand{\bluett}[1]{\textcolor{blue}{\ttt{#1}}}
+\begin{document}
+
+\maketitle
+
+\vspace{50pt}
+
+\begin{enumerate}
+    \item Please write your solutions in English.
+    \item Submit your solutions to Gradescope.
+    \item Set your FULL name to your Chinese name and your STUDENT ID correctly in Gradescope account settings.
+    \item If you want to submit a handwritten version, scan it clearly. \ttt{CamScanner} is recommended.
+    \item We recommend you to write in LaTeX.
+    \item When submitting, match your solutions to the problems correctly.
+    \item No late submission will be accepted.
+    \item Violations to any of the above may result in zero points.
+\end{enumerate}
+
+\newpage
+
+
+{\large\textbf{Important Notes}:}
+
+\begin{enumerate}
+	\item Some problems in this homework requires you to design divide-and-conquer algorithm. When grading these problems, we will put more emphasis on how you reduce a problem to a smaller size problem and how to combine their solutions with divide-and-conquer strategy. 
+	\item There are mainly $3$ kinds of writing problems that may be involved in this assignment (and following assignments).
+    We recommend you to know what each part {\color{red}\textbf{should}} include:
+	\begin{enumerate}
+        \item [1.] Describe/Design an algorithm that...: Clear description of your algorithm design in natural language is needed. If you want to present it into pseudocode, you'd better take it seriously on your boundary cases and supplement it with meaningful, clear variable names. Unless the problem allows, you should give a complete algorithm instead of fragmented words incremented by some other algorithm.
+        \item [2.] Justify your algorithm/Justify its correctness/...: You should give out a proof of why your algorithm is correct. The requirements may not be so strict, but please at least clarify every step of your proof and make sure they are reasonable. You can give out an answer or some propositions and then make \textbf{reliable and credible} explanations, and we encourage you to do that on suitable cases (e.g. using induction).
+        \item [3.] Analyze the time complexity/Show its time complexity is ...: You should give out a exact time complexity and some reason to justify it (e.g. Master Theorem/Recurrence relation/...). We won't restrict too much on $O$ and $\Theta$. However, your time complexity bound should be \textbf{tight}. For example, we won't make it correct when you say something is $O(n^2)$ with its worst case running on $\Theta(n\log n)$ (Even if it is logically correct).
+	\end{enumerate}
+    \item Your answer for these problems is {\color{red}not allowed to include real C or C++ code}.
+	\item In your description of algorithm design, you should describe each step of your algorithm clearly.
+	\item You are encouraged to write pseudocode to facilitate explaining your algorithm design, though this is not mandatory. However, we recommend you not to write pseudocode, if you are using handwriting to finish your homework. If you choose to write pseudocode, please give some additional descriptions to make your pseudocode intelligible.
+	\item You are recommended to finish the algorithm design part of this homework with \LaTeX. If you insist on using handwriting to finish it, your explanation should be at least tidy and readable (can be specified) otherwise your assignments will be considered as unspecified.
+    \item Please \textbf{\red{do not}} just hand in a picture of answer-sheet with several answers only. For both of your and our convenience, please at least upload a PDF assignment file (In fact, you don't need to cut down any pages because we will filter it for you).
+\end{enumerate}
+
+\begin{questions}
+
+\include{release/example}
+
+\newpage
+
+\include{release/multi_choice}
+
+\newpage
+
+\include{release/jewelry}
+
+\newpage
+
+\include{release/similarity}
+
+\newpage
+
+\include{release/calc_div}
+
+\end{questions}
+
+\end{document}

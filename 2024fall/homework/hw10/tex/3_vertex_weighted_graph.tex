@@ -1,0 +1,30 @@
+\titledquestion{The shortest path with vertex weights}[10]
+
+Given a directed graph $G = (V, E)$, you need to find the path from $s$ to $t$ with minimum cost. The edges are not weighted i.e. you can regard them as $1$. However, the vertices in $V$ have their weights and those are required to be considered in the path.
+
+The graph $G = (V, E)$ is
+\begin{itemize}
+    \item $V=\{1,2,\ldots, n\}$, where each vertex $i$ is associated with a positive vertex weight $a_i > 0$,
+    \item $E=\{(u_i,v_i):i=1,2,\ldots, m\}$, where each edge $(u_i, v_i)$ is associated with a positive edge weight $1$.
+    % \item The start point $s$ and the end point $t$.
+\end{itemize}
+And $F: V\to \mathbb{R}^+$ represents the weight assigning function. (e.g. weight of vertex $u$ is $F(u)$.)
+
+A path is defined as a series of vertices $v_0\to v_1\to \cdots\to v_k$, which involves $k$ edges and satifies that $\forall\ 0\leq i <k, ((v_i,v_{i+1})\in E)$ (which implies $\forall\ 0\leq i \leq k, v_i\in V$.).
+
+The cost $C(P)$ of path $P = v_0 \to v_1 \to \cdots \to v_k$ is as follows:
+\begin{align*}
+    C(P) = \sum_{i=0}^k F(u_i) + k
+\end{align*}
+
+Now given a vertex $s\in V$, you need to find path $P = s \to (v_1 \to \cdots ) \to t$ with minimum cost for all $t \not = s$.
+You are supposed to give out the $|V|-1$ minimum cost of the paths. Guaranteed that $s$ can reach all other vertices.
+
+You should give out the steps of your algorithm (\textbf{as efficient as possible}) together with the time complexity (tight). You don't need to prove the correctness of your algorithm.
+
+
+\textbf{Hint:} Try to create a new graph instead of modifying the algorithm known.
+\begin{solution} \\
+    \vspace{2in}
+
+\end{solution}

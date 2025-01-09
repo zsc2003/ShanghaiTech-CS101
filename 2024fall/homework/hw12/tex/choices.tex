@@ -1,0 +1,86 @@
+\titledquestion{Multiple Choice(s)}
+For each multiple-choice, there may be \textbf{one or more} correct choice(s). Select all the correct answer(s). For each such question, you will get 0 points if you select \textbf{any} wrong choice, but you will get 1 point if you select a non-empty subset of the correct choices.
+\textbf{Write your answers in the following table; otherwise, we may take your answers as unspecified.}\\
+\textbf{Notice: ``must be true'' means the proposition holds no matter whether $\P = \NP$ or not. If you feel confused about some of the definitions, we encourage you to search the friendly web. But remember not to cheat or just use GenAI to fill in the blanks.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice' with `\choice', as what you did in the previous questions. 
+% However, there are still many students who would like to handwrite their homework. To make TA's work 
+% easier, you have to fill your selected choices in the table below, no matter whether you use LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        2(a) & 2(b) & 2(c) & 2(d) & 2(e) & 2(f) & 2(g) \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % YOUR ANSWER HERE.
+          &   &   &   &   &   &  \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{parts}
+\part[3] Choose those problems which must be in in $\complete{\NP}$:
+\begin{choices}
+    \choice $\mathsf{CYCLE}$: Given a graph $G=(V,E)$, check whether it has a cycle.
+    \choice $\mathsf{GI}$: Given two graphs $G_1=(V_1,E_1)$ and $G_2 = (V_2,E_2)$, check whether $G_1$ is isomorphic to $G_2$. ($\exists f:V_1\to V_2$ is bijective and $(v_1,u_1)\in E_1$ if and only if $(f(v_1),f(u_1))\in E_2$). 
+    \choice $\mathsf{K\text{-}COLORING}$: Given a graph $G=(V,E)$, check whether it has a $k$-coloring: $f:V\to [k]$ that $\forall e=(u,v)\in E, f(u)\not = f(v)$. ($k\geq 3$)
+    \choice $\mathsf{KNAPSACK}$: Given $n$ items and a capacity $W$ where the weight and value of each item is $w_i$ and $v_i$ respectively. Check whether there is a subset of items such that the total weights of items are below $W$ and the total value are above $V$. ($n,w_i,W\in \mathbb{Z}^{+}, v_i, V\in \mathbb{R}^+$.)
+\end{choices}
+
+\part[3] Given two decision problems $A$ and $B$ such that there exists a polynomial-time many-one reduction from $A$ to $B$. Denote this as $A\leq_p B$. Which of the following statements must be true?
+\begin{choices}
+    \choice $A\in \P \implies B\in \P$
+    \choice $A\in \complete{\NP} \implies B\in \complete{\NP}$.
+    \choice $B\in \P\implies A\in \P$.
+    \choice $B\in \complete{\NP} \implies A\in \complete{\NP}$.
+\end{choices}
+
+\part[3] Which of the following statements must be true? 
+\begin{choices} 
+    \choice Given a problem $A$, if there exists a polynomial-time certifier $f$ so that for any no-instance $X$ of $A$, there exists a polynomial-size certificate $u$, then $A$ is also in $\NP$.
+    \choice If a problem $X$ can be solved in polynomial time in the range of the output result, then $X\in\P$.
+    \choice If a problem $X$ can be solved in polynomial space in the length of the input result, then $X\in \P$.
+    \choice $\P \neq \NP$ if and only if $\P \cap \complete{\NP} = \emptyset$.
+    \choice $\P = \NP$ if and only if $\NP = \complete{\NP}$.
+\end{choices}
+
+\part[3] Which of the following statement(s) must be true? 
+\begin{choices}
+    \choice Every problem in $\NP$ can be solved in exponential time.
+    \choice Finding a polynomial-time algorithm for problems in $\NP$ can prove $\P=\NP$.
+    \choice There exists a polynomial-time many-one reduction from $\textsf{2\text{-}SAT}$ to every problem in $\NP$.
+    \choice There exists a polynomial-time many-one reduction from every problem in $\NP$ to $\textsf{3\text{-}SAT}$.
+\end{choices}
+
+Given a problem set $L$, we call a problem $X$ in $\complete{L}$ if and only if every problem $Y\in L$ can be reduced to $X$ in polynomial time. Recall $\P$ and $\NP$ are defined on decision problems i.e. problems giving out $YES$ or $NO$. From this finish the following $2$ problems:
+
+\part[3] Which of the following statement(s) of $\NP$ and $\complete{\NP}$ is/are true?
+\begin{choices}
+    \choice If $\exists L \in \complete{NP} \cap \P$, then $\P = \NP$.
+    \choice If $L_1 \leq_p L_2, L_2 \leq_p L_3$, then $L_1\leq_p L_3$. Here $A\leq_p B$ means there exist a polynomial reduction from $A$ to $B$.
+    \choice The $N$ in $\NP$ means ``No polynomial solutions" since $\P\not=\NP$ is mostly believed.
+    \choice The $P$ in $\P$ means ``Polynomial'' since $X\in \P$ indicates $X$ can be solved in polynomial time.
+\end{choices}
+
+\part[3] Given a decision problem $A$ and its corresponding certifier C, the counting version of $A$, denoted as $\#A$, is defined such that for every instance x, the output of $\#A(x)$ is the number of certificates y for which $C(x,y)=1$. Specifically, $\#A(x)=|\{y|C(x,y)=1\}|$. Furthermore, $\#P$ is defined as $\#P=\{\#A|A\in\NP\}$. Which of the following statements must be true?
+\begin{choices}
+    \choice $\forall A\in \NP$, $A \in \complete{\NP}$ if and only if $\#A\in \complete{\#\P}$.
+    \choice If $\# \SAT$ can be solved in polynomial time, then the decision problem $\P=\NP$. 
+    \choice $\forall A\in \complete{\NP}$, $\#A\in\complete{\#\P}$.
+    \choice If $\exists \#A\in \#\P$ can be solved in polynomial time, then $A\in \P$.
+\end{choices}
+
+\part[3] Which of the following statement(s) is/are true?
+\begin{choices}
+    \choice ``There exists an $\NP$ problem that is not an $\complete{\NP}$ problem.'' is false regardless of whether $\P$ equals to $\NP$ or not.
+    \choice ``$\mathsf{Shortest\text{-}Path}$ is not in $\complete{\NP}$.'' is false regardless of whether $\P$ equals to $\NP$ or not.
+    \choice ``There exists an $\NP$ problem that is not an $\complete{\NP}$ problem.'' is true if and only if $\P \neq \NP$.
+    \choice ``$\mathsf{Shortest\text{-}Path}$ is not in $\complete{\NP}$.'' is true if and only if $\P \neq \NP$.
+\end{choices}
+
+\end{parts}

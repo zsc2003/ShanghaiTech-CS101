@@ -1,0 +1,67 @@
+\titledquestion{Dichotomy}
+
+$\sat{3}$ is a well-known $\complete{\NP}$ problem and it has many variants. There exists a kind of dichotomy theorems due to the complexity problem defined by $S$ is either in $\P$ or is $\complete{\NP}$. Schaefer's dichotomy theorem shows that a large set of $\SAT$-like problems are $\complete{\NP}$, while only $6$ kinds of problems can be solved in polynomial time.
+
+First of all we should claim some notations of $\SAT$(the Boolean satisfiability problem). Given a variable set $U = \{u_1,u_2,\cdots,u_n\}$, a \textbf{boolean formula} is defined as the combination of unary/binary operators $\vee$(OR), $\wedge$(AND), $\neg$(NOT) and the variables in the variable set $U$. Given a boolean formula $\phi$, if there exists a variable combination that makes $\phi$ true, then $\phi$ is satisfiable, otherwise $\phi$ is unsatisfiable.
+
+A \textbf{SAT formula} is a logical formula in conjunctive normal form (CNF) Specifically, a \textbf{3-SAT formula} $\phi$ is a conjunction (AND) of clauses $C_1, C_2, \ldots, C_m$, and each clause $C_i$ is a disjunction (OR) of three literals (variables or their negations) from $X \cup \{\neg x_1, \neg x_2, \ldots, \neg x_n\}$. We will give out the initial $\complete{\NP}$ problem: $\sat{3}$.
+
+$\sat{3}$: Given a set of Boolean variables $X = \{x_1, x_2, \ldots, x_n\}$ and a \textbf{3-SAT formula} $\phi$ on $X$, determine whether there exists at least one truth assignment $\tau$ that makes the formula $\phi$ evaluate to true. The yes-instance of $\sat{3}$ is:
+\begin{equation*}
+\mathsf{3\text{-}SAT} = 
+\left\{\langle{\phi\rangle} \middle| 
+\begin{aligned}
+& \phi \text{ is a 3-SAT formula with variables } X = {x_1, x_2, \ldots, x_n}\\
+&\text{and clauses } C_1, C_2, \ldots, C_m \text{ such that there exists} \text{ a truth } \\
+& \text{assignment }\tau: X \rightarrow \{\text{true}, \text{false}\}\text{ such that } \tau(\phi) = \text{true}.
+\end{aligned}
+\right\}
+\end{equation*}
+In this problem, you are supposed to give out a reduction from the following problem to those problems in $\complete{\NP}$ if it is in $\complete{\NP}$, otherwise give out a polynomial time algorithm to solve it. Moreover, you are required to give out the yes-instances of those problems if they are in $\complete{\NP}$.
+\begin{parts}
+    \part[5] \textsf{Horn-SAT}: Given a set of Boolean variables $X = \{x_1, x_2, \ldots, x_n\}$ and a \textbf{Horn-formula} $\phi$ on $X$, determine whether there exists at least one truth assignment $\tau$ that makes the formula $\phi$ evaluate to true.
+
+    A \textbf{Horn-fomula} is either a single literal (a positive or negative variable) or a disjunction of at most one positive literal and one or more negative literals. %In other words, Horn clauses are either unit clauses (single literals) or implications of the form $(A \rightarrow B_1 \land B_2 \land \ldots \land B_k)$, where $A$ is a positive literal and $B_1, B_2, \ldots, B_k$ are negative literals.
+
+\begin{solution}
+
+\end{solution}
+\newpage
+    \part[5]
+    $\sat{4}$: Given a set of Boolean variables $X = \{x_1, x_2, \ldots, x_n\}$ and a \textbf{4-SAT formula}(a conjunction of clauses where each clause $C_i$ is a disjunction of $4$ literals) $\phi$ on $X$, determine whether there exists at least one truth assignment $\tau$ that makes the formula $\phi$ evaluate to true.
+\begin{solution}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{solution}
+    \part[5]
+    $\sat{(3,3)}$: Given a set of Boolean variables $X = \{x_1, x_2, \ldots, x_n\}$ and a \textbf{3-SAT formula} $\phi$ on $X$, where \textbf{each variable appears at most three times}, determine whether there exists at least one truth assignment $\tau$ that makes the formula $\phi$ evaluate to true.\\
+    \textbf{Hint:} Consider how $a\Leftrightarrow b$ can be transformed into CNF. 
+\begin{solution}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+ \end{solution}
+
+
+\end{parts}

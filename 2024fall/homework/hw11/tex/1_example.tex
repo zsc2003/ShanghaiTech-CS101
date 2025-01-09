@@ -1,0 +1,42 @@
+
+\titledquestion{(DP Example) Maximum Subarray Problem}
+
+\vspace{0.1in}
+
+Given an array $A=\langle A_1, \dots, A_n\rangle$ of $n$ elements, please design a dynamic programming algorithm to find a contiguous subarray whose sum is maximum.
+
+% utilities you might need for wrting Bellman equations
+\newcommand{\maxi}[2]{\max\left\{\substack{#1\\#2}\right\}}	% usage: \maxi{a}{b}
+\newcommand{\mini}[2]{\min\left\{\substack{#1\\#2}\right\}}	% usage: \mini{a}{b}
+\newcommand{\case}[1]{\text{if}\ #1}	% usage: \case{$i > 1$}
+\newcommand{\otherwise}{\text{otherwise}}	% usage: \otherwise
+
+
+\begin{solution}
+
+    \textbf{Main Idea}
+    
+    Let $OPT(I)$ be the maximum sum of subarrays of $A$ ending with $A_i$. 
+    Then we have the following equation:
+    \[
+    OPT(i)=
+    \begin{cases}
+        A_1                       & \case{i=1} \\
+        \max \{A_i,A_i+OPT(i-1)\} & \otherwise
+    \end{cases}
+    \]
+
+    The final answer is 
+    \[ \max_{i\in\{1, 2, \dots, n\}} OPT(i) \]
+
+    \textbf{Proof of Correctness}: 
+
+    \begin{itemize}
+        \item The $1$st term in $\max$: only take $A_i$
+        \item The $2$nd term in $\max$: take $A_i$ together with the best subarray ending with $A_{i-1}$
+    \end{itemize}
+
+    \textbf{Runtime Analysis}: 
+
+    The running time is $\Theta(n)$ since we have a single loop with range $n$ to reduce subproblems.
+\end{solution}

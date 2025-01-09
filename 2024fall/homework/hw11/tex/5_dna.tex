@@ -1,0 +1,76 @@
+\titledquestion{Pairwise DNA Sequence Alignment}
+
+\newcommand{\maxt}[3]{\max\begin{cases}#1\\#2\\#3\end{cases}}
+
+Given two DNA sequences: a query sequence $Q=\langle Q_1, \dots, Q_m\rangle$ of $m$ nucleotides and a subject sequence $S=\langle S_1, \dots, S_n\rangle$ of $n$ nucleotides. There are $4$ types of nucleotides, namely Adenine (A), Cytosine (C), Guanine (G) and Thymine (T). We provide a scoring matrix for nucleotides at the same index of these two sequences:
+
+
+\begin{table}[!htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|} \hline
+		  & A  & C  & G  & T  \\ \hline
+		A & 1  & -5 & -1 & -5 \\ \hline
+		C & -5 & 1  & -5 & -1 \\ \hline
+		G & -1 & -5 & 1  & -5 \\ \hline
+		T & -5 & -1 & -5 & 1  \\ \hline
+	\end{tabular}
+\end{table}
+
+
+where $\text{Score}(X, X)$ on the diagonal represents the score of a successful match for nucleotide $X$ at the same index of both sequences, and  $\text{Score}(X, Y)$ indicates the penalty for mismatching nucleotide $X$ by nucleotide $Y$.
+
+
+For example, assume we have $m=n$ here and there are two sequences $Q=\langle TGGTG\rangle$ and $S=\langle ATCGT\rangle$. Then the alignment score for these two sequences is
+\[
+	\begin{aligned}
+		\text{Score}(Q, S) & = \sum_{i}^{n} \text{Score}(Q_i, S_i) \\
+		                   & = \text{Score}(T, A)+\text{Score}(G, T)+\text{Score}(G, C)+\text{Score}(T, G)+\text{Score}(G, T) \\
+		                   & = (-5)+(-5)+(-5)+(-5)+(-5) \\
+		                   & = -25
+	\end{aligned}
+\]
+
+
+However, if $m \neq n$, we must insert several gaps `$-$' to make two sequences the same length. In order to align two sequences for higher scores, we can also insert an arbitrary number of gaps `$-$' to each sequence at an arbitrary index. However, adding one gap will result in a gap penalty $\text{Penalty}(X, -)=\text{Penalty}(-, Y)=-2$.
+
+
+Assume after inserting $4$ gaps, we obtain $Q^\prime=\langle -T-GGTG\rangle$ and $S^\prime=\langle ATCG-T-\rangle$. Then the recomputed alignment score is:
+\[
+	\begin{aligned}
+		\text{Score}(Q^\prime, S^\prime) & = \text{Penalty}(-, A) +\text{Score}(T, T)+\text{Penalty}(-, C) + \text{Score}(G, G) \\
+		                                 & \ \ \  +\text{Penalty}(G, -)+\text{Score}(T, T)+ \text{Penalty}(G, -)               \\
+		                                 & = (-2)+1+(-2)+1+(-2)+1+(-2)                                                          \\
+		                                 & = -5
+	\end{aligned}
+\]
+Notice that $Q^\prime$ and $S^\prime$ should share the same length after inserting gaps.
+
+
+Given the scoring matrix and gap penalty, please come up with a dynamic programming algorithm to \textbf{maximize the pairwise alignment score} of a pair of DNA sequences by inserting gaps into these two sequences.
+
+
+\newpage
+\begin{parts}
+	\part[2] Define your subproblem for this question.
+	\begin{solution}
+            \vspace{1in}
+        \end{solution}
+
+
+	\part[6] Give your Bellman equation to solve the subproblems. (Proof of correctness is not required)
+	\begin{solution}
+            \vspace{3in}
+        \end{solution}
+
+
+	\part[1] What is the answer to this question in terms of the subproblems?
+	\begin{solution}
+            \vspace{0.7in}
+        \end{solution}
+
+
+	\part[1] What is the runtime complexity of your algorithm?
+	\begin{solution}
+            \vspace{0.7in}
+        \end{solution}
+\end{parts}

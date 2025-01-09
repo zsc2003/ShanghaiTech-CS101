@@ -1,0 +1,119 @@
+\titledquestion{Similarity Test}
+
+Maddelena has drawn a lot of paintings. She wants to organize her work. To finish her job better, she decides to determine whether a subset of similar paintings exists. Every paint $p$ has its own feature $\lambda_p$. 
+
+In this problem, we specify some notations: $\mathcal{P}$ is the set of paintings. Without giving rise to ambiguity, $\lambda_p$ can be referred to the feature of a painting $p$. $\mathcal{F} = \{\lambda_p|p\in \mathcal{P}\}$ denotes the set of features. $n$ can be refereed to the number of paintings i.e. $n=\left|\mathcal{P}\right|$.
+
+Note that $\mathcal{F}$ is not partially ordered i.e. you can't make comparisons for any $p,q\in \mathcal{P}$ so that you cannot sort $\mathcal{F}$ or give out inferences like $\lambda_p<\lambda_q$ or $\lambda_q<\lambda_p$. There exists an equivalence relation on $\mathcal{F}$, as $\lambda_p = \lambda_q$ indicates $p$ and $q$ has similar features.
+
+The master feature is defined as the feature it is similar to \textbf{over} half of the paintings. 
+In other words, the "master" feature is the feature$\lambda_0\in \mathcal{F}$ s.t. $|\{p\in\mathcal{P}|\lambda_p = \lambda_0\}|>\frac n2$.
+
+For example, $2$ sets of paintings are shown: The first set of paintings has a "master" feature $\lambda_0 = \alpha$ since there exists over a half ($4$: a,b,e,g) paintings share this feature. The second set of paintings does not have a ``master" feature because there exists no such feature that over half paintings share that.
+\begin{table}[!ht]
+    \centering
+    \begin{minipage}[b]{.5\linewidth}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \hline
+        Painting & a & b & c & d & e & f & g \\ \hline
+        Feature & $\alpha$ & $\alpha$ & $\beta$ & $\omega$ & $\alpha$ & $\beta$ & $\alpha$ \\ \hline
+    \end{tabular}
+    \caption{A "master" feature $\lambda_0 = \alpha$.}
+    \end{minipage}
+    \begin{minipage}[b]{.4\linewidth}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+        Painting & A & B & C & D & E \\ \hline
+        Feature & $\alpha$ & $\beta$ & $\omega$ & $\beta$ & $\alpha$ \\ \hline
+    \end{tabular}
+    \caption{No "master" feature.}
+    \end{minipage}
+\end{table}
+\newpage
+\begin{parts}
+\part{} 
+Maddelena wants to find a "master" feature first. She asks you to help her with those problems:
+\begin{subparts}
+    \subpart[3] {Design a divide-and-conquer algorithm whose worst case takes $\Theta(n\log n)$ time.} \\
+    \textbf{Note: Of course, you can index them, but we recommend you \red{not} to.} \\
+    \textbf{Hint:} Recall merge sort, think out the relation between the "master" features of the $2$ subsets after dividing and the "master" feature of the original set. (If they have)
+   \begin{solution} 
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\ 
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+    \subpart[2] {Justify it by proving its correctness and show its time complexity is $\Theta(n\log n)$. }
+    \begin{solution} 
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+\end{subparts}
+
+\part{} 
+Maddelena finds $\Theta(n\log n)$ still not fast enough since she has so many paintings. She wants to develop a new algorithm that takes $o(n\log n)$ time.  \\
+\textbf{In this problem, you can always assume that the total remaining number is even. In other words, you don't need to consider how to deal with the one superfluous after dividing.}
+
+\textbf{Hint: Recall binary search, what if we give up at least half every recurrence? \\ Match those by pairs and do differently based on whether they are similar.}
+
+\begin{subparts}
+    \subpart[2] {Design a divide-and-conquer algorithm that takes $o(n\log n)$ time.}
+    \begin{solution}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+    \subpart[2] {Justify its correctness.}
+    \begin{solution}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\ 
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{solution}
+    \subpart[1] {Analyze the time complexity of the algorithm.}
+    \begin{solution}
+    \\
+    \\
+    \end{solution}
+\end{subparts}
+
+\end{parts}

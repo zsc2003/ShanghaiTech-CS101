@@ -1,0 +1,81 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get half points if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\CorrectChoice', as what you did in the first question. However, there are still
+% many students who would like to handwrite their homework. To make TA's work easier,
+% you have to fill your selected choices in the table below, no matter whether you use 
+% LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+        \hline 
+        (a) & (b) & (c) & (d) & (e) & (f) \\
+        \hline
+        % YOUR ANSWER HERE.
+        &  &  &  &  &  \\
+
+        \hline
+    \end{tabular} 
+\end{table}
+
+\begin{parts}
+
+    \part[2] A union tree, used in a disjoint set with only union-by-rank optimization, has height 7. The number of nodes contained in that tree \textbf{can not} be:
+    \begin{choices}
+        \choice 127
+        \choice 128
+        \choice 129
+        \choice 2024
+    \end{choices}
+
+    \part[2] Which of the following statements are true for disjoint set?
+    \begin{choices}
+        \choice The two main operations of disjoint set are Find and Union.
+        \choice Union-by-rank optimization alone is sufficient to ensure that the height of the union trees remains $O(\alpha(n))$, where $n$ is the number of nodes and $\alpha$ is the inverse Ackermann function.
+        \choice After applying the Find operation with path compression in a disjoint set, the height of the union tree will always decrease.
+        \choice The combination of path compression and union by rank ensures that both the time complexity of the Find and Union operations is nearly constant in practice.
+
+    \end{choices}
+
+    \part[2] Undirected Graph $G = (V, E)$ is stored in an adjacency matrix $A$. We let $A_{i, j}=1$ if and only if there is an edge between $V_i$ and $V_j$ in G, otherwise $A_{i,j}=0$. We want to know whether there is a path \textbf{with length $m$} between $V_i$ and $V_j$ by visiting $P_{i,j}$; if $P_{i,j}$=0, then there is no such path. What should $P$ be?
+    \begin{choices}
+    	\choice $A$
+    	\choice $mA$
+    	\choice $A^{m-1}$
+    	\choice $A^m$
+    \end{choices}
+
+    \part[2]  Which of the following statements are true for graph properties?
+    \begin{choices}
+        \choice An undirected simple graph with $n$ vertices can have at most $n(n-1)$ edges.
+        \choice An undirected graph is acyclic if and only if it is a tree.
+        \choice The minimum number of edges required to connect $n$ vertices in a graph is $n - 1$.
+        \choice In a connected undirected graph, the removal of any edge will always result in a graph that is still connected.
+    \end{choices}
+
+    \part[2] Which of the following statements are true for graph properties?
+    \begin{choices}
+        \choice Any tree is a bipartite graph.
+        \choice A graph with an odd number of vertices can not be a bipartite graph.
+        \choice A DAG(Directed Acyclic Graphs) must have at least one vertex with no incoming edges (source).
+        \choice The sum of the degrees of all vertices in a graph is always equal to the number of edges in the graph.
+    \end{choices}
+
+    \part[2] Which of the following statements are true for graph traversal?
+    \begin{choices}
+        \choice Given two vertices $s$ and $t$ in a graph $G$, we can use both BFS and DFS to determine whether there exists a path from $s$ to $t$.
+        \choice Both the time complexity of DFS and that of BFS are $\Theta(|V| + |E|)$.
+        \choice In DFS, all vertices are visited in the order of their distance from the start vertex.
+        \choice In BFS, let $d(v)$ be the minimum number of edges between a vertex $v$ and the start vertex. For any two vertices $u$ and $v$ in the queue, $|d(u) - d(v)|$ is always less than $2$.
+    \end{choices}
+    
+
+\end{parts}

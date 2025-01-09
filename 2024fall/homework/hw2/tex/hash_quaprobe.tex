@@ -1,0 +1,106 @@
+\titledquestion{Hash Table Insertions and Deletions}
+Consider an empty hash table of capacity 7 and with a hash function \(h(k) = (3k + 6) \mod 7\). Collisions are resolved by quadratic probing with the probing function \(H_i(k) = (h(k) + i^2)\mod 7\), paired with lazy erasing. We will give three kinds of instructions, which are among the set  $\{$\ttt{Insert, Delete, Search}$\}$. For \texttt{Insert/Delete} instructions, you need to fill the hash table after each instruction. For \texttt{Search} instructions, write down the probing sequence (index). Use `\(\ttt{D}\)' to indicate that the bin has been marked as deleted.
+\newcolumntype{x}{>{\centering\arraybackslash\hspace{0pt}}p{0.5cm}}
+
+\begin{parts}
+\part [1] \ttt{Insert 9}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\part[1] \ttt{Insert 17}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\part[1] \ttt{Insert 32}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\part[1] \ttt{Insert 24}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\part[1] \ttt{Insert 18}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\part[1] \ttt{Search 18}
+    \begin{solution}[3pt]
+        \vspace{3pt}
+    \end{solution}
+\part[1] \ttt{Delete 32}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\part[1] \ttt{Insert 25}
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+\newpage
+\part[3] Suppose that the collisions are resolved by linear probing. 
+\begin{enumerate}[i.]
+    \item Write down the content of the hash table after \ttt{Insert 9, 17, 32, 24, 18}.
+    \begin{table}[hbt!]
+      \centering
+      \begin{tabular}{|c|x|x|x|x|x|x|x|}
+        \hline
+        Index     & 0 & 1 & 2 & 3 & 4 & 5 & 6           \\
+        \hline
+        Key Value &   &   &   &   &   &   &  \\
+        \hline
+      \end{tabular}
+    \end{table}
+    \item What is the load factor $\lambda$?
+    \begin{solution}[3pt]
+        \vspace{3pt}
+    \end{solution}
+\end{enumerate}
+\end{parts}

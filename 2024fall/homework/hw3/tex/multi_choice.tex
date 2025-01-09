@@ -1,0 +1,78 @@
+\titledquestion{Multiple Choices}
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+        \hline
+        (a) & (b) & (c) & (d) & (e)\\
+        \hline
+ 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% YOUR ANSWER HERE.
+		   &  &  &    &  \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{parts}
+        
+    \part[3] Which of the following sorting algorithm(s) is(are) stable?
+    \begin{choices}
+    \choice Insertion-Sort 
+    \choice Merge-Sort
+    \choice Quick-Sort (picking a random element as pivot)
+    \choice None of the above
+    \end{choices}
+    
+
+    \part[3] Which of the following statements is \textbf{NOT} true?
+    
+    \begin{choices}
+    \choice The worst case time complexity of merge-sort is $O(n^2)$.
+	\choice Given 2 sorted lists of size        $m$ and $n$ respectively, and we want      to merge them to one sorted list by        merge-sort. Then in the worst case,         we need $m+n-1$ comparisons.
+	\choice The time complexity of 
+        quick-sort, compared with merge-sort, is less affected by the initial order of the input array.
+	\choice Traditional implementations of merge-sort need \(\Theta(n\log n)\) time when the input sequence is sorted or totally reversely sorted, but it is possible to make it \(\Theta(n)\) on such input while still \(\Theta(n\log n)\) on the average case.
+        
+    \end{choices}
+    
+    
+
+     \part[3] You have to sort $n$ data with very limited extra memory ($\Theta(1)$ extra memory every case).  Choose sort algorithm(s) which is(are) \textbf{not} appropriate.\\
+     \textbf{Hint: Note that too much recursion will take use of huge stack memory.}
+    
+    \begin{choices}
+    \choice Merge-sort.
+	\choice Insertion-sort.
+	\choice Bubble-sort.
+	\choice Quick-sort.
+        
+    \end{choices}
+    
+    \part[3] Which of the following implementations of quick-sort may improve the average \textbf{behavior} (not only improvement on time complexity) of trivial quick-sort?(Compared to always picking the first element as pivot and using no optimization, data are uniformly distributed.)
+    
+    \begin{choices}
+    \choice Always picking the last element.
+    \choice When partitioning the subarray \(\langle a_l,\cdots,a_r\rangle\) (assuming \(r-l\geqslant 2\)), choose the median of \(\left\{a_x,a_y,a_z\right\}\) as the pivot, where \(x,y,z\) are three different indices chosen randomly from \(\{l,l+1,\cdots,r\}\).
+    \choice When partitioning the subarray \(\langle a_l,\cdots,a_r\rangle\) (assuming \(r-l\geqslant 2\)), we first calculate \(q = \frac{1}{2} (a_{\max} + a_{\min})\) where \(a_{\max}\) and \(a_{\min}\) are the maximum and minimum values in the current subarray respectively. Then we traverse the whole subarray to find \(a_m \; s.t. \left|a_m - q\right| = \min_{i=l}^r \left|a_i - q\right|\) and choose \(a_m\) as the pivot.
+    \choice When the disordered sub-array is short enough, use insertion-sort instead of quick-sort.
+    \end{choices}
+
+    \part[3] Which of the following statements is true?
+    
+    \begin{choices}
+    \choice If \(T(n) = 2T(\frac{n}{2}) + O(\sqrt{n})\) with \(T(0) = 0\) and \(T(1) = 1\), then \(T(n) = \Theta(n)\).
+    \choice If \(T(n) = T(\frac{n}{10}) + T(\frac{9n}{10})+ \Theta(n)\) with \(T(0) = 0\) and \(T(1) = 1\), then \(T(n) = O(n \log n)\).
+    \choice If \(T(n) = 4T(\frac{n}{2}) + O(n^2)\) with \(T(0) = 0\) and \(T(1) = 1\), then \(T(n) = \Theta(n^2\log n)\).
+    \choice If the run-time $T(n)$ of a divide-and-conquer algorithm satisfies \(T(n) = aT(\frac{n}{b}) + f(n)\) with \(T(0) = 0\) and \(T(1) = 1\), we may deduce that the run-time for dividing the original problem into $a$ subproblems of size $\frac{n}{b}$ is $f(n)$.
+        
+    \end{choices}
+    
+ 
+    
+
+\end{parts}

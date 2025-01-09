@@ -1,0 +1,73 @@
+\titledquestion{A star}
+
+Logan is doing an A* \textbf{graph search} from $S$ to $T$ on the graph below. Edges are labeled with weights.
+
+The exploration order follows in their lexicographical order. (For example, $S \to X \to A$ would be expanded before $S \to X \to B$, and $S \to A \to Z$ would be expanded before $S \to B \to A$.
+\begin{table}[!ht]
+\begin{minipage}[b]{0.6\linewidth}
+\centering
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,auto]
+    \node[circle,draw] (S) {S};
+    \node[circle,draw] (A) [right=3cm of S] {A};
+    \node[circle,draw] (B) [below=3cm of S] {B};
+    \node[circle,draw] (C) [right=3cm of A] {C};
+    \node[circle,draw] (D) [below=3cm of A] {D};
+    \node[circle,draw] (T) [right=3cm of D] {T};
+    \path[->]
+    (S) edge node {2} (A)
+    (A) edge node {2} (B)
+    (S) edge node {6} (B)
+    (B) edge node {2} (D)
+    (D) edge node {5} (T)
+    (A) edge node {8} (C)
+    (D) edge node {4} (C)
+    (C) edge node {4} (T);
+\end{tikzpicture}
+\end{minipage}
+    \begin{minipage}[b]{0.35\linewidth}
+    \centering
+    \begin{tabular}{|r|l|l|l|l|l|l|}
+    \hline
+        Node & S & A & B & C & D& T \\ \hline
+        Heuristic & $11$ & $9$ & $12$ & $4$ & $5$ & $0$ \\ \hline
+    \end{tabular}
+    \caption{The initial heuristic value}
+    \label{tab:heuristic}
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|r|l|l|l|l|l|l|}
+    \hline
+        Node & S & A & B & C & D& T \\ \hline
+        Heuristic & $10$ & $6$ & $4$ & $2$ & $3$ & $0$ \\ \hline
+    \end{tabular}
+    \caption{The new heuristic value}
+    \label{tab:new}
+    \end{table}
+\end{minipage}
+\end{table}\\
+
+\begin{parts}
+    \part[3] He first uses the heuristic value in the Table \ref{tab:heuristic} but finds it does not work well. That's because the given heuristic values are:
+\begin{choices}
+    \choice Admissible but not consistent
+    \choice Consistent but not admissible
+    \choice Neither admissible nor consistent
+\end{choices}
+\part Logan decides to modify the heuristic.
+\begin{subparts}
+    \subpart[3] He first gives out a new heuristic as in Table \ref{tab:new} above, please check whether the heuristic meets both admissibility and consistency (Write `Yes' or `No' for this). \\
+    \textbf{If so}, write down the path from $S$ to $T$ returned by $A^*$ graph search (in the form of nodes, e.g. $S\to A \to C \to T$ should be written as $SACT$). \\
+    \textbf{Otherwise}, give out a contradiction that will lead admissibility or consistency to fail (in the form of `Admissibility/Consistency' and its corresponding inequality. \\
+    e.g. If consistency fails on $A\to C$, write `Consistency, $h(C) + 8 < h(A)$', here $8$ corresponds to $w(A, C)$.).
+\begin{solution} \\
+    \vspace{2in}
+
+\end{solution}
+    \subpart[4] He finds that he can modify the heuristic of \textbf{only one node} to meet admissibility and consistency from the initial heuristic values in Table \ref{tab:heuristic}. Find the node and corresponding heuristic value for the chosen node. Justify your answer by stating the equalities obtained from admissibility and consistency.
+\begin{solution} \\
+    \vspace{2in}
+
+\end{solution}
+\end{subparts}
+
+\end{parts}

@@ -1,0 +1,78 @@
+\titledquestion{Multiple Choices}
+
+Each question has \textbf{one or more} correct answer(s). Select all the correct answer(s). For each question, you will get 0 points if you select one or more wrong answers, but you will get 1 point if you select a non-empty subset of the correct answers.
+
+Write your answers in the following table.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: The `LaTeX' way to answer a multiple-choices question is to replace `\choice'
+% with `\CorrectChoice', as what you did in the first question. However, there are still
+% many students who would like to handwrite their homework. To make TA's work easier,
+% you have to fill your selected choices in the table below, no matter whether you use 
+% LaTeX or not.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+        \hline 
+        (a) & (b) & (c) & (d)\\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % YOUR ANSWER HERE.
+         &  &  &  \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{parts}
+
+    \part[3] Which of the following statements about arrays and linked lists are true?
+
+    \begin{choices}
+        \choice A doubly linked list consumes more memory than a (singly) linked list of the same length.
+        \choice Inserting an element into the middle of an array takes constant time.
+        \choice Reversing a singly linked list takes constant time.
+        \choice Given a pointer to some node in a doubly linked list, we are able to gain access to every node of it.
+        \choice If we implement a queue using the circular array, the minimal memory we need is related to the maximal possible numbers of elements in the queue. 
+    \end{choices}
+
+    \part[3] Suppose we use a circular array with an index range from $0$ to $N - 1$ to implement a queue, and currently Front is pointing at index $m$. We will know that if this queue is full with $N$ elements, the last element in it should be stored at index = \rule[-3pt]{1cm}{0.05em}. (Options below are mapped to \textbf{Integers Modulo N}: $\mathbb{Z}_N = \{0, 1, 2, ..., N-1\}$)
+    \begin{choices}
+		\choice $0$
+		\choice $m$
+		\choice $N-1$
+		\choice $m-1$
+    \end{choices}
+
+    \part[3] Which of the following statements is(are) correct?
+    \begin{choices}
+        \choice \( n! = o(n^n) \).
+        \choice \(n^n = O(n!)\)
+        \choice \( (\log n)^2 = \omega(\sqrt{n}) \).
+        \choice \( n+\log n = \Omega(n+\log \log n) \).
+        \choice \( n^{\log(n^2)} = O(n^2\log(n^2)) \).
+    \end{choices}
+
+    \part[3] Your two magic algorithms run in
+    \[f(n)= n\lceil\sqrt{n}\rceil(1+(-1)^n) + 1\]
+    \[g(n)= n\lfloor\log{n}\rfloor\]
+    time, where \(n\) is the input size. Which of the following statements is true?
+    \begin{choices}
+        \choice \( f(n) = o\left(n^2\right) \).
+        \choice \( f(n) = \Omega\left(n\right) \).
+        \choice \( f(n)+g(n) = \Theta\left(n^{1.5}\right) \).
+        \choice \( f(n)+g(n) = \omega\left(n\log{(1.5n)}\right) \).
+    \end{choices}
+    Here is the definition of Landau Symbols without using the limit, which may be helpful for you to strictly prove whether each choice is correct:
+    \begin{align*}
+        f(n)=\Theta(g(n)):& \exists c_1,c_2\in\mathbb{R}^+,\exists n_0,\forall n>n_0, 0\le c_1\cdot g(n)\le f(n)\le c_2\cdot g(n).\\
+        f(n)=O(g(n)):& \exists c\in\mathbb{R}^+,\exists n_0,\forall n>n_0, 0\le f(n)\le c\cdot g(n).\\
+        f(n)=\Omega(g(n)):& \exists c\in\mathbb{R}^+,\exists n_0,\forall n>n_0, 0\le g(n)\le c\cdot f(n).\\
+        f(n)=o(g(n)):& \forall c\in\mathbb{R}^+,\exists n_0,\forall n>n_0, 0\le f(n)<c\cdot g(n).\\
+        f(n)=\omega(g(n)):& \forall c\in\mathbb{R}^+,\exists n_0,\forall n>n_0, 0\le g(n)<c\cdot f(n).
+    \end{align*}
+
+\end{parts}

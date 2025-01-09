@@ -1,0 +1,46 @@
+\titledquestion{Binary Search Example}[0]
+
+Design an algorithm to find the index of an element $x$ in a sorted array $a$ of $n$ elements.
+
+\begin{solution}
+
+We will show how you are supposed to finish the $3$ kinds of problems mentioned last page.
+
+\textbf{Algorithm Design:} We basically ignore half of the elements just after one comparison.
+\begin{enumerate}
+	\item Compare $x$ with the middle element.
+	\item If $x$ matches with the middle element, return the middle index.
+	\item Otherwise $x$ is greater than the mid element, then $x$ can only lie in right half subarray after the mid element. So we recur for right half.
+	\item Otherwise ($x$ is smaller) recur for the left half.
+\end{enumerate}
+
+\textbf{Pseudocode(Optional):}
+\begin{algorithm}[H]
+    \color{blue}
+	\begin{algorithmic}[1]
+		\Function {binarySearch}{a, value, left, right}
+		\If {right $<$ left} 
+		\State \Return not found
+		\EndIf
+		\State mid $\gets \lfloor (right-left)/2 \rfloor + left$
+		\If {a[mid] = value} 
+		\State \Return mid
+		\EndIf
+		\If {value $<$ a[mid]} 
+		\State \Return binarySearch(a, value, left, mid-1)
+		\Else
+		\State \Return binarySearch(a, value, mid+1, right) 
+		\EndIf   		
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\textbf{Proof of Correctness:}
+If $x$ happens to be the middle element, we will find it in the first step. Otherwise, if $x$ is greater than the middle element, then all the element in the left half subarray is less than $x$ since the original array has already been sorted, so we just need to look for $x$ in the right half subarray. Similarly, if $x$ is less than the middle element, then all the element in the right subarray is greater than $x$, so we just need to look for $x$ in the front list. If we still can't find $x$ in a recursive call where $left = right$, which indicates that $x$ is not in $a$, we will return $not\; found$ in the next recursive call.
+
+\textbf{Time Complexity Analysis:}
+During each recursion, the calculation of $mid$ and comparison can be done in constant time, which is $O(1)$. We ignore half of the elements after each comparison, thus we need $O(\log n)$ recursions.
+$$T(n) = T(n/2)+O(1)$$\\
+Therefore, by the Master Theorem $\log_{b}{a}=0=d$, so $T(n) = O(\log n)$.
+
+\end{solution}
